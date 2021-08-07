@@ -56,7 +56,7 @@
           <div class="musician-img timo"></div>
           <div class="musician-info">
             <h3 class="musician-name">Timo Alakotila</h3>
-            <p class="musician-text">Quisque a lobortis elit, non iaculis nisl. Quisque sem arcu, mollis sed nisl quis, mollis dictum orci. Nulla sagittis ac urna ut semper. Nam at dolor odio. Maecenas id metus sit amet eros egestas sollicitudin et pulvinar mauris. Nulla eu ullamcorper nunc. Pellentesque ut tortor dui.</p>
+            <p class="musician-text">Timo Alakotila is one of Finland’s busiest, most versatile and most in-demand musicians, as composer, arranger, pianist and harmonium player in folk, classical, jazz and pop fields. His career began in 1982 in Kaustinen, Finland as harmonium player and founder member of the fiddle group JPP, who quickly established themselves as the best and most innovative fiddle music group in Finland.</p>
             <div class="musician-meta">
               <div class="musician-contact">
                 <p>+46(0)70-6691374</p>

@@ -1,6 +1,6 @@
 <template>
   <div class="ui container">
-    <div @mouseover="hooverEnter" @mouseleave="hooverLeave" data-aos="fade-up">
+    <div v-if="preview" @mouseover="hooverEnter" @mouseleave="hooverLeave" data-aos="fade-up">
       <div id="more-news-header" class="header" v-if="header" @click="moreNews">
         <h3>More News</h3>
       </div>
