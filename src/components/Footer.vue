@@ -43,9 +43,6 @@
             <button class="ui circular google plus icon button">
               <i class="google plus icon"></i>
             </button>
-            <button class="ui circular github icon button">
-              <i class="github icon"></i>
-            </button>
           </div><br>
 
           <p>Copyright 2021 © Elias Frigård</p>
@@ -70,11 +67,9 @@
 /* Style */
 <style scoped>
   #footer {
-    padding-top: 20px;
     padding: 80px;
     background-color: rgb(4, 46, 66);
     bottom:0;
-    margin-top: 50px;
   }
   
   a {
@@ -85,9 +80,15 @@
     font-size: 14px;
     text-align: left;
   }
+
+  .header {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-align: left;
+  }
   
   #buttons button {
     margin-right: 10px;
-
   }
 </style>

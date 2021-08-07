@@ -1,33 +1,41 @@
 <template>
-<div class="timer">
+<div class="timer" data-aos="fade-in">
   <h1 class="title">next show going live in</h1>
   <div class="counter">
     <div class="days">
       <div class="time">
-        <h3>{{ displayDays }}</h3>
+        <div class="time-head">
+          <h3>{{ displayDays }}</h3>
+          <p>days</p>
+        </div>
         <p class="colon">:</p>
       </div>
-      <p>days</p>
     </div>
     <div class="hours">
       <div class="time">
-        <h3>{{ displayHours }}</h3>
+        <div class="time-head">
+          <h3>{{ displayHours }}</h3>
+          <p>hours</p>
+        </div>
         <p class="colon">:</p>
       </div>
-      <p>hours</p>
     </div>
     <div class="minutes">
       <div class="time">
-        <h3>{{ displayMinutes }}</h3>
+        <div class="time-head">
+          <h3>{{ displayMinutes }}</h3>
+          <p>minutes</p>
+        </div>
         <p class="colon">:</p>
       </div>
-      <p>minutes</p>
     </div>
     <div class="seconds">
       <div class="time">
-        <h3>{{ displaySeconds }}</h3>
+        <div class="time-head">
+          <h3>{{ displaySeconds }}</h3>
+          <p>seconds</p>
+        </div>
       </div>
-      <p>seconds</p>
     </div>
   </div>
 </div>
@@ -98,6 +106,17 @@ export default {
   text-transform: uppercase;
 }
 
+.time-head {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-head p {
+  font-size: 14px;
+}
+
 .timer {
   display:flex;
   flex-direction: column;
@@ -115,7 +134,7 @@ export default {
   margin: 0;
   display:flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .time h3 {

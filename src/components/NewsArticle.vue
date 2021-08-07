@@ -135,6 +135,10 @@ export default {
   }
 
   .news-text, .news-author, .news-date {
-    letter-spacing: 1px;
+    letter-spacing: 1.3px;
+  }
+
+  .news-text {
+    font-size: 16px;
   }
 </style>

@@ -2,6 +2,7 @@
   <div class="live">
     <Timer :date="upcomingConcert.date"/>
     <Concerts @next-concert="setUpcoming"/>
+    <div class="image" data-aos="fade-up"></div>
   </div>
 </template>
 
@@ -29,5 +30,26 @@
 </script>
 
 <style scoped>
+  .image {
+    height:85vh;
+    width: 100%;
+    background-image: url("/P1110954-2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 2s ease;
+  }
 
+  .image:hover {
+    background-image: url("/P1110954.jpg");
+    transition: all 2.5s ease;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    } to {
+      opacity: 1;
+    }
+  }
 </style>

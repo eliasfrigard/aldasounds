@@ -1,6 +1,6 @@
 <template>
-  <div id="news">
-    <News :preview="false" :articleNumber="10" title="alda news!" />
+  <div class="ui container">
+    <News class="news" :preview="false" :articleNumber="10" title="alda news!" />
   </div>
 </template>
 
@@ -17,13 +17,13 @@ export default {
 </script>
 
 <style scoped>
-  #news {
+  .news {
+    margin: 50px 0;
     top: 8vh;
-    padding-top: 75px;
     width: 100%;
     background-color: white;
-    position:relative;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

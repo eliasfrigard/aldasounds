@@ -1,7 +1,7 @@
 <template>
   <div id="navbar">
-    <h1 id="title">ALDA</h1>
-    <div class="nav">
+    <h1 id="title" @click="reloadPage" data-aos="fade-in">ALDA</h1>
+    <div class="nav" data-aos="fade-in">
       <router-link to="/">Home</router-link>
       <router-link to="/about">Story</router-link>
       <router-link to="/news">News</router-link>
@@ -9,7 +9,7 @@
       <router-link to="/live">Live</router-link>
       <router-link to="/contact">Contact</router-link>
     </div>
-    <div class="social">
+    <div class="social" data-aos="fade-in">
       <a href="https://www.facebook.com/aldasounds" target="_blank">
         <i class="fab fa-facebook-square fa-lg"></i>
       </a>
@@ -24,7 +24,7 @@
       </a>
     </div>
 
-    <div class="burger" @click="openMobileNav">
+    <div class="burger" @click="openMobileNav" data-aos="fade-in">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
@@ -69,6 +69,9 @@ export default {
       })
 
       burger.classList.toggle('toggle')
+    },
+    reloadPage() {
+      window.location.href = "http://localhost:8080"
     }
   }
 }
@@ -97,19 +100,6 @@ export default {
   -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
-}
-
-.social i {
-  margin: 20px;
-  color: rgba(230, 230, 230, 0.6);
-}
-
-.social i:hover {
-  color: #ec3c01;
-}
-
-.social a {
-  height: 60px;
 }
 
 /* width */
@@ -158,27 +148,58 @@ export default {
   box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.3);
 }
 
-.nav {
-  width: 31%;
-  display: flex;
-  justify-content: space-around;
-  padding: 0px;
-}
-
 #title {
   color: rgb(230, 230, 230);
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   margin:0px;
+  width:25%;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 700;
+  cursor: pointer;
 }
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:25%;
+}
+
+.social i {
+  margin: 20px;
+  color: rgba(230, 230, 230, 0.6);
+}
+
+.social i:hover {
+  color: #ec3c01;
+}
+
+.social a {
+  height: 60px;
+}
+
+.nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 100px;
+}
+
 
 .nav a {
   text-decoration: none;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   font-weight: 500;
   font-size: 19px;
   color: rgb(230, 230, 230);
   font-family: 'Bad Script', cursive;
  }
+
+ .nav a:hover {
+  font-weight: bold;
+}
 
 .nav a.router-link-exact-active {
   font-weight: bold;
@@ -198,9 +219,9 @@ export default {
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1345px) {
   .nav {
-    width: 50%;
+    padding: 0;
   }
 }
 

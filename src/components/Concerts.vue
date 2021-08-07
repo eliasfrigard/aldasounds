@@ -1,16 +1,16 @@
 <template>
   <div class="ui container">
     <div class="upcoming">
-      <div class="header">
+      <div class="header" data-aos="fade-in">
         <h3>Upcoming Live Performances</h3>
       </div>
-      <Concert v-for="concert in upcomingConcerts.slice(0, limit)" :key="concert.id" :date="concert.date" :location="concert.location" :country="concert.country" :link="concert.link" :description="concert.description" :divider="concert.divider" data-aos="fade-up" />
+      <Concert v-for="concert in upcomingConcerts.slice(0, limit)" :key="concert.id" :date="concert.date" :location="concert.location" :country="concert.country" :link="concert.link" :streamLink="concert.streamLink" :description="concert.description" :divider="concert.divider" />
     </div>
-    <div class="previous" v-show="!onlyUpcoming">
+    <div class="previous" v-show="!onlyUpcoming" data-aos="fade-in">
       <div class="header">
         <h3>Past Shows</h3>
       </div>
-      <Concert v-for="concert in previousConcerts" :key="concert.id" :date="concert.date" :location="concert.location" :country="concert.country" :link="concert.link" :description="concert.description" :divider="concert.divider" data-aos="fade-up" />
+      <Concert v-for="concert in previousConcerts" :key="concert.id" :date="concert.date" :location="concert.location" :country="concert.country" :link="concert.link" :description="concert.description" :divider="concert.divider" />
     </div>
   </div>
 </template>

@@ -94,7 +94,7 @@ export default {
     margin: 10px;
   }
   
-/*   .header {
+/* .header {
     margin-top: 50px;
     flex: 1 1;
     text-align: center;

@@ -1,5 +1,5 @@
 <template>
-  <div class="concert">
+  <div class="concert" data-aos="fade-left">
     <div class="date">
       <p class="day">{{day}}</p>
       <p class="month">{{month}}</p>
@@ -11,8 +11,10 @@
     <div class="description">
       <p>{{description}}</p>
     </div>
-    <div class="link" @click="onClick">
-      <button>GO TO EVENT</button>
+    <div class="links" @click="onClick">
+      <button class="stream-link" v-if="streamLink !== undefined">LIVE STREAM</button>
+      <button class="stream-link hidden" v-else>LIVE STREAM</button>
+      <button class="event-link">GO TO EVENT</button>
     </div>
   </div>
     <hr v-if="divider">
@@ -23,7 +25,7 @@ import moment from 'moment'
 
 export default {
   name: 'Concerts',
-  props: ['date', 'location', 'country', 'link', 'description', 'divider'],
+  props: ['date', 'location', 'country', 'link', 'streamLink', 'description', 'divider'],
   data() {
     return {
 
@@ -34,7 +36,6 @@ export default {
       return this.country.toUpperCase()
     },
     flagClass() {
-      console.log(this.country);
       return this.country.toLowerCase() + ' flag'
     },
     day() {
@@ -48,7 +49,7 @@ export default {
     }
   },
   async created () {
-
+    console.log(this.streamLink)
   },
   methods: {
     onClick() {
@@ -77,25 +78,33 @@ export default {
     width: 100%;
   }
 
-  .link button {
+  .links button {
     font-size: 14px;
     letter-spacing: 1.5px;
     font-family: myriad-pro, sans-serif;
     height: 45px;
     width: 150px;
     border: none;
-    background-color: #ec3c01;
     text-align: center;
     border-radius: 4px;
     cursor: pointer;
     color: white;
+    margin: 0 10px;
     -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
   }
 
-  .link button:hover {
+  .stream-link, .event-link:hover {
     background-color: rgb(4, 46, 66);
+  }
+
+  .event-link {
+    background-color: #ec3c01;
+  }
+
+  .hidden {
+    opacity: 0;
   }
 
   .location p {
@@ -105,7 +114,8 @@ export default {
   }
 
   .description {
-    max-width: 400px;
+    width: 300px;
+    text-align: center;
   }
 
   .location {
@@ -124,7 +134,7 @@ export default {
   }
 
   .date p {
-    text-shadow: 0px 5px 6px rgba(41, 41, 41, 0.2);
+    text-shadow: 0px 5px 4px rgba(41, 41, 41, 0.15);
   }
 
   .day, .month, .year {

@@ -12,12 +12,12 @@
 
     <div id="secondContent">
       <div class="ui container">
-        <div id="album-header" class="header">
+        <div id="album-header" class="header" data-aos="fade-in">
           <h3>NEW ALBUM OUT NOW!</h3>
         </div>
-        <img src="../assets/albumcover.jpg" alt="" class="image">
+        <img src="../assets/albumcover.jpg" alt="" class="image" data-aos="fade-in">
 
-        <div class="ui form">
+        <div class="ui form" data-aos="fade-in">
           <div class="two fields">
             <div class="field">
               <label>Shipping Destination:</label>
@@ -43,10 +43,10 @@
             </div>
           </div>
         </div>
-        <div id="buy-header" class="header" @click="purchaseAlbum">
-          <h3>BUY NOW FOR 19,99€ + SHIPPING!</h3>
+        <div id="buy-header" class="header" @click="purchaseAlbum" data-aos="fade-in">
+          <h3>BUY FOR 19,99€ + SHIPPING!</h3>
         </div>
-        <p class="destination-info">If your destination is not on the list, contact us and we can make an arrangement for you!</p>
+        <p data-aos="fade-in" class="destination-info">If your destination is not on the list, contact us and we can make an arrangement for you!</p>
       </div>
     </div>
   </div>
@@ -77,12 +77,16 @@ export default {
       } else if (scrollPercentage > 1.2) {
         splash.style.opacity = 1
         splash.style.backgroundImage = "url(/P1110937.jpg)"
+        splash.style.backgroundPosition = "center top"
+        splash.style.top = '8vh'
 
         firstContent.style.backgroundColor = 'white'
         secondContent.style.backgroundColor = 'white'
       } else {
         splash.style.opacity = 1 - scrollPercentage * 1.15
-        splash.style.backgroundImage = "url(/P1110877.jpg)"
+        splash.style.top = `${scrollPercentage * 2 + 8}vh`
+        splash.style.backgroundImage = "url(/P1110881.jpg)"
+        splash.style.backgroundPosition = "center center"
 
         firstContent.style.backgroundColor = ''
         secondContent.style.backgroundColor = ''
@@ -96,13 +100,20 @@ export default {
   created() {
     window.addEventListener('scroll', this.onScroll)
   },
+  mounted() {
+    const footer = document.querySelector('#footer')
+    footer.style.top = '100vh'
+  },
   unmounted() {
     window.removeEventListener('scroll', this.onScroll)
+
+    const footer = document.querySelector('#footer')
+    footer.style.top = '0'
   }
 }
 </script>
 
-<style scoped>
+<style scoped> 
   .footer {
     top: 100vh;
   }
@@ -113,7 +124,7 @@ export default {
     opacity: 0.8;
   }
 
-  .header {
+/*   .header {
     text-align: center;
     text-transform: uppercase;
     font-size: 14px;
@@ -126,10 +137,11 @@ export default {
     border-radius: 2px;
     transition: all .3s;
     cursor: pointer;
-  }
+  } */
 
   #buy-header {
     background-color: #ec3c01;
+    margin: 30px 0;
   }
 
   #splash {
@@ -138,9 +150,12 @@ export default {
     width: 100%;
     position: fixed;
     overflow: hidden;
+    background-image: url("/P1110881.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
     background-color: white;
+    transform: scale(1.05)
   }
 
   .image-divider {
