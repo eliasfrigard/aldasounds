@@ -23,7 +23,7 @@
           <div class="musician-img elias" data-aos="fade-right"></div>
           <div class="musician-info" data-aos="fade-left">
             <h3 class="musician-name">Elias Frigård</h3>
-            <p class="musician-instrument">Soprano Saxophone</p>
+            <p class="musician-instrument">Soprano- & Baritone Saxophone</p>
             <p class="musician-text">Quisque a lobortis elit, non iaculis nisl. Quisque sem arcu, mollis sed nisl quis, mollis dictum orci. Nulla sagittis ac urna ut semper. Nam at dolor odio. Maecenas id metus sit amet eros egestas sollicitudin et pulvinar mauris. Nulla eu ullamcorper nunc. Pellentesque ut tortor dui.</p>
             
             <div class="musician-meta">
@@ -225,7 +225,7 @@ export default {
 }
 
 .elias {
-  background-image: url("/elias.jpg");
+  background-image: url("/eliasalt.webp");
 }
 
 .veera {

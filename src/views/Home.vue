@@ -26,6 +26,33 @@
           <img src="../assets/albumback.webp" alt="" class="image">
         </div>
 
+        <div class="ui container album-form">
+          <form action="" method="post">
+            <select class="cd-select" name="destination" id="">
+              <option value="">Shipping Destination</option>
+              <option value="Europe">Europe</option>
+              <option value="North America">North America</option>
+            </select>
+            <select class="cd-select" name="quantity">
+              <option value="">Quantity</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </form>
+        </div>
+        <div id="buy-header" class="header" @click="purchaseAlbum">
+          <h3>BUY FOR 19,99€ + SHIPPING!</h3>
+        </div>
+        <p class="destination-info">If your destination is not on the list, contact us and we can make an arrangement for you!</p>
+<!-- 
         <div class="ui form">
           <div class="two fields">
             <div class="field">
@@ -55,7 +82,7 @@
           <h3>BUY FOR 19,99€ + SHIPPING!</h3>
         </div>
         <p class="destination-info">If your destination is not on the list, contact us and we can make an arrangement for you!</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -108,6 +135,7 @@ export default {
   },
   created() {
     window.addEventListener('scroll', this.onScroll)
+    
   },
   mounted() {
     const footer = document.querySelector('#footer')
@@ -142,21 +170,6 @@ export default {
     margin-top: 20px;
     opacity: 0.8;
   }
-
-/*   .header {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 1px;
-    background-color: #042e42;
-    color: rgb(230, 230, 230);
-    padding: 15px 20px;
-    width: 100%;
-    border-radius: 2px;
-    transition: all .3s;
-    cursor: pointer;
-  } */
 
   #buy-header {
     background-color: #ec3c01;
@@ -256,6 +269,27 @@ export default {
 
 .title, .subtitle, .pre-title {
   line-height: 125%;
+}
+
+.album-form {
+  display:flex;
+  justify-content: center;
+}
+
+select {
+  width: 500px;
+  height: 50px;
+  margin: 15px;
+  border: none;
+  border-bottom: 2px solid #042e42;
+  font-family: myriad-pro, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+select:focus {
+  outline: none;
+  border-bottom: 4px solid #ec3c01;
 }
 
   @media screen and (max-width: 768px) {

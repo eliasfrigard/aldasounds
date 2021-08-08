@@ -26,11 +26,6 @@ const routes = [
     component: () => import('../views/News.vue')
   },
   {
-    path: '/music',
-    name: 'Music',
-    component: () => import('../views/Music.vue')
-  },
-  {
     path: '/live',
     name: 'Live',
     component: () => import('../views/Live.vue')

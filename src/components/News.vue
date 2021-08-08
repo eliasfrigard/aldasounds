@@ -12,15 +12,6 @@
     <div class="articles" @click="onClick">
       <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" data-aos="fade-up" />
     </div>
-
-<!--     <div class="navi" data-aos="fade-up">
-      <button class="ui circular large icon button" @click="previousPreviews">
-        <i class="arrow left icon"></i>
-      </button>
-      <button class="ui circular large icon button" @click="nextPreviews">
-        <i class="arrow right icon"></i>
-      </button>
-    </div> -->
   </div>
 </template>
 

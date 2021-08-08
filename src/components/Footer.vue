@@ -23,10 +23,13 @@
             <a href="https://github.com/eliasfrigard/devsite" target="_blank" class="item">Download Technical Rider</a>
             <a href="#" class="item">Download Full Audio Sample</a>
             <a href="#" class="item">Download Full Resolution Images</a>
+         
+          <br>
 
           </div>
         </div>
-        <div class="six wide column">
+
+        <div class="four wide column">
           <h4 class="ui inverted header">Social Media</h4>
 
           <div class="ui hidden divider"></div>
@@ -45,9 +48,10 @@
               <i class="google plus icon"></i>
             </button>
           </div><br>
-
           <p>Copyright © 2021 Elias Frigård</p>
+
         </div>
+
       </div>
     </div>
   </div>

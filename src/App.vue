@@ -5,7 +5,6 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about">Story</router-link>
       <router-link to="/news">News</router-link>
-      <router-link to="/music">Music</router-link>
       <router-link to="/live">Live</router-link>
       <router-link to="/contact">Contact</router-link>
     </div>
@@ -37,11 +36,19 @@
     </transition>
   </router-view>
   <Footer class="footer" />
+  <Player class="audio-player" @close-player="closePlayer" />
+
+  <div class="to-top">
+    <button class="action-btn-big" @click="toTop">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </div>
 </template>
 
 
 <script>
 import Footer from '@/components/Footer.vue'
+import Player from '@/components/Player.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -51,7 +58,13 @@ import 'aos/dist/aos.css'
 export default {
   name: 'App',
   components: {
-    Footer
+    Footer,
+    Player
+  },
+  data() {
+    return {
+      playerIsActive: true
+    }
   },
   created () {
     AOS.init()
@@ -76,6 +89,14 @@ export default {
     },
     reloadPage() {
       window.location.href = "http://localhost:8080"
+    },
+    closePlayer() {
+      document.querySelector('.audio-player').remove()
+      document.querySelector('.to-top').style.bottom = '25px'
+      this.playerIsActive = false
+    },
+    toTop() {
+      window.scrollTo(0, 0)
     }
   }
 }
@@ -221,6 +242,30 @@ export default {
   background-color: rgb(230, 230, 230);
   margin: 5px;
   transition: all 0.3s ease;
+}
+
+.to-top {
+  position: fixed;
+  bottom:  100px;
+  left: 44px;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(4, 46, 66);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+.action-btn-big {
+  background-color: transparent;
+  border: 0;
+  font-size: 30px;
+  color: rgb(230, 230, 230);
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 10px;
 }
 
 @media screen and (max-width: 1345px) {

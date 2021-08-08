@@ -57,7 +57,7 @@ export default {
 }
 
 .title, .subtitle, .pre-title {
-  line-height: 85%;
+  line-height: 125%;
 }
 
 </style>

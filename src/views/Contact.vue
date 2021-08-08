@@ -27,7 +27,7 @@
       <div class="form">
         <h2>Contact Form</h2>
         <form action="" method="post">
-          <input type="text" name="name" id="" placeholder="Name">
+          <input type="text" name="name" id="" placeholder="Name" autofocus>
           <input type="tel" name="phone" id="" placeholder="Phone Number">
           <input type="email" name="email" id="" placeholder="E-Mail">
           <input type="text" name="subject" id="" placeholder="Subject">
