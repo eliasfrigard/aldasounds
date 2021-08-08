@@ -1,57 +1,46 @@
 <template>
-  <div class="contact">
-    <div class="contact-content">
-      <div class="inform">
-        <h2 class="contact-title">You can use the form below to contact us directly!</h2>
-        <a class="mailto" href="mailto:info@aldasounds.com">Or you can send us an email.</a>
-      </div>
-
-      <div class="ui hidden divider"></div>
-
-      <div id="contact" @submit.prevent="submitForm">
-        <form class="ui form">
-
-          <!-- Two Fields -->
-          <div class="two fields">
-            <!-- Name Field -->
-            <div class="field">
-              <label>Name</label>
-              <input type="text" v-model="name" name="name" placeholder="Name">
-            </div>
-            <!-- Email Field -->
-            <div class="field">
-              <label>E-Mail</label>
-              <input type="text" v-model="email" name="email" placeholder="E-Mail">
-            </div>
-          </div>
-
-          <!-- Project Field -->
-          <div class="field">
-            <label>Type of Project</label>
-            <input type="text" v-model="project" name="projectType" placeholder="Type of Project">
-          </div>
-
-          <!-- Information Field -->
-          <div class="field">
-            <label>Additional Information</label>
-            <textarea type="text" v-model="information" name="information" placeholder="Additional Information"></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <button class="ui fluid large blue button" type="submit">Submit</button>
-        </form>
-      </div>
-
-
+  <div class="ui container contact">
+    <div class="titles">
+      <p class="pre-title">ALDA</p>
+      <h2 class="title">CONTACT</h2>
+      <h3 class="subtitle">Find contact, press and technical information below.</h3>
     </div>
 
-    <Footer />
+    <div class="ui container divider-img"></div>
+
+    <div class="contact-info">
+      <div class="info">
+        <h2>Contact Information</h2>
+        <h3>Feel free to contact us with any questions you may have about our music or regarding booking!</h3>
+        <h3 class="info-title">Band Mail</h3>
+        <a href="mailto:info@aldasounds.com">info@aldasounds.com</a>
+        <h3 class="info-title">Elias Frigård</h3>
+        <a href="mailto:elias@aldasounds.com">elias@aldasounds.com</a>
+        <p>+46(0)70-6691374</p>
+        <h3 class="info-title">Veera Kuisma</h3>
+        <a href="mailto:veera@aldasounds.com">veera@aldasounds.com</a>
+        <p>+358(0)45-1107182</p>
+        <h3 class="info-title">Timo Alakotila</h3>
+        <a href="mailto:timoalakotila@gmail.com">timoalakotila@gmail.com</a>
+        <p>+358(0)50-5116112</p>
+      </div>
+      <div class="form">
+        <h2>Contact Form</h2>
+        <form action="" method="post">
+          <input type="text" name="name" id="" placeholder="Name">
+          <input type="tel" name="phone" id="" placeholder="Phone Number">
+          <input type="email" name="email" id="" placeholder="E-Mail">
+          <input type="text" name="subject" id="" placeholder="Subject">
+          <textarea name="text" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+          <input type="submit" value="SUBMIT">
+        </form>  
+      </div>    
+    </div>
+    <div class="image" data-aos="fade-up"></div>
   </div>
 </template>
 
 <script>
-  import Footer from '@/components/Footer.vue'
-
   export default {
     name: 'Contact',
     data() {
@@ -74,80 +63,182 @@
         this.project = ''
         this.information = ''
       }
-    },
-    components: {
-      Footer
     }
   }
 </script>
 
 <style scoped>
-  * {
-    color: rgb(230, 230, 230);
-    letter-spacing: 2px;
-  }
+.divider-img {
+  margin: 25px 0 75px 0;
+  height: 750px;
+  border-radius: 4px;
+  background-image: url("/P1110770.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
+}
 
-  a {
-    font-family: 'Bad Script', cursive;
-    font-size: 18px;
-    letter-spacing: 3px;
-  }
+.image {
+  height:85vh;
+  width: 100vw;
+  margin-top: 75px;
+  background-image: url("/P1110998-sized.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 2s ease;
+}
 
-  .contact {
-    z-index: 5;
-  }
+.contact {
+  top: 8vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+  
+.contact-info {
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
-  .field label {
-    padding-left: 4px;
-    font-family: 'Bad Script', cursive;
-  }
+.info {
+  width: 47%;
+  height: 200px;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+}
 
-  .inform {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+.info p, .info a {
+  line-height: 200%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-    #contact {
-      padding: 40px;
-      border-radius: 5px;
-      width: 90%;
-      max-width: 1000px;
-      background-color: white;
+.info h3 {
+  font-size: 20px;
+  font-family: 'Bad Script', cursive;
+  letter-spacing: 3px;
+  line-height: 175%;  
+}
 
-      -webkit-box-shadow: 1px -3px 7px 0px rgba(0,0,0,0.3);
-      -moz-box-shadow: 1px -3px 7px 0px rgba(0,0,0,0.3);
-      box-shadow: 1px -3px 7px 0px rgba(0,0,0,0.3);
-    }
+.form form {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
 
-    #contact-container {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 50px;
-      width: 100%;
-      background: rgb(255,255,255);
-      background: linear-gradient(180deg, rgba(255,255,255,1) 60%, rgba(0,55,77,1) 40%);
-    }
+.form h2, .info h2 {
+  font-size: 40px;
+  font-family: 'Bad Script', cursive;
+  letter-spacing: 5px;
+  text-align: center;
+}
 
-  .contact-content {
-    height: 92vh;
-    width: 100%;
-    background-color: rgb(4, 46, 66);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+input[type=text], input[type=tel], input[type=email] {
+  width: 500px;
+  height: 50px;
+  margin: 15px;
+  border: none;
+  border-bottom: 2px solid #042e42;
+  font-family: myriad-pro, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
 
-  #form {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus {
+  outline: none;
+  border-bottom: 4px solid #ec3c01;
+}
+
+textarea {
+  height: 200px;
+  width: 500px;
+  margin: 15px;
+  border: 2px solid #042e42;
+  border-radius: 4px;
+  resize: none;
+  padding: 15px;
+  font-family: myriad-pro, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+textarea:focus {
+  outline: none !important;
+  border:4px solid #ec3c01;
+}
+
+input[type=submit] {
+  width: 500px;
+  margin: 15px;
+  border: none;
+  border-radius: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #042e42;
+  color: rgb(230, 230, 230);
+  padding: 15px 20px;
+  transition: all .3s;
+  cursor: pointer;
+  font-family: myriad-pro, sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  line-height: 20px;
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+  transition: all 0.1s ease;
+}
+
+input[type=submit]:hover {
+  background-color: #ec3c01;
+  transition: all 0.1s ease;
+}
+
+.news {
+  margin: 50px 0;
+  top: 8vh;
+  width: 100%;
+  background-color: white;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.title {
+  font-size: 70px;
+  letter-spacing: 5px;
+}
+
+.subtitle {
+  font-family: 'Bad Script', cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+
+
+.pre-title {
+  letter-spacing: 2px;
+}
+
+.title, .subtitle, .pre-title {
+  line-height: 125%;
+}
 </style>

@@ -10,14 +10,23 @@
 
     <div class="image-divider"></div>
 
-    <div id="secondContent">
+    <div id="secondContent" data-aos="fade-in">
       <div class="ui container">
-        <div id="album-header" class="header" data-aos="fade-in">
-          <h3>NEW ALBUM OUT NOW!</h3>
+        <div class="titles">
+          <p class="pre-title">NINE WORLDS</p>
+          <h2 class="title">NEW ALBUM OUT NOW</h2>
+          <h1 class="subtitle">Available for purchase below.</h1>
         </div>
-        <img src="../assets/albumcover.jpg" alt="" class="image" data-aos="fade-in">
+<!--         <div id="album-header" class="header">
+          <h3>NEW ALBUM OUT NOW!</h3>
+        </div> -->
 
-        <div class="ui form" data-aos="fade-in">
+        <div class="album-img">
+          <img src="../assets/albumcover.webp" alt="" class="image">
+          <img src="../assets/albumback.webp" alt="" class="image">
+        </div>
+
+        <div class="ui form">
           <div class="two fields">
             <div class="field">
               <label>Shipping Destination:</label>
@@ -42,11 +51,11 @@
               </select>
             </div>
           </div>
-        </div>
-        <div id="buy-header" class="header" @click="purchaseAlbum" data-aos="fade-in">
+        <div id="buy-header" class="header" @click="purchaseAlbum">
           <h3>BUY FOR 19,99€ + SHIPPING!</h3>
         </div>
-        <p data-aos="fade-in" class="destination-info">If your destination is not on the list, contact us and we can make an arrangement for you!</p>
+        <p class="destination-info">If your destination is not on the list, contact us and we can make an arrangement for you!</p>
+        </div>
       </div>
     </div>
   </div>
@@ -76,7 +85,7 @@ export default {
         return
       } else if (scrollPercentage > 1.2) {
         splash.style.opacity = 1
-        splash.style.backgroundImage = "url(/P1110937.jpg)"
+        splash.style.backgroundImage = "url(/P1110937-sized.webp)"
         splash.style.backgroundPosition = "center top"
         splash.style.top = '8vh'
 
@@ -85,7 +94,7 @@ export default {
       } else {
         splash.style.opacity = 1 - scrollPercentage * 1.15
         splash.style.top = `${scrollPercentage * 2 + 8}vh`
-        splash.style.backgroundImage = "url(/P1110881.jpg)"
+        splash.style.backgroundImage = "url(/P1110881-sized.webp)"
         splash.style.backgroundPosition = "center center"
 
         firstContent.style.backgroundColor = ''
@@ -114,6 +123,16 @@ export default {
 </script>
 
 <style scoped> 
+
+  .album-img {
+    display:flex;
+    justify-content: space-between;
+  }
+
+  .album-img img {
+    max-width: 49%;
+  }
+
   .footer {
     top: 100vh;
   }
@@ -150,7 +169,7 @@ export default {
     width: 100%;
     position: fixed;
     overflow: hidden;
-    background-image: url("/P1110881.jpg");
+    background-image: url("/P1110881-sized.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -161,7 +180,7 @@ export default {
   .image-divider {
     top: 100vh;
     position:relative;
-    height: 60vh;
+    height: 70vh;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -211,6 +230,33 @@ export default {
     justify-content: center;
     align-items: flex-start;
   }
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.title {
+  font-size: 70px;
+  letter-spacing: 5px;
+}
+
+.subtitle {
+  font-family: 'Bad Script', cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+}
+
+
+.pre-title {
+  letter-spacing: 2px;
+}
+
+.title, .subtitle, .pre-title {
+  line-height: 125%;
+}
 
   @media screen and (max-width: 768px) {
     #splash {

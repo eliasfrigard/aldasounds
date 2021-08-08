@@ -31,7 +31,11 @@
     </div>
   </div>
 
-  <router-view id="page-content" />
+  <router-view id="page-content" v-slot="{ Component }"> 
+    <transition name="fade" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
   <Footer class="footer" />
 </template>
 
@@ -272,5 +276,15 @@ export default {
 }
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px)
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
 }
 </style>

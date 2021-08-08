@@ -8,20 +8,21 @@
           <div class="ui hidden divider"></div>
           <div class="ui inverted link list">
             <a href="#" class="item">Home</a>
-            <a href="#about-container" class="item">About</a>
-            <a href="#projects-container" class="item">Projects</a>
-            <a href="#education-container" class="item">Education</a>
+            <a href="#about-container" class="item">Story</a>
+            <a href="#projects-container" class="item">News</a>
+            <a href="#education-container" class="item">Music</a>
+            <a href="#contact-container" class="item">Live</a>
             <a href="#contact-container" class="item">Contact</a>
           </div>
         </div>
-        <div class="four wide column">
-          <h4 class="ui inverted header">Services</h4>
+        <div class="five wide column">
+          <h4 class="ui inverted header">Downloads</h4>
           <div class="ui hidden divider"></div>
           <div class="ui inverted link list">
             <a href="#contact-container" class="item">Download Presskit</a>
-            <a href="https://github.com/eliasfrigard/devsite" target="_blank" class="item">Visit Repository</a>
-            <a href="#" class="item">Download Resumé</a>
-            <a href="#" class="item">Download Diploma</a>
+            <a href="https://github.com/eliasfrigard/devsite" target="_blank" class="item">Download Technical Rider</a>
+            <a href="#" class="item">Download Full Audio Sample</a>
+            <a href="#" class="item">Download Full Resolution Images</a>
 
           </div>
         </div>
@@ -45,7 +46,7 @@
             </button>
           </div><br>
 
-          <p>Copyright 2021 © Elias Frigård</p>
+          <p>Copyright © 2021 Elias Frigård</p>
         </div>
       </div>
     </div>
@@ -74,11 +75,13 @@
   
   a {
     margin-top: 15px;
+    letter-spacing: 1px;
   }
 
   p {
     font-size: 14px;
     text-align: left;
+    letter-spacing: 1px;
   }
 
   .header {

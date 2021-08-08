@@ -2,14 +2,14 @@
   <div class="about">
     <div class="image"></div>
     <div class="band">
-      <div class="titles">
+      <div class="titles" data-aos="fade-in">
         <p class="pre-title">WE ARE</p>
         <h2 class="title">ALDA</h2>
         <h1 class="subtitle">Welcome to our home on the web.</h1>
       </div>
       <div class="ui container bio">
-        <div class="band-image"></div>
-        <div class="band-info">
+        <div class="band-image" data-aos="fade-up"></div>
+        <div class="band-info" data-aos="fade-in">
           <h2 class="slogan">Furious Nordic groove, divine harmonies and top-notch melodies.</h2>
           <p>{{firstParagraph}}</p>
           <p>{{secondParagraph}}</p>
@@ -17,14 +17,13 @@
         </div>
       </div>
 
-      <img class="decorator" src="../assets/decorator.png" alt="" srcset="">
-
       <div class="musicians ui container">
-        <h2 class="members-title">Band Members</h2>
+        <h2 class="title" id="band-members-title" data-aos="fade in">BAND MEMBERS</h2>
         <div class="musician">
-          <div class="musician-img elias"></div>
-          <div class="musician-info">
+          <div class="musician-img elias" data-aos="fade-right"></div>
+          <div class="musician-info" data-aos="fade-left">
             <h3 class="musician-name">Elias Frigård</h3>
+            <p class="musician-instrument">Soprano Saxophone</p>
             <p class="musician-text">Quisque a lobortis elit, non iaculis nisl. Quisque sem arcu, mollis sed nisl quis, mollis dictum orci. Nulla sagittis ac urna ut semper. Nam at dolor odio. Maecenas id metus sit amet eros egestas sollicitudin et pulvinar mauris. Nulla eu ullamcorper nunc. Pellentesque ut tortor dui.</p>
             
             <div class="musician-meta">
@@ -38,29 +37,31 @@
         </div>
         <hr>
         <div class="musician">
-          <div class="musician-info">
+          <div class="musician-info" data-aos="fade-right">
             <h3 class="musician-name">Veera Kuisma</h3>
+            <p class="musician-instrument">5-string Violin</p>
             <p class="musician-text">Quisque a lobortis elit, non iaculis nisl. Quisque sem arcu, mollis sed nisl quis, mollis dictum orci. Nulla sagittis ac urna ut semper. Nam at dolor odio. Maecenas id metus sit amet eros egestas sollicitudin et pulvinar mauris. Nulla eu ullamcorper nunc. Pellentesque ut tortor dui.</p>
             <div class="musician-meta">
-              <a href="http://eliasfrigard.com" target="_blank">www.veerakuisma.com</a>
               <div class="musician-contact">
-                <p>+46(0)70-6691374</p>
+                <p>+358(0)45-1107182</p>
                 <a href="mailto:elias@aldasounds.com">veera@aldasounds.com</a>
               </div>
+              <a href="http://eliasfrigard.com" target="_blank">www.veerakuisma.com</a>
             </div>
           </div>
-          <div class="musician-img"></div>
+          <div class="musician-img veera" data-aos="fade-left"></div>
         </div>
         <hr>
         <div class="musician">
-          <div class="musician-img timo"></div>
-          <div class="musician-info">
+          <div class="musician-img timo" data-aos="fade-right"></div>
+          <div class="musician-info" data-aos="fade-left">
             <h3 class="musician-name">Timo Alakotila</h3>
-            <p class="musician-text">Timo Alakotila is one of Finland’s busiest, most versatile and most in-demand musicians, as composer, arranger, pianist and harmonium player in folk, classical, jazz and pop fields. His career began in 1982 in Kaustinen, Finland as harmonium player and founder member of the fiddle group JPP, who quickly established themselves as the best and most innovative fiddle music group in Finland.</p>
+            <p class="musician-instrument">Piano & Harmonium</p>
+            <p class="musician-text">Timo Alakotila is one of Finland’s busiest, most versatile and most in-demand musicians, as composer, arranger, pianist and harmonium player in folk, classical, jazz and pop fields. His career began in 1982 in Kaustinen, Finland as harmonium player and founding member of the fiddle group JPP, who quickly established themselves as the best and most innovative fiddle music group in Finland.</p>
             <div class="musician-meta">
               <div class="musician-contact">
-                <p>+46(0)70-6691374</p>
-                <a href="mailto:elias@aldasounds.com">timo@aldasounds.com</a>
+                <p>+358(0)50-5116112</p>
+                <a href="mailto:timoalakotila@gmail.com">timoalakotila@gmail.com</a>
               </div>
               <a href="http://timoalakotila.com" target="_blank">www.timoalakotila.com</a>
             </div>
@@ -98,7 +99,7 @@ export default {
 .image {
   height: 92vh;
   width: 100%;
-  background-image: url("/P1110768.jpg");
+  background-image: url("/P1110768-sized.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -122,7 +123,7 @@ export default {
 }
 
 .title, .subtitle, .pre-title {
-  line-height: 85%;
+  line-height: 125%;
 }
 
 .titles {
@@ -130,6 +131,10 @@ export default {
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+}
+
+#band-members-title {
+  margin: 100px 0;
 }
 
 .band {
@@ -156,6 +161,11 @@ export default {
 
 .band-image {
   height: 700px;
+  background-image: url("/P1110933-cropped-sized.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 4px;
 }
 
 .band-info p, .more-info p, .musician-text {
@@ -170,14 +180,7 @@ export default {
   font-family: 'Bad Script', cursive;
   letter-spacing: 5px;
   margin-bottom:40px;
-}
-
-.band-image {
-  background-image: url("/P1110933.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  border-radius: 4px;
+  text-transform: uppercase;
 }
 
 .band-image, .musician-img {
@@ -214,7 +217,6 @@ export default {
 .musician-img {
   height: 500px;
   width: 50%;
-  background-color: orange;
   margin: 0 25px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -227,12 +229,13 @@ export default {
 }
 
 .veera {
-  background-image: url("/P1110954-2.jpg");
+  background-image: url("/veera-sized.webp");
 }
 
 .timo {
-  background-image: url("/timo.jpg");
+  background-image: url("/timo-sized.webp");
 }
+
 
 .musician-info {
   width: 50%;
@@ -247,6 +250,14 @@ export default {
   font-size: 40px;
   font-family: 'Bad Script', cursive;
   letter-spacing: 5px;
+}
+
+.musician-instrument {
+    font-family: 'Bad Script', cursive;
+    font-size: 18px;
+    letter-spacing: 3px;
+    opacity: 0.8;
+
 }
 
 .musician-meta {

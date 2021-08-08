@@ -33,7 +33,7 @@
   .image {
     height:85vh;
     width: 100%;
-    background-image: url("/P1110954-2.jpg");
+    background-image: url("/P1110954-2-sized.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -41,7 +41,7 @@
   }
 
   .image:hover {
-    background-image: url("/P1110954.jpg");
+    background-image: url("/P1110954-sized.webp");
     transition: all 2.5s ease;
   }
 

@@ -108,7 +108,7 @@ export default {
 
   .news-image {
     height: 100%;
-    background-image: url("/P1110937.jpg");
+    background-image: url("/P1110937-sized.webp");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 3px;
