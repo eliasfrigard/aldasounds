@@ -52,37 +52,6 @@
           <h3>Buy for 19,99€ + shipping!</h3>
         </div>
         <p class="destination-info">If your destination is not on the list, contact us and we can make an arrangement for you!</p>
-<!-- 
-        <div class="ui form">
-          <div class="two fields">
-            <div class="field">
-              <label>Shipping Destination:</label>
-              <select class="ui fluid search dropdown" name="card[expire-month]">
-                <option value="1">Europe</option>
-                <option value="2">North America</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Quantity:</label>
-              <select class="ui fluid search dropdown" name="card[expire-month]">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-            </div>
-          </div>
-        <div id="buy-header" class="header" @click="purchaseAlbum">
-          <h3>BUY FOR 19,99€ + SHIPPING!</h3>
-        </div>
-        <p class="destination-info">If your destination is not on the list, contact us and we can make an arrangement for you!</p>
-        </div> -->
       </div>
     </div>
   </div>
@@ -151,7 +120,6 @@ export default {
 </script>
 
 <style scoped> 
-
   .album-img {
     display:flex;
     justify-content: space-between;

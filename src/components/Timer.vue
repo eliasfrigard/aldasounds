@@ -125,6 +125,7 @@ export default {
   height: 200px;
   margin-top: 50px;
 }
+
 .counter {
   display: flex; 
 }
@@ -155,4 +156,14 @@ export default {
   align-items: flex-start;
 }
 
+@media screen and (max-width: 768px) {
+  .time-head h3, .colon {
+    font-size: 40px;
+      height: 55px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}
 </style>

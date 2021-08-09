@@ -1,7 +1,7 @@
 <template>
   <div id="navbar">
     <h1 id="title" @click="reloadPage" data-aos="fade-in">ALDA</h1>
-    <div class="nav" data-aos="fade-in">
+    <div class="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/about">Story</router-link>
       <router-link to="/news">News</router-link>
@@ -30,7 +30,7 @@
     </div>
   </div>
 
-  <router-view id="page-content" v-slot="{ Component }"> 
+  <router-view id="page-content" v-slot="{ Component }" class="ui component"> 
     <transition name="fade" mode="out-in">
       <component :is="Component" />
     </transition>
@@ -107,6 +107,10 @@ export default {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .header {
@@ -275,9 +279,9 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  body, html {
+/*   body, html {
     overflow-x: hidden;
-  }
+  } */
   .nav {
     position: absolute;
     right: 0px;
@@ -288,6 +292,7 @@ export default {
     width: 100%;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+    align-items: center;
   }
 
   .nav a {
@@ -300,6 +305,10 @@ export default {
 
   .nav-active {
     transform: translateX(0%);
+  }
+
+  .social {
+    display: none;
   }
 }
 

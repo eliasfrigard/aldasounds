@@ -3,7 +3,7 @@
     <div class="titles">
       <p class="pre-title">ALDA</p>
       <h2 class="title">CONTACT</h2>
-      <h3 class="subtitle">Find contact, press and technical information below.</h3>
+      <h3 class="subtitle">Find contact-, press- and technical information below.</h3>
     </div>
 
     <div class="ui container divider-img"></div>
@@ -108,8 +108,7 @@
 }
 
 .info {
-  width: 47%;
-  height: 200px;
+  width: 45%;
   text-align: center;
   display:flex;
   flex-direction: column;
@@ -128,8 +127,11 @@
   line-height: 175%;  
 }
 
+.form {
+  width: 45%;
+}
+
 .form form {
-  width: 47%;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -144,7 +146,6 @@
 }
 
 input[type=text], input[type=tel], input[type=email] {
-  width: 500px;
   height: 50px;
   margin: 15px;
   border: none;
@@ -161,7 +162,6 @@ input[type=text]:focus, input[type=tel]:focus, input[type=email]:focus {
 
 textarea {
   height: 200px;
-  width: 500px;
   margin: 15px;
   border: 2px solid #042e42;
   border-radius: 4px;
@@ -178,7 +178,6 @@ textarea:focus {
 }
 
 input[type=submit] {
-  width: 500px;
   margin: 15px;
   border: none;
   border-radius: 2px;
@@ -240,5 +239,42 @@ input[type=submit]:hover {
 
 .title, .subtitle, .pre-title {
   line-height: 125%;
+}
+
+@media screen and (max-width: 992px) {
+  .contact-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form form {
+    width: 100%;
+  }
+
+  .divider-img {
+    display: none;
+  }
+
+  .titles {
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  .info {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .image {
+  }
 }
 </style>

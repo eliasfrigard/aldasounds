@@ -1,23 +1,30 @@
 <template>
-  <div class="concert" data-aos="fade-left">
-    <div class="date">
-      <p class="day">{{day}}</p>
-      <p class="month">{{month}}</p>
-      <p class="year">{{year}}</p>
+  <div class="ui container">
+    <div class="concert" data-aos="fade-left">
+      <div class="date">
+        <p class="day">{{day}}</p>
+        <p class="month">{{month}}</p>
+        <p class="year">{{year}}</p>
+      </div>
+      <div class="location">
+        <p>{{ location }}, {{ countryUpperCase }} <i :class="flagClass"></i></p>
+      </div>
+      <div class="description">
+        <p class="mobile-location">{{ location }}, {{ countryUpperCase }} <i :class="flagClass"></i></p>
+        <p>{{description}}</p>
+      </div>
+      <div class="links" @click="onClick">
+        <button class="stream-link" v-if="streamLink !== undefined">LIVE STREAM</button>
+        <button class="stream-link hidden" v-else>LIVE STREAM</button>
+        <button class="event-link">GO TO EVENT</button>
+      </div>
     </div>
-    <div class="location">
-      <p>{{ location }}, {{ countryUpperCase }} <i :class="flagClass"></i></p>
-    </div>
-    <div class="description">
-      <p>{{description}}</p>
-    </div>
-    <div class="links" @click="onClick">
-      <button class="stream-link" v-if="streamLink !== undefined">LIVE STREAM</button>
-      <button class="stream-link hidden" v-else>LIVE STREAM</button>
+    <div class="mobile-links" @click="onClick">
       <button class="event-link">GO TO EVENT</button>
+      <button class="stream-link" v-if="streamLink !== undefined">LIVE STREAM</button>
     </div>
+    <hr class="divider" v-if="divider">
   </div>
-    <hr v-if="divider">
 </template>
 
 <script>
@@ -71,14 +78,14 @@ export default {
   }
 
   .concert {
-    margin: 15px 0 15px 0;
+    margin: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
   }
 
-  .links button {
+  .links button, .mobile-links button {
     font-size: 14px;
     letter-spacing: 1.5px;
     font-family: myriad-pro, sans-serif;
@@ -95,6 +102,15 @@ export default {
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
   }
 
+  .mobile-links {
+    display: none;
+  }
+
+  .mobile-links button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
   .stream-link, .event-link:hover {
     background-color: rgb(4, 46, 66);
   }
@@ -107,19 +123,23 @@ export default {
     opacity: 0;
   }
 
-  .location p {
+  .location p, .mobile-location {
     font-family: 'Bad Script', cursive;
     font-size: 20px;
     letter-spacing: 2.4px;
   }
 
   .description {
-    width: 300px;
+    width: 250px;
     text-align: center;
   }
 
   .location {
     max-width: 300px;
+  }
+
+  .mobile-location {
+    display: none;
   }
 
   .description p {
@@ -161,5 +181,33 @@ export default {
     margin: 0;
     text-align: center;
     font-size: 18px;
+  }
+
+  @media screen and (max-width: 992px) {
+    .location {
+      display: none;
+    }
+    
+
+    .mobile-location {
+      display: block;
+    }
+
+    .mobile-links {
+      margin: 35px 0;
+      display: block;
+    }
+
+    .links {
+      display: none;
+    }
+
+    .divider {
+      margin: 15px 0;
+    }
+
+    .hidden {
+      display:none;
+    }
   }
 </style>

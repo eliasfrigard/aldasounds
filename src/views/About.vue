@@ -36,7 +36,7 @@
           </div>
         </div>
         <hr>
-        <div class="musician">
+        <div class="musician musician-veera">
           <div class="musician-info" data-aos="fade-right">
             <h3 class="musician-name">Veera Kuisma</h3>
             <p class="musician-instrument">5-string Violin</p>
@@ -279,5 +279,33 @@ export default {
 hr {
   width: 100%;
   opacity: 0.2;
+}
+
+@media screen and (max-width: 992px) {
+  .musicians {
+    width: 100%;
+  }
+
+  .musician {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .musician-meta {
+    flex-direction: column;
+    height: 92px;
+  }
+
+  .musician-info, .musician-img {
+    width: 100%;
+  }
+
+  .musician-img {
+    margin-bottom: 50px;
+  }
+
+  .musician-veera {
+    flex-direction: column-reverse;
+  }
 }
 </style>

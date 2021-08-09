@@ -141,4 +141,25 @@ export default {
   .news-text {
     font-size: 16px;
   }
+
+  @media screen and (max-width: 768px) {
+    .news-article {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .news-content {
+      width: 100%;
+    }
+
+    .image-wrapper {
+      height: 250px;
+      width: 100%;
+    }
+
+    .news-image {
+      height: 100%;
+      width: 100%;
+    }
+  }
 </style>

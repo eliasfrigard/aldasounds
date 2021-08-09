@@ -49,6 +49,7 @@ export default {
   font-family: 'Bad Script', cursive;
   letter-spacing: 3px;
   font-size: 40px;
+  text-align: center;
 }
 
 
