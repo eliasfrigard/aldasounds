@@ -159,8 +159,11 @@ export default {
       const currentValue = document.querySelector('.volume-range').value
       this.volumeValue = currentValue
     },
-    playAudio() {
-      document.querySelector('.music-audio').play()
+    async playAudio() {
+      const audio = document.querySelector('.music-audio')
+      await audio.load()
+      await audio.play()
+
       this.isPlaying = true
     },
     pauseAudio() {
@@ -191,6 +194,8 @@ export default {
       }
 
       this.currentSong = this.songList[this.currentSongIndex]
+
+      this.playAudio()
     },
     prevSong() {
       this.currentSongIndex--;
@@ -200,6 +205,8 @@ export default {
       }
 
       this.currentSong = this.songList[this.currentSongIndex]
+
+      this.playAudio()
     },
     openList() {
       const list = document.querySelector('.song-container')
