@@ -29,15 +29,31 @@
     
     <!--  -->
     <div class="window-controls">
-      <button class="action-btn-big" v-if="listIsOpen" @click="closeList">
+      <div class="volume-controls" @mouseover="openVolumeControl" @mouseout="closeVolumeControl">
+        <input type="range" class="volume-range" name="" id="" min="0" max="100" value="80" @change="changeVolume">
+        
+        <button class="action-btn" v-if="volumeValue > 50" @click="muteAudio">
+          <i class="fas fa-volume-up"></i>
+        </button>
+
+        <button class="action-btn" v-else-if="volumeValue > 0" @click="muteAudio">
+          <i class="fas fa-volume-down"></i>
+        </button>
+
+        <button class="action-btn" v-else @click="unmuteAudio">
+          <i class="fas fa-volume-mute"></i>
+        </button>
+      </div>
+
+      <button class="action-btn" v-if="listIsOpen" @click="closeList">
         <i class="fas fa-chevron-down"></i>
       </button>
 
-      <button class="action-btn-big" v-else @click="openList">
+      <button class="action-btn" v-else @click="openList">
         <i class="fas fa-chevron-up"></i>
       </button>
 
-      <button class="action-btn-big" @click="$emit('close-player')">
+      <button class="action-btn" @click="$emit('close-player')">
         <i class="fas fa-times"></i>
       </button>
     </div>
@@ -67,7 +83,7 @@
 
 
     <!--  -->
-    <audio :src="currentSong.link" class="music-audio" @timeupdate="updateProgress"></audio>
+    <audio :src="currentSong.link" class="music-audio" @timeupdate="updateProgress" :volume="volume"></audio>
   </div>
 </template>
 
@@ -97,6 +113,9 @@ export default {
       currentSong: '',
       currentSongIndex: 0,
       isPlaying: false,
+      volumeValue: 80,
+      prevVolume: '',
+      muted: false,
       listIsOpen: false
     }
   },
@@ -115,10 +134,31 @@ export default {
       })
     }
   },
-  created() {
+  mounted() {
     this.currentSong = this.songList[0]
   },
+  computed: {
+    volume() {
+      return this.volumeValue / 100
+    }
+  },
   methods: {
+    openVolumeControl() {
+      document.querySelector('.volume-range').style.display = "block"
+    },
+    closeVolumeControl() {
+      document.querySelector('.volume-range').style.display = "none"
+    },
+    changeVolume(e) {
+      this.volumeValue = e.srcElement.value
+    },
+    muteAudio() {
+      this.volumeValue = 0
+    },
+    unmuteAudio() {
+      const currentValue = document.querySelector('.volume-range').value
+      this.volumeValue = currentValue
+    },
     playAudio() {
       document.querySelector('.music-audio').play()
       this.isPlaying = true
@@ -306,5 +346,25 @@ th, td {
 
 .song-table tr:last-child td{
     border-bottom:0;
+}
+
+.volume-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.volume-controls:hover {
+  cursor: pointer;
+}
+
+.volume-range {
+  display: none;
+  transform: rotate(-90deg);
+  position:fixed;
+  bottom: 110px;
+  right: 120px;
+  color: #ec3c01;
+  z-index: 1;
 }
 </style>

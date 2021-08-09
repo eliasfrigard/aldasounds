@@ -49,7 +49,7 @@
           </form>
         </div>
         <div id="buy-header" class="header" @click="purchaseAlbum">
-          <h3>BUY FOR 19,99€ + SHIPPING!</h3>
+          <h3>Buy for 19,99€ + shipping!</h3>
         </div>
         <p class="destination-info">If your destination is not on the list, contact us and we can make an arrangement for you!</p>
 <!-- 
@@ -174,6 +174,7 @@ export default {
   #buy-header {
     background-color: #ec3c01;
     margin: 30px 0;
+    text-transform: capitalize;
   }
 
   #splash {
