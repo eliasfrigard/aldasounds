@@ -1,17 +1,17 @@
 <template>
   <div class="ui container">
-    <div v-if="preview" @mouseover="hooverEnter" @mouseleave="hooverLeave" data-aos="fade-up">
+    <div v-if="preview" @mouseover="hooverEnter" @mouseleave="hooverLeave" data-aos="fade-in">
       <div class="titles" v-if="preview" data-aos="fade-in">
         <h2 class="title">LATEST NEWS</h2>
+        <div id="more-news-header" class="header" v-if="preview" @click="moreNews">
+            <h3>read More News</h3>
+        </div>
       </div>
     </div>
 
     <div class="articles" @click="onClick">
-      <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" data-aos="fade-up" />
+      <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" data-aos="fade-in" />
     </div>
-    <div id="more-news-header" class="header" v-if="preview" @click="moreNews">
-        <h3>read More News</h3>
-      </div>
   </div>
 </template>
 
@@ -74,7 +74,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #more-news-header {
-    background-color: #ec3c01;
+    background-color: rgb(4, 46, 66);
     margin: 50px 0;
   }
 
@@ -104,5 +104,15 @@ export default {
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 45px;
+    }
+
+    #more-news-header {
+      margin: 25px 0 0px 0;
+    }
   }
 </style>

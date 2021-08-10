@@ -84,8 +84,15 @@ export default {
         return
       } else if (scrollPercentage > 1.2) {
         splash.style.opacity = 1
-        splash.style.backgroundImage = "url(/P1110937-sized.webp)"
-        splash.style.backgroundPosition = "center top"
+
+        if (this.mobile) {
+          splash.style.backgroundImage = "url(/P1110768-sized.webp)"
+          splash.style.backgroundPosition = "center right"
+        } else {
+          splash.style.backgroundImage = "url(/P1110937-sized.webp)"
+          splash.style.backgroundPosition = "center top"          
+        }
+
         splash.style.top = '8vh'
 
         firstContent.style.backgroundColor = 'white'
@@ -93,8 +100,15 @@ export default {
       } else {
         splash.style.opacity = 1 - scrollPercentage * 1.15
         splash.style.top = `${scrollPercentage * 2 + 8}vh`
-        splash.style.backgroundImage = "url(/P1110881-sized.webp)"
-        splash.style.backgroundPosition = "center center"
+ 
+         if (this.mobile) {
+          splash.style.backgroundImage = "url(/P1110768-sized.webp)"
+          splash.style.backgroundPosition = "center right"
+        } else {
+          splash.style.backgroundImage = "url(/P1110881-sized.webp)"
+          splash.style.backgroundPosition = "center center"
+        }
+ 
 
         firstContent.style.backgroundColor = ''
         secondContent.style.backgroundColor = ''
@@ -267,12 +281,20 @@ select:focus {
 
   @media screen and (max-width: 768px) {
     #splash {
-      background-image: url("../assets/P1110937.jpg");
+      background-image: url("/P1110768-sized.webp");
+      background-position: center right;
+    }
+
+    #firstContent {
+      padding: 0;
+    }
+
+    #secondContent {
+      padding-top: 10px; 
     }
 
     .home {
-/*       overflow-y: hidden;
- */      height: auto;
+      height: auto;
     }
 
     .album-img {
@@ -297,6 +319,24 @@ select:focus {
     .album-form form {
       width: 100%;
       margin: 0;
+    }
+
+    .image-divider {
+      height: 500px;
+    }
+    
+    .title {
+      font-size: 40px;
+    }
+
+    .album-form {
+      margin-top: 20px;
+    }
+
+    #firstContent, #secondContent {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
     }
   }
 </style>

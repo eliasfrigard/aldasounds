@@ -4,10 +4,8 @@
       <div class="titles" data-aos="fade-in">
         <h2 class="title">UPCOMING CONCERTS</h2>
       </div>
-      <div class="ui container">
-        <div id="more-concerts-header" class="header" v-if="onlyUpcoming" @click="moreNews">
-            <h3>see all concerts</h3>
-        </div>
+      <div id="more-concerts-header" class="header" v-if="onlyUpcoming" @click="moreNews">
+          <h3>see all concerts</h3>
       </div>
       <Concert class="concert-main" v-for="concert in upcomingConcerts.slice(0, limit)" :key="concert.id" :date="concert.date" :location="concert.location" :country="concert.country" :link="concert.link" :streamLink="concert.streamLink" :description="concert.description" :divider="concert.divider" />
     </div>
@@ -133,5 +131,15 @@ export default {
 
   #more-concerts-header:hover {
     background-color: #ec3c01;
+  }
+
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 45px;
+    }
+
+    #more-concerts-header {
+      margin: 0 0 40px 0;
+    }
   }
 </style>

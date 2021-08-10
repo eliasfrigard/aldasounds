@@ -18,54 +18,29 @@
       </div>
 
       <div class="musicians ui container">
+        <!-- Title for musicians div. -->
         <h2 class="title" id="band-members-title" data-aos="fade in">BAND MEMBERS</h2>
-        <div class="musician">
-          <div class="musician-img elias" data-aos="fade-right"></div>
-          <div class="musician-info" data-aos="fade-left">
-            <h3 class="musician-name">Elias Frigård</h3>
-            <p class="musician-instrument">Soprano- & Baritone Saxophone</p>
-            <p class="musician-text">Quisque a lobortis elit, non iaculis nisl. Quisque sem arcu, mollis sed nisl quis, mollis dictum orci. Nulla sagittis ac urna ut semper. Nam at dolor odio. Maecenas id metus sit amet eros egestas sollicitudin et pulvinar mauris. Nulla eu ullamcorper nunc. Pellentesque ut tortor dui.</p>
-            
+
+        <!-- Musician object. -->
+        <div class="musician" v-for="(musician, index) in musicians" :key="musician.name" data-aos="fade in">
+          <!-- Image (every second on left side) -->
+          <div class="musician-img" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 0 || mobile" />
+          <!-- Musician Info -->
+          <div class="musician-info">
+            <h3 class="musician-name">{{musician.name}}</h3>
+            <p class="musician-instrument">{{musician.instrument}}</p>            
+            <p class="musician-text">{{musician.description}}</p>
+            <!-- Meta Information -->
             <div class="musician-meta">
               <div class="musician-contact">
-                <p>+46(0)70-6691374</p>
-                <a href="mailto:elias@aldasounds.com">elias@aldasounds.com</a>
+                <p>{{musician.phone}}</p>
+                <a :href="'mailto:' + musician.email">{{musician.email}}</a>
               </div>
-              <a href="http://eliasfrigard.com" target="_blank">www.eliasfrigard.com</a>
+              <a :href="musician.website" target="_blank">{{musician.website}}</a>
             </div>
           </div>
-        </div>
-        <hr v-if="!mobile">
-        <div class="musician musician-veera">
-          <div class="musician-info" data-aos="fade-right">
-            <h3 class="musician-name">Veera Kuisma</h3>
-            <p class="musician-instrument">5-string Violin</p>
-            <p class="musician-text">Quisque a lobortis elit, non iaculis nisl. Quisque sem arcu, mollis sed nisl quis, mollis dictum orci. Nulla sagittis ac urna ut semper. Nam at dolor odio. Maecenas id metus sit amet eros egestas sollicitudin et pulvinar mauris. Nulla eu ullamcorper nunc. Pellentesque ut tortor dui.</p>
-            <div class="musician-meta">
-              <div class="musician-contact">
-                <p>+358(0)45-1107182</p>
-                <a href="mailto:elias@aldasounds.com">veera@aldasounds.com</a>
-              </div>
-              <a href="http://eliasfrigard.com" target="_blank">www.veerakuisma.com</a>
-            </div>
-          </div>
-          <div class="musician-img veera" data-aos="fade-left"></div>
-        </div>
-        <hr v-if="!mobile">
-        <div class="musician">
-          <div class="musician-img timo" data-aos="fade-right"></div>
-          <div class="musician-info" data-aos="fade-left">
-            <h3 class="musician-name">Timo Alakotila</h3>
-            <p class="musician-instrument">Piano & Harmonium</p>
-            <p class="musician-text">Timo Alakotila is one of Finland’s busiest, most versatile and most in-demand musicians, as composer, arranger, pianist and harmonium player in folk, classical, jazz and pop fields. His career began in 1982 in Kaustinen, Finland as harmonium player and founding member of the fiddle group JPP, who quickly established themselves as the best and most innovative fiddle music group in Finland.</p>
-            <div class="musician-meta">
-              <div class="musician-contact">
-                <p>+358(0)50-5116112</p>
-                <a href="mailto:timoalakotila@gmail.com">timoalakotila@gmail.com</a>
-              </div>
-              <a href="http://timoalakotila.com" target="_blank">www.timoalakotila.com</a>
-            </div>
-          </div>
+          <!-- Image (every second on right side) -->
+          <div class="musician-img" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 1 && !mobile" />
         </div>
       </div>
     </div>
@@ -81,7 +56,36 @@ export default {
     return {
       firstParagraph: text[0].firstParagraph,
       secondParagraph: text[0].secondParagraph,
-      thirdParagraph: text[0].thirdParagraph
+      thirdParagraph: text[0].thirdParagraph,
+      musicians: [
+        {
+          name: 'Elias Frigård',
+          instrument: 'Soprano- & Baritone Saxophone',
+          description: 'Quisque a lobortis elit, non iaculis nisl. Quisque sem arcu, mollis sed nisl quis, mollis dictum orci. Nulla sagittis ac urna ut semper. Nam at dolor odio. Maecenas id metus sit amet eros egestas sollicitudin et pulvinar mauris. Nulla eu ullamcorper nunc. Pellentesque ut tortor dui.',
+          phone: '+46(0)70-6691374',
+          email: 'elias@aldasounds.com',
+          website: 'www.eliasfrigard.com',
+          image: '/eliasalt.webp'
+        },
+        {
+          name: 'Veera Kuisma',
+          instrument: '5-string Violin',
+          description: 'Quisque a lobortis elit, non iaculis nisl. Quisque sem arcu, mollis sed nisl quis, mollis dictum orci. Nulla sagittis ac urna ut semper. Nam at dolor odio. Maecenas id metus sit amet eros egestas sollicitudin et pulvinar mauris. Nulla eu ullamcorper nunc. Pellentesque ut tortor dui.',
+          phone: '+358(0)45-1107182',
+          email: 'veera@aldasounds.com',
+          website: 'www.veerakuisma.com',
+          image: '/veera-sized.webp'
+        },
+        {
+          name: 'Timo Alakotila',
+          instrument: 'Piano & Harmonium',
+          description: 'Timo Alakotila is one of Finland’s busiest, most versatile and most in-demand musicians, as composer, arranger, pianist and harmonium player in folk, classical, jazz and pop fields. His career began in 1982 in Kaustinen, Finland as harmonium player and founding member of the fiddle group JPP, who quickly established themselves as the best and most innovative fiddle music group in Finland.',
+          phone: '+358(0)50-5116112',
+          email: 'timoalakotila@gmail.com',
+          website: 'www.timoalakotila.com',
+          image: '/timo-sized.webp'
+        }
+      ]
     }
   },
   computed: {
@@ -237,19 +241,6 @@ export default {
   border-radius: 4px;
 }
 
-.elias {
-  background-image: url("/eliasalt.webp");
-}
-
-.veera {
-  background-image: url("/veera-sized.webp");
-}
-
-.timo {
-  background-image: url("/timo-sized.webp");
-}
-
-
 .musician-info {
   width: 50%;
   margin: 0 25px;
@@ -320,11 +311,12 @@ hr {
 
   .image {
     width: 100%;
+    background-position: center right;
   }
 
-/*   .bio {
+  .bio {
     text-align: justify;
-  } */
+  }
 
   .slogan {
     line-height: 200%;
@@ -349,10 +341,6 @@ hr {
 
   .musician-img {
     margin: 0 0 50px 0;
-  }
-
-  .musician-veera {
-    flex-direction: column-reverse;
   }
 
   .band-info {
