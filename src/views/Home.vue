@@ -123,7 +123,6 @@ export default {
 </script>
 
 <style scoped> 
-
   .album-img {
     display:flex;
     justify-content: space-between;

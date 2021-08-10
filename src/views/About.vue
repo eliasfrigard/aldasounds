@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <hr>
+        <hr v-if="!mobile">
         <div class="musician musician-veera">
           <div class="musician-info" data-aos="fade-right">
             <h3 class="musician-name">Veera Kuisma</h3>
@@ -51,7 +51,7 @@
           </div>
           <div class="musician-img veera" data-aos="fade-left"></div>
         </div>
-        <hr>
+        <hr v-if="!mobile">
         <div class="musician">
           <div class="musician-img timo" data-aos="fade-right"></div>
           <div class="musician-info" data-aos="fade-left">
@@ -84,6 +84,11 @@ export default {
       thirdParagraph: text[0].thirdParagraph
     }
   },
+  computed: {
+    mobile() {
+      return screen.width < 992
+    }
+  },
   mounted() {
     const footer = document.querySelector('#footer')
     footer.style.top = '100vh'
@@ -96,9 +101,14 @@ export default {
 </script>
 
 <style scoped>
+* {
+  word-wrap: break-word;
+}
+
 .image {
   height: 92vh;
   width: 100%;
+  max-width: 100vw;
   background-image: url("/P1110768-sized.webp");
   background-size: cover;
   background-repeat: no-repeat;
@@ -124,6 +134,7 @@ export default {
 
 .title, .subtitle, .pre-title {
   line-height: 125%;
+  max-width: 100%;
 }
 
 .titles {
@@ -157,7 +168,7 @@ export default {
 
 .band-image, .band-info {
   width: 100%;
-  margin: 25px;
+  margin: 25px 0;
 }
 
 .band-image {
@@ -204,6 +215,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .musician {
@@ -283,12 +295,21 @@ hr {
 }
 
 @media screen and (max-width: 992px) {
-  /* .about {
-    overflow-y: hidden;
-  } */
+  .about {
+    height: auto;
+  }
+
+  #band-members-title {
+    margin: 25px 0;
+  }
 
   .musicians {
     width: 100%;
+    overflow:hidden;
+  }
+
+  .musician-info {
+    margin: 0;
   }
 
   .band-image {
@@ -301,9 +322,9 @@ hr {
     width: 100%;
   }
 
-  .bio {
+/*   .bio {
     text-align: justify;
-  }
+  } */
 
   .slogan {
     line-height: 200%;
@@ -314,6 +335,7 @@ hr {
   .musician {
     flex-direction: column;
     height: auto;
+    margin: 50px 0 0 0;
   }
   
   .musician-meta {
@@ -326,7 +348,7 @@ hr {
   }
 
   .musician-img {
-    margin: 0 0 30px 0;
+    margin: 0 0 50px 0;
   }
 
   .musician-veera {
@@ -335,10 +357,6 @@ hr {
 
   .band-info {
     width: auto;
-  }
-
-  .musician-text {
-    text-align: justify;
   }
 }
 </style>
