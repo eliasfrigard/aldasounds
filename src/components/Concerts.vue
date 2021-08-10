@@ -122,7 +122,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom:50px;
   }
 
   #more-concerts-header {

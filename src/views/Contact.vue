@@ -1,7 +1,6 @@
 <template>
   <div class="ui container contact">
     <div class="titles">
-      <p class="pre-title">ALDA</p>
       <h2 class="title">CONTACT</h2>
       <h3 class="subtitle">Find contact-, press- and technical information below.</h3>
     </div>

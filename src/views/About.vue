@@ -4,8 +4,8 @@
     <div class="band">
       <div class="titles" data-aos="fade-in">
         <p class="pre-title">WE ARE</p>
-        <h2 class="title">ALDA</h2>
-        <h1 class="subtitle">Welcome to our home on the web.</h1>
+        <h2 class="title" id="band-title">ALDA</h2>
+        <h1 class="subtitle">Welcome to our home on the web!</h1>
       </div>
       <div class="bio ui container">
         <div class="band-image" data-aos="fade-up"></div>
@@ -291,7 +291,7 @@ hr {
   }
 
   #band-members-title {
-    margin: 25px 0;
+    margin: 40px 0 30px 0;
   }
 
   .musicians {
@@ -301,6 +301,7 @@ hr {
 
   .musician-info {
     margin: 0;
+    text-align: center;
   }
 
   .band-image {
@@ -311,7 +312,13 @@ hr {
 
   .image {
     width: 100%;
-    background-position: center right;
+    background-image: url("/P1110937-mobile-sized.jpg");
+    background-position: center center;
+  }
+
+  .band-image {
+    background-image: url("/P1110881-sized.webp");
+    height: 300px;
   }
 
   .bio {
@@ -320,8 +327,8 @@ hr {
 
   .slogan {
     line-height: 200%;
-    font-size: 18px;
-    margin: 10px 0;
+    font-size: 20px;
+    margin: 35px 0;
   }
 
   .musician {
@@ -345,6 +352,22 @@ hr {
 
   .band-info {
     width: auto;
+  }
+  
+  .subtitle {
+    font-size: 21px;
+  }
+
+  .title, .subtitle, .pre-title {
+    line-height: 100%;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  #band-title {
+    font-size: 90px;
   }
 }
 </style>

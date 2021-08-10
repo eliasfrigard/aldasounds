@@ -1,7 +1,6 @@
 <template>
   <div class="ui container">
     <div class="titles">
-      <p class="pre-title">ALDA</p>
       <h2 class="title">NEWS</h2>
       <h1 class="subtitle">Here you will find all our lastest news and articles.</h1>
     </div>
