@@ -3,7 +3,7 @@
   <div class="ui inverted vertical footer segment" id="footer">
     <div class="ui container">
       <div class="ui stackable inverted divided equal height stackable grid">
-        <div class="four wide column">
+        <div id="sitemap" class="four wide column">
           <h4 class="ui inverted header">This Site</h4>
           <div class="ui hidden divider"></div>
           <div class="ui inverted link list">
@@ -15,7 +15,7 @@
             <a href="#contact-container" class="item">Contact</a>
           </div>
         </div>
-        <div class="five wide column">
+        <div id="downloads" class="five wide column">
           <h4 class="ui inverted header">Downloads</h4>
           <div class="ui hidden divider"></div>
           <div class="ui inverted link list">
@@ -97,5 +97,11 @@
   
   #buttons button {
     margin-right: 10px;
+  }
+
+  @media screen and (max-width: 992px) {
+    #sitemap, #downloads {
+      display:none;
+    }
   }
 </style>

@@ -70,12 +70,12 @@
             <th class="length-header">Length</th>
           </tr>
           <tr class="data-row" v-for="(song, index) in songList" :key="index" :id="index" @click="changeTrack(index)">
-            <td class="id">{{index + 1}}</td>
-            <td class="title">{{song.title}}</td>
-            <td class="artist">{{song.artist}}</td>
-            <td class="album">{{song.album}}</td>
-            <td class="composer">{{song.composer}}</td>
-            <td class="length">{{song.length}}</td>
+            <td class="song-id">{{index + 1}}</td>
+            <td class="song-title">{{song.title}}</td>
+            <td class="song-artist">{{song.artist}}</td>
+            <td class="song-album">{{song.album}}</td>
+            <td class="song-composer">{{song.composer}}</td>
+            <td class="song-length">{{song.length}}</td>
           </tr>
         </table>
         <div class="mobile-progress" v-if="mobile">
@@ -129,7 +129,7 @@ export default {
       const allSongs = document.querySelectorAll(`.data-row`)
       
       allSongs.forEach(song => {
-        const title = song.querySelector('.title').textContent
+        const title = song.querySelector('.song-title').textContent
 
         if (this.currentSong.title === title) {
           song.classList.add('is-active')
@@ -415,7 +415,7 @@ th, td {
     margin: 20px 0 0 ;
   }
 
-  .composer, .length, .composer-header, .length-header {
+  .song-composer, .song-length, .composer-header, .length-header {
     display: none;
   }
 }

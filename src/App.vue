@@ -2,11 +2,11 @@
   <div id="navbar">
     <h1 id="title" @click="reloadPage" data-aos="fade-in">ALDA</h1>
     <div class="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">Story</router-link>
-      <router-link to="/news">News</router-link>
-      <router-link to="/live">Live</router-link>
-      <router-link to="/contact">Contact</router-link>
+      <router-link to="/" @click="toggleMobileNav">Home</router-link>
+      <router-link to="/about" @click="toggleMobileNav">Story</router-link>
+      <router-link to="/news" @click="toggleMobileNav">News</router-link>
+      <router-link to="/live" @click="toggleMobileNav">Live</router-link>
+      <router-link to="/contact" @click="toggleMobileNav">Contact</router-link>
     </div>
     <div class="social" data-aos="fade-in">
       <a href="https://www.facebook.com/aldasounds" target="_blank">
@@ -23,7 +23,7 @@
       </a>
     </div>
 
-    <div class="burger" @click="openMobileNav" data-aos="fade-in">
+    <div class="burger" @click="toggleMobileNav" data-aos="fade-in">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
@@ -69,8 +69,15 @@ export default {
   created () {
     AOS.init()
   },
+  computed: {
+    mobile() {
+      return screen.width < 992
+    }
+  },
   methods: {
-    openMobileNav() {
+    toggleMobileNav() {
+      if (!this.mobile) return
+      
       const nav = document.querySelector('.nav')
       const navLinks = document.querySelectorAll('.nav a')
       const burger = document.querySelector('.burger')
@@ -94,6 +101,12 @@ export default {
       document.querySelector('.audio-player').remove()
       document.querySelector('.to-top').style.bottom = '25px'
       this.playerIsActive = false
+
+      if (this.mobile) {
+        const nav = document.querySelector('.nav')
+
+        nav.style.height = "92vh"
+      }
     },
     toTop() {
       window.scrollTo(0, 0)
@@ -206,7 +219,9 @@ body {
 }
 
 .social a {
-  height: 60px;
+  display:flex;
+  align-items: center;
+  font-size: 18px;
 }
 
 .nav {
@@ -276,16 +291,17 @@ body {
   .nav {
     padding: 0;
   }
+
+  .title {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
-/*   body, html {
-    overflow-x: hidden;
-  } */
   .nav {
     position: absolute;
     right: 0px;
-    height: 92vh;
+    height: calc(92vh - 75px);
     top: 8vh;
     background-color: rgb(4, 46, 66);
     flex-direction: column;
@@ -313,6 +329,10 @@ body {
 
   .to-top {
     display: none;
+  }
+
+  .nav a {
+    font-size: 25px;
   }
 }
 

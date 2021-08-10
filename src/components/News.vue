@@ -10,7 +10,7 @@
       <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" data-aos="fade-up" />
     </div>
     <div id="more-news-header" class="header" v-if="preview" @click="moreNews">
-        <h3>More News</h3>
+        <h3>read More News</h3>
       </div>
   </div>
 </template>
@@ -75,6 +75,7 @@ export default {
 <style scoped>
   #more-news-header {
     background-color: #ec3c01;
+    margin: 50px 0;
   }
 
   .navi {

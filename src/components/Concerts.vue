@@ -4,6 +4,11 @@
       <div class="titles" data-aos="fade-in">
         <h2 class="title">UPCOMING CONCERTS</h2>
       </div>
+      <div class="ui container">
+        <div id="more-concerts-header" class="header" v-if="onlyUpcoming" @click="moreNews">
+            <h3>see all concerts</h3>
+        </div>
+      </div>
       <Concert class="concert-main" v-for="concert in upcomingConcerts.slice(0, limit)" :key="concert.id" :date="concert.date" :location="concert.location" :country="concert.country" :link="concert.link" :streamLink="concert.streamLink" :description="concert.description" :divider="concert.divider" />
     </div>
     <div class="previous" v-show="!onlyUpcoming" data-aos="fade-in">
@@ -120,5 +125,13 @@ export default {
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
-}
+  }
+
+  #more-concerts-header {
+    margin: 50px 0;
+  }
+
+  #more-concerts-header:hover {
+    background-color: #ec3c01;
+  }
 </style>

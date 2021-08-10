@@ -5,17 +5,18 @@
     <div id="firstContent">
       <News :preview="true" :articleNumber="3" title="LATEST NEWS" />
       <div class="ui hidden divider"></div>
+      <div class="ui hidden divider"></div>
       <Concerts :onlyUpcoming="true" />
     </div>
 
     <div class="image-divider"></div>
 
-    <div id="secondContent" data-aos="fade-in">
+    <div id="secondContent">
       <div class="ui container">
         <div class="titles">
           <p class="pre-title">NINE WORLDS</p>
           <h2 class="title">NEW ALBUM OUT NOW</h2>
-          <h1 class="subtitle">Available for purchase below.</h1>
+          <h1 class="subtitle" v-if="!mobile">Available for purchase below.</h1>
         </div>
 
         <div class="album-img">
@@ -64,6 +65,11 @@ export default {
   components: {
     News,
     Concerts
+  },
+  computed: {
+    mobile() {
+      return screen.width < 992
+    }
   },
   methods: {
     onScroll() {
@@ -117,6 +123,7 @@ export default {
 </script>
 
 <style scoped> 
+
   .album-img {
     display:flex;
     justify-content: space-between;
@@ -226,6 +233,7 @@ export default {
   font-family: 'Bad Script', cursive;
   letter-spacing: 3px;
   font-size: 40px;
+  text-align: center;
 }
 
 
@@ -264,7 +272,32 @@ select:focus {
     }
 
     .home {
-      overflow: hidden;
+/*       overflow-y: hidden;
+ */      height: auto;
+    }
+
+    .album-img {
+      flex-direction: column;
+    }
+
+    .album-img img {
+      max-width: none;
+      margin: 7px 0;
+    }
+
+    select {
+      width: 100%;
+      margin:15px 0;
+    }
+
+    .album-form {
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .album-form form {
+      width: 100%;
+      margin: 0;
     }
   }
 </style>

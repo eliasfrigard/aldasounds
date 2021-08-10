@@ -7,7 +7,7 @@
         <h2 class="title">ALDA</h2>
         <h1 class="subtitle">Welcome to our home on the web.</h1>
       </div>
-      <div class="ui container bio">
+      <div class="bio ui container">
         <div class="band-image" data-aos="fade-up"></div>
         <div class="band-info" data-aos="fade-in">
           <h2 class="slogan">Furious Nordic groove, divine harmonies and top-notch melodies.</h2>
@@ -153,7 +153,6 @@ export default {
 .bio {
   display:flex;
   flex-direction: column;
-  width: 100%;
 }
 
 .band-image, .band-info {
@@ -284,9 +283,9 @@ hr {
 }
 
 @media screen and (max-width: 992px) {
-  .about {
-    overflow: hidden;
-  }
+  /* .about {
+    overflow-y: hidden;
+  } */
 
   .musicians {
     width: 100%;
@@ -309,6 +308,7 @@ hr {
   .slogan {
     line-height: 200%;
     font-size: 18px;
+    margin: 10px 0;
   }
 
   .musician {
@@ -335,6 +335,10 @@ hr {
 
   .band-info {
     width: auto;
+  }
+
+  .musician-text {
+    text-align: justify;
   }
 }
 </style>
