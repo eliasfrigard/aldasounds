@@ -1,5 +1,5 @@
 <template>
-  <div class="news-article" @mouseover="onHover">
+  <div class="news-article" @mouseover="onHover" @click="onClick">
     <div class="image-wrapper">
       <div class="news-image">      
         <span>Read More</span>
@@ -20,14 +20,20 @@
 export default {
   name: 'News',
   props: {
+    id: Number,
     title: String,
-    body: String
+    body: String,
   },
   methods: {
     onHover() {
       const image = document.querySelector('.news-image')
 
       image.classList.toggle('zoom-image')
+    },
+    onClick() {
+      this.$router.push(`/article${this.id}`)
+
+      //this.$router.push({ path: 'Article', params: { id: this.id }})
     }
   }
 }
@@ -125,6 +131,7 @@ export default {
     font-size: 24px;
     font-family: 'Bad Script', cursive;
     letter-spacing: 4px;
+    line-height: 150%;
   }
 
   .news-author, .news-date {
@@ -140,6 +147,8 @@ export default {
 
   .news-text {
     font-size: 16px;
+    line-height: 185%;
+
   }
 
   @media screen and (max-width: 768px) {

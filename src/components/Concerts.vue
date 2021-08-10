@@ -141,5 +141,9 @@ export default {
     #more-concerts-header {
       margin: 0 0 40px 0;
     }
+
+    .upcoming {
+      margin-top: 30px
+    }
   }
 </style>

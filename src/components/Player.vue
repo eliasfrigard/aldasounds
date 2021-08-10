@@ -169,16 +169,22 @@ export default {
       const currentValue = document.querySelector('.volume-range').value
       this.volumeValue = currentValue
     },
-    async playAudio() {
+    playAudio() {
       const audio = document.querySelector('.music-audio')
-      await audio.load()
-      await audio.play()
+
+      audio.play()
 
       this.isPlaying = true
     },
     pauseAudio() {
       document.querySelector('.music-audio').pause()
       this.isPlaying = false
+    },
+    async loadAndPlayAudio() {
+      const audio = document.querySelector('.music-audio')
+      
+      await audio.load()
+      await audio.play()
     },
     updateProgress(e) {     
       const progress = document.querySelector('.music-progress')
@@ -205,7 +211,9 @@ export default {
 
       this.currentSong = this.songList[this.currentSongIndex]
 
-      this.playAudio()
+      document.querySelector('.music-audio')
+      
+      this.loadAndPlayAudio()
     },
     prevSong() {
       this.currentSongIndex--;
@@ -215,8 +223,15 @@ export default {
       }
 
       this.currentSong = this.songList[this.currentSongIndex]
+      
+      this.loadAndPlayAudio()
+    },
+    changeTrack(index) {
+      this.currentSongIndex = index
 
-      this.playAudio()
+      this.currentSong = this.songList[index]
+
+      this.loadAndPlayAudio()
     },
     openList() {
       const list = document.querySelector('.song-container')
@@ -229,13 +244,6 @@ export default {
       list.style.display = 'none'
 
       this.listIsOpen = false
-    },
-    changeTrack(index) {
-      this.currentSongIndex = index
-
-      this.currentSong = this.songList[index]
-
-      this.playAudio()
     }
   }
 }
@@ -384,6 +392,7 @@ th, td {
   color: #ec3c01;
   z-index: 1;
 }
+
 
 @media screen and (max-width: 992px) {
   .music-info {

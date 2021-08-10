@@ -10,7 +10,6 @@
             <a href="#" class="item">Home</a>
             <a href="#about-container" class="item">Story</a>
             <a href="#projects-container" class="item">News</a>
-            <a href="#education-container" class="item">Music</a>
             <a href="#contact-container" class="item">Live</a>
             <a href="#contact-container" class="item">Contact</a>
           </div>
@@ -21,18 +20,19 @@
           <div class="ui inverted link list">
             <a href="#contact-container" class="item">Download Presskit</a>
             <a href="https://github.com/eliasfrigard/devsite" target="_blank" class="item">Download Technical Rider</a>
-            <a href="#" class="item">Download Full Audio Sample</a>
-            <a href="#" class="item">Download Full Resolution Images</a>
-         
+            <a href="#" class="item" v-if="!mobile">Download Full Audio Sample</a>
+            <a href="#" class="item" v-else>Download Audio Sample</a>
+            <a href="#" class="item" v-if="!mobile">Download Full Resolution Images</a>
+            <a href="#" class="item" v-else>Download Images</a>         
           <br>
 
           </div>
         </div>
 
-        <div class="four wide column">
-          <h4 class="ui inverted header">Social Media</h4>
+        <div class="four wide column social-media">
+          <h4 class="ui inverted header" v-if="!mobile">Social Media</h4>
 
-          <div class="ui hidden divider"></div>
+          <div class="ui hidden divider" v-if="!mobile"></div>
           
           <div id="buttons">
             <button class="ui circular facebook icon button">
@@ -64,6 +64,11 @@
     data() {
       return {
 
+      }
+    },
+    computed: {
+      mobile() {
+        return screen.width < 992
       }
     }
   }
@@ -100,8 +105,15 @@
   }
 
   @media screen and (max-width: 992px) {
-    #sitemap, #downloads {
+/*     #sitemap, #downloads {
       display:none;
+    } */
+    #footer {
+      display:flex;
+      padding: 40px;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
     }
   }
 </style>

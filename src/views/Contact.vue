@@ -25,13 +25,13 @@
       </div>
       <div class="form">
         <h2>Contact Form</h2>
-        <form action="" method="post">
-          <input type="text" name="name" id="" placeholder="Name" autofocus>
-          <input type="tel" name="phone" id="" placeholder="Phone Number">
-          <input type="email" name="email" id="" placeholder="E-Mail">
-          <input type="text" name="subject" id="" placeholder="Subject">
-          <textarea name="text" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-          <input type="submit" value="SUBMIT">
+        <form>
+          <input type="text" name="name" id="" placeholder="Name" autofocus v-model="name" required>
+          <input type="tel" name="phone" id="" placeholder="Phone Number" v-model="phone">
+          <input type="email" name="email" id="" placeholder="E-Mail" v-model="email" required>
+          <input type="text" name="subject" id="" placeholder="Subject" v-model="subject" required>
+          <textarea name="text" id="" cols="30" rows="10" placeholder="Your Message" v-model="message" required></textarea>
+          <input type="submit" value="SUBMIT" @click.prevent="submitForm">
         </form>  
       </div>    
     </div>
@@ -40,30 +40,49 @@
 </template>
 
 <script>
-  export default {
-    name: 'Contact',
-    data() {
-      return {
-        name: null,
-        email: null,
-        project: null,
-        information: null
-      }
-    },
-    methods: {
-      submitForm() {      
-        console.log(`Name: ${this.name}`);
-        console.log(`Email: ${this.email}`);
-        console.log(`Project: ${this.project}`);
-        console.log(`Information: ${this.information}`);
+import axios from 'axios'
 
-        this.name = ''
-        this.email = ''
-        this.project = ''
-        this.information = ''
+export default {
+  name: 'Contact',
+  data() {
+    return {
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: ''
+    }
+  },
+  methods: {
+    submitForm() {
+      const url = 'http://127.0.0.1:3000/contact'
+      const params = {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        subject: this.subject,
+        message: this.message
       }
+
+      const headers = {
+        'Access-Control-Allow-Origin': '*',
+      }
+      
+      axios.post(url, params, headers)
+        .then(response => console.log(response.data))
+        .catch(error => {
+          this.errorMessage = error.message;
+          console.error("There was an error!", error);
+        })
+
+      this.name = ''
+      this.email = ''
+      this.phone = ''
+      this.subject = ''
+      this.message = ''
     }
   }
+}
 </script>
 
 <style scoped>

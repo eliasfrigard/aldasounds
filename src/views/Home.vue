@@ -12,6 +12,8 @@
     <div class="image-divider"></div>
 
     <div id="secondContent">
+      <Stripe />
+
       <div class="ui container">
         <div class="titles">
           <p class="pre-title">NINE WORLDS</p>
@@ -59,12 +61,14 @@
 // @ is an alias to /src
 import News from '@/components/News.vue'
 import Concerts from '@/components/Concerts.vue'
+import Stripe from '@/components/Stripe.vue'
 
 export default {
   name: 'Home',
   components: {
     News,
-    Concerts
+    Concerts,
+    Stripe
   },
   computed: {
     mobile() {

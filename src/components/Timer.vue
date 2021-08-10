@@ -1,6 +1,6 @@
 <template>
 <div class="timer" data-aos="fade-in">
-  <h1 class="title">next show going live in</h1>
+  <h1 class="title">Next show going live in</h1>
   <div class="counter">
     <div class="days">
       <div class="time">
@@ -102,8 +102,8 @@ export default {
 <style scoped>
 .title {
   font-family: 'Bad Script', cursive;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  letter-spacing: 3px;
 }
 
 .time-head {

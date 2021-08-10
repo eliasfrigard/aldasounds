@@ -72,6 +72,12 @@
     transition: all 2.5s ease;
   }
 
+  @media screen and (max-width: 992px) {
+    .image {
+      background-position: bottom right
+    }
+  }
+
   @keyframes fade {
     from {
       opacity: 0;

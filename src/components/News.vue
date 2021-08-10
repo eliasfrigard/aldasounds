@@ -9,8 +9,8 @@
       </div>
     </div>
 
-    <div class="articles" @click="onClick">
-      <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" data-aos="fade-in" />
+    <div class="articles">
+      <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" :id="article.id" data-aos="fade-in" />
     </div>
   </div>
 </template>
@@ -30,7 +30,6 @@ export default {
     }
   },
   async created () {
-    console.log(this.preview);
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(json => this.articles = json.slice(0, this.articleNumber))
@@ -41,9 +40,6 @@ export default {
     },
     hooverLeave() {
       this.header = false
-    },
-    onClick() {
-      window.location.href = '/';
     },
     moreNews() {
       window.location.href = '/news'
