@@ -17,9 +17,6 @@
           <h2 class="title">NEW ALBUM OUT NOW</h2>
           <h1 class="subtitle">Available for purchase below.</h1>
         </div>
-<!--         <div id="album-header" class="header">
-          <h3>NEW ALBUM OUT NOW!</h3>
-        </div> -->
 
         <div class="album-img">
           <img src="../assets/albumcover.webp" alt="" class="image">
@@ -264,6 +261,10 @@ select:focus {
   @media screen and (max-width: 768px) {
     #splash {
       background-image: url("../assets/P1110937.jpg");
+    }
+
+    .home {
+      overflow: hidden;
     }
   }
 </style>

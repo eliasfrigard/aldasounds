@@ -310,6 +310,10 @@ body {
   .social {
     display: none;
   }
+
+  .to-top {
+    display: none;
+  }
 }
 
 @keyframes navLinkFade {

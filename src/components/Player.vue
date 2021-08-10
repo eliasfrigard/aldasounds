@@ -20,7 +20,7 @@
     </div>
 
     <!--  -->
-    <div class="music-info">
+    <div class="music-info" v-if="!mobile">
       <h4 class="music-title">{{currentSong.title}}</h4>
       <div class="music-progress-container" @click="setProgress">
         <div class="music-progress"></div>
@@ -66,18 +66,23 @@
             <th>Title</th>
             <th>Artist</th>
             <th>Album</th>
-            <th>Composer</th>
-            <th>Length</th>
+            <th class="composer-header">Composer</th>
+            <th class="length-header">Length</th>
           </tr>
           <tr class="data-row" v-for="(song, index) in songList" :key="index" :id="index" @click="changeTrack(index)">
             <td class="id">{{index + 1}}</td>
             <td class="title">{{song.title}}</td>
             <td class="artist">{{song.artist}}</td>
             <td class="album">{{song.album}}</td>
-            <td class="compose">{{song.composer}}</td>
+            <td class="composer">{{song.composer}}</td>
             <td class="length">{{song.length}}</td>
           </tr>
         </table>
+        <div class="mobile-progress" v-if="mobile">
+          <div class="music-progress-container" @click="setProgress">
+            <div class="music-progress"></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -140,11 +145,16 @@ export default {
   computed: {
     volume() {
       return this.volumeValue / 100
+    },
+    mobile() {
+      return screen.width < 992
     }
   },
   methods: {
     openVolumeControl() {
-      document.querySelector('.volume-range').style.display = "block"
+      if (screen.width > 992) {
+        document.querySelector('.volume-range').style.display = "block"
+      }
     },
     closeVolumeControl() {
       document.querySelector('.volume-range').style.display = "none"
@@ -373,5 +383,40 @@ th, td {
   right: 120px;
   color: #ec3c01;
   z-index: 1;
+}
+
+@media screen and (max-width: 992px) {
+  .music-info {
+    display:none;
+  }
+
+  .audio-controls {
+    width: 35%;
+  }
+
+  .window-controls {
+    width:35%;
+  }
+
+  .volume-range {
+    display: none;
+  }
+
+  .mobile-progress {
+    width: 100%;
+  }
+
+  .song-container {
+    justify-content: center;
+  }
+
+  .mobile-progress .music-progress-container {
+    height: 10px;
+    margin: 20px 0 0 ;
+  }
+
+  .composer, .length, .composer-header, .length-header {
+    display: none;
+  }
 }
 </style>

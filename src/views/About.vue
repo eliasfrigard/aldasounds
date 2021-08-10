@@ -130,6 +130,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   margin-bottom: 50px;
 }
 
@@ -152,6 +153,7 @@ export default {
 .bio {
   display:flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .band-image, .band-info {
@@ -282,8 +284,31 @@ hr {
 }
 
 @media screen and (max-width: 992px) {
+  .about {
+    overflow: hidden;
+  }
+
   .musicians {
     width: 100%;
+  }
+
+  .band-image {
+    width: auto;
+    height: 450px;
+    margin:0;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .bio {
+    text-align: justify;
+  }
+
+  .slogan {
+    line-height: 200%;
+    font-size: 18px;
   }
 
   .musician {
@@ -301,11 +326,15 @@ hr {
   }
 
   .musician-img {
-    margin-bottom: 50px;
+    margin: 0 0 30px 0;
   }
 
   .musician-veera {
     flex-direction: column-reverse;
+  }
+
+  .band-info {
+    width: auto;
   }
 }
 </style>

@@ -1,17 +1,17 @@
 <template>
   <div class="ui container">
     <div v-if="preview" @mouseover="hooverEnter" @mouseleave="hooverLeave" data-aos="fade-up">
-      <div id="more-news-header" class="header" v-if="header" @click="moreNews">
-        <h3>More News</h3>
-      </div>
-      <div id="news-header" class="header" v-else>
-        <h3>{{ title }}</h3>
+      <div class="titles" v-if="preview" data-aos="fade-in">
+        <h2 class="title">LATEST NEWS</h2>
       </div>
     </div>
 
     <div class="articles" @click="onClick">
       <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" data-aos="fade-up" />
     </div>
+    <div id="more-news-header" class="header" v-if="preview" @click="moreNews">
+        <h3>More News</h3>
+      </div>
   </div>
 </template>
 
@@ -30,6 +30,7 @@ export default {
     }
   },
   async created () {
+    console.log(this.preview);
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(json => this.articles = json.slice(0, this.articleNumber))
@@ -87,5 +88,20 @@ export default {
 
   hr {
     opacity: 0.3;
+  }
+
+  .title {
+    font-size: 70px;
+    letter-spacing: 5px;
+    line-height: 125%;
+    color: rgb(4, 46, 66);
+  }
+
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
   }
 </style>
