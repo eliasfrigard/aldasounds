@@ -34,20 +34,21 @@
 
           <div class="ui hidden divider" v-if="!mobile"></div>
           
-          <div id="buttons">
-            <button class="ui circular facebook icon button">
-              <i class="facebook icon"></i>
-            </button>
-            <button class="ui circular twitter icon button">
-              <i class="twitter icon"></i>
-            </button>
-            <button class="ui circular linkedin icon button">
-              <i class="linkedin icon"></i>
-            </button>
-            <button class="ui circular google plus icon button">
-              <i class="google plus icon"></i>
-            </button>
-          </div><br>
+
+            <div class="social">
+              <a href="https://www.facebook.com/aldasounds" target="_blank">
+                <i class="fab fa-facebook-square fa-lg"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UC1CSzPlVfH7RYlWo-ulYDaw" target="_blank">
+                <i class="fab fa-youtube fa-lg"></i>
+              </a>
+              <a href="https://www.instagram.com/aldasounds/" target="_blank">
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+              <a href="" target="_blank">
+                <i class="fab fa-spotify fa-lg"></i>
+              </a>
+            </div><br>
           <p>Copyright © 2021 Elias Frigård</p>
 
         </div>
@@ -104,16 +105,53 @@
     margin-right: 10px;
   }
 
-  @media screen and (max-width: 992px) {
-/*     #sitemap, #downloads {
-      display:none;
-    } */
-    #footer {
-      display:flex;
-      padding: 40px;
-      justify-content: center;
-      align-items: center;
-      padding-bottom: 100px;
-    }
+  .social {
+    width: 100%;
+    display:flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
   }
+
+  .social a, .social i {
+    margin: 0;
+    padding: 0;
+  }
+
+  .social i {
+    margin-right: 25px;
+    font-size: 25px;
+    color: rgba(230, 230, 230, 0.6);
+    opacity: 0.6;
+  }
+  .social i:hover {
+    opacity: 1;
+  }
+  .social .fa-facebook-square:hover {
+    color: rgb(49, 92, 177);
+  }
+  .social .fa-youtube:hover {
+    color: rgb(255, 0, 0);
+  }
+  .social .fa-instagram:hover {
+    color: rgb(251, 173, 80)
+  }
+  .social .fa-spotify:hover {
+    color: rgb(30, 215, 96);
+  }
+
+  .social a {
+    display:flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 992px) {
+  #footer {
+    display:flex;
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 100px;
+  }
+}
 </style>

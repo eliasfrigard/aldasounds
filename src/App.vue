@@ -12,13 +12,13 @@
       <a href="https://www.facebook.com/aldasounds" target="_blank">
         <i class="fab fa-facebook-square fa-lg"></i>
       </a>
-      <a href="https://www.facebook.com/aldasounds" target="_blank">
+      <a href="https://www.youtube.com/channel/UC1CSzPlVfH7RYlWo-ulYDaw" target="_blank">
         <i class="fab fa-youtube fa-lg"></i>
       </a>
-      <a href="https://www.facebook.com/aldasounds" target="_blank">
+      <a href="https://www.instagram.com/aldasounds/" target="_blank">
         <i class="fab fa-instagram fa-lg"></i>
       </a>
-      <a href="https://www.facebook.com/aldasounds" target="_blank">
+      <a href="" target="_blank">
         <i class="fab fa-spotify fa-lg"></i>
       </a>
     </div>
@@ -126,22 +126,30 @@ body {
   overflow-x: hidden;
 }
 
-.header {
+.header, .header-disabled {
   text-align: center;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 1px;
-  background-color: #042e42;
   color: rgb(230, 230, 230);
   padding: 15px 20px;
   width: 100%;
   border-radius: 2px;
-  transition: all .3s;
   cursor: pointer;
   -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+}
+
+.header {
+  background-color: #042e42;
+}
+
+.header-disabled {
+    background-color: #3b3d3d;
+    cursor:default;
+    opacity: 0.2;
 }
 
 /* width */
@@ -213,10 +221,22 @@ body {
 .social i {
   margin: 20px;
   color: rgba(230, 230, 230, 0.6);
+  opacity: 0.6;
 }
-
 .social i:hover {
-  color: #ec3c01;
+  opacity: 1;
+}
+.social .fa-facebook-square:hover {
+  color: rgb(49, 92, 177);
+}
+.social .fa-youtube:hover {
+  color: rgb(255, 0, 0);
+}
+.social .fa-instagram:hover {
+  color: rgb(251, 173, 80)
+}
+.social .fa-spotify:hover {
+  color: rgb(30, 215, 96);
 }
 
 .social a {
@@ -237,7 +257,7 @@ body {
   text-decoration: none;
   letter-spacing: 4px;
   font-weight: 500;
-  font-size: 19px;
+  font-size: 22px;
   color: rgb(230, 230, 230);
   font-family: 'Bad Script', cursive;
  }
