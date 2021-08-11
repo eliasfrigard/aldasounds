@@ -126,7 +126,7 @@ export default {
   }
 
   #more-concerts-header {
-    margin: 50px 0;
+    margin: 14px 0 75px 0;
   }
 
   #more-concerts-header:hover {
