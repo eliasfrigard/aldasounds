@@ -49,11 +49,11 @@
       </div>
       <div class="download-item">
         <i class="fas fa-download"></i>
-        <h4 class="download-item-text">Download Presskit</h4>
+        <h4 class="download-item-text">Download Audio Sample</h4>
       </div>
       <div class="download-item">
         <i class="fas fa-download"></i>
-        <h4 class="download-item-text">Download Technical Rider</h4>
+        <h4 class="download-item-text">Download Full Resolution Images</h4>
       </div>
     </div>
 
@@ -113,7 +113,7 @@ export default {
   margin: 25px 0 75px 0;
   height: 750px;
   border-radius: 4px;
-  background-image: url("/P1110770.jpg");
+  background-image: url("/P1110770-sized-cropped.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -292,8 +292,9 @@ input[type=submit]:hover {
 }
 
 .fa-download {
-  font-size: 40px;
-  margin: 0 20px;
+  font-size: 30px;
+  padding-bottom: 6px;
+  margin-right: 30px;
 }
 
 .downloads-title {
@@ -311,16 +312,20 @@ input[type=submit]:hover {
   display:flex;
   align-items: center;
   justify-content: center;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
 
 }
 
 .download-item:hover {
   border: 3px solid #ec3c01;
   cursor: pointer;
+  transform: scale(1.025);
 }
 
 .download-item-text {
-  font-size: 24px;
+  font-size: 22px;
   text-align: center;
   font-family: 'Bad Script', cursive;
   letter-spacing: 3px;

@@ -20,8 +20,8 @@
         </div>
 
         <div class="album-img">
-          <img src="../assets/albumcover.webp" alt="" class="image">
-          <img src="../assets/albumback.webp" alt="" class="image">
+          <img src="../assets/albumfront-sized.webp" alt="" class="image">
+          <img src="../assets/albumback-sized.webp" alt="" class="image">
         </div>
 
         <Stripe />
@@ -91,14 +91,9 @@ export default {
         secondContent.style.backgroundColor = ''
       }
     },
-
-    purchaseAlbum() {
-      window.location.href = 'https://buy.stripe.com/cN28xn2aqcv7fxSbIJ'
-    }
   },
   created() {
     window.addEventListener('scroll', this.onScroll)
-    
   },
   mounted() {
     const footer = document.querySelector('#footer')

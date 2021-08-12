@@ -108,12 +108,36 @@ export default {
         length: '3:54'
       },
       {
-        title: 'Veera Violin',
-        link: 'music/Veera Violin.mp3',
-        artist: 'Veera Kuisma',
+        title: 'Moment Before SAMPLE',
+        link: 'music/samples/Moment Before SAMPLE.mp3',
+        artist: 'ALDA',
         album: 'Nine Worlds',
         composer: 'Veera Kuisma',
-        length: '3:54'
+        length: '0:39'
+      },
+      {
+        title: 'Bee Reel SAMPLE',
+        link: 'music/samples/BEE REEL SAMPLE.mp3',
+        artist: 'ALDA',
+        album: 'Nine Worlds',
+        composer: 'Veera Kuisma',
+        length: '0:20'
+      },
+      {
+        title: 'Ajastaika SAMPLE',
+        link: 'music/samples/AJASTAIK SAMPLE.mp3',
+        artist: 'ALDA',
+        album: 'Nine Worlds',
+        composer: 'Veera Kuisma',
+        length: '0:41'
+      },
+      {
+        title: 'Polska In Between SAMPLE',
+        link: 'music/samples/POLSKA IN BETWEEN SAMPLE.mp3',
+        artist: 'ALDA',
+        album: 'Nine Worlds',
+        composer: 'Veera Kuisma',
+        length: '0:30'
       }],
       currentSong: '',
       currentSongIndex: 0,
