@@ -47,4 +47,9 @@ router.beforeEach(() => {
   window.scrollTo(0, 0)
 })
 
+router.beforeEach((to, from, next) => {
+  document.title = 'ALDA ' + to.name
+  next()
+})
+
 export default router

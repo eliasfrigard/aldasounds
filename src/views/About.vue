@@ -8,7 +8,7 @@
         <h1 class="subtitle">Welcome to our home on the web!</h1>
       </div>
       <div class="bio ui container">
-        <div class="band-image" data-aos="fade-up"></div>
+        <div class="band-image" data-aos="fade-in"></div>
         <div class="band-info" data-aos="fade-in">
           <h2 class="slogan">Furious Nordic groove, divine harmonies and top-notch melodies.</h2>
           <p>{{firstParagraph}}</p>

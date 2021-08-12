@@ -35,6 +35,28 @@
         </form>  
       </div>    
     </div>
+
+
+    <div class="ui container contact-downloads">
+      <h2 class="title downloads-title">DOWNLOADS</h2>
+      <div class="download-item">
+        <i class="fas fa-download"></i>
+        <h4 class="download-item-text">Download Presskit</h4>
+      </div>
+      <div class="download-item">
+        <i class="fas fa-download"></i>
+        <h4 class="download-item-text">Download Technical Rider</h4>
+      </div>
+      <div class="download-item">
+        <i class="fas fa-download"></i>
+        <h4 class="download-item-text">Download Presskit</h4>
+      </div>
+      <div class="download-item">
+        <i class="fas fa-download"></i>
+        <h4 class="download-item-text">Download Technical Rider</h4>
+      </div>
+    </div>
+
     <div class="image" data-aos="fade-up"></div>
   </div>
 </template>
@@ -260,7 +282,56 @@ input[type=submit]:hover {
   line-height: 125%;
 }
 
+.contact-downloads {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 100px 0 50px 0;
+}
+
+.fa-download {
+  font-size: 40px;
+  margin: 0 20px;
+}
+
+.downloads-title {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 50px 0;
+}
+
+.download-item {
+  height: 100px;
+  margin: 20px 0;
+  width: 47.5%;
+  border: 2px solid rgb(4, 46, 66);
+  border-radius: 20px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.download-item:hover {
+  border: 3px solid #ec3c01;
+  cursor: pointer;
+}
+
+.download-item-text {
+  font-size: 24px;
+  text-align: center;
+  font-family: 'Bad Script', cursive;
+  letter-spacing: 3px;
+  margin:0;
+}
+
 @media screen and (max-width: 992px) {
+  .download-item {
+    width: 100%;
+  }
+
   .contact-info {
     flex-direction: column;
     justify-content: center;

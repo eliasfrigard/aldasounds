@@ -1,16 +1,22 @@
 <template>
   <div class="stripe">
     <div class="titles">
-      <h1 class="subtitle" v-if="shippingPrice === '' || quantity === ''">Buy now for <h2 class="line-price">19,99€</h2> + shipping!</h1>
-      <h1 class="subtitle" v-else>Buy now for <h2 class="line-price">{{(shippingPrice.price + (19.99 * quantity)).toFixed(2)}}€</h2> including shipping!</h1>
+      <h1 class="subtitle" v-if="shippingPrice.id === 'none'">Buy now for <h2 class="line-price">{{computedPrice}}€</h2> + <h1 class="line-through">shipping!</h1></h1>
+      <h1 class="subtitle" v-else-if="shippingPrice === '' || quantity === ''">Buy now for <h2 class="line-price">19.99€</h2> + shipping!</h1>
+      <h1 class="subtitle" v-else>Buy now for <h2 class="line-price">{{computedPrice}}€</h2> including shipping!</h1>
     </div>
     <div class="ui container album-form">
+      <div v-if="destination === 'none'">
+        <p class="destination-info">You have selected no shipping. You must recieve the album directly from the musicians!</p>
+        <br>
+      </div>
       <form action="" method="post">
         <select class="cd-select" name="destination" v-model="destination" @change="updatePrice">
           <option value="">Shipping Destination</option>
           <option value="fi">Finland</option>
           <option value="eu">Europe</option>
           <option value="na">North America</option>
+          <option value="none">No Shipping</option>
         </select>
         <select class="cd-select" name="quantity" v-model="quantity" @change="updatePrice">
           <option value="">Quantity</option>
@@ -39,36 +45,38 @@
 import { loadStripe } from '@stripe/stripe-js'
 
 const stripePromise = loadStripe(
-  'pk_test_51JLS1dG8aJhMUW3TYwrcF6cWZiJ9IwVFr7ntaVEqXOgNpjLj6Ki7oDsDMX5EJBHdul0p6K3xLyEBwascaJV2Hivg00Fmt1EoMa'
+  'pk_test_51JNey1DjXF4YVvjQmRg3ARnM3i2mILRQrQJM2VtcrQ6McpHBueYfNY7YfyizK6HXC9WWgHxfqCXg94Xf0IBm1xBX00kcmijS5Y'
 )
 
 export default {
   name: "Stripe",
-  data () {
-    this.publishableKey = 'pk_test_51JLS1dG8aJhMUW3TYwrcF6cWZiJ9IwVFr7ntaVEqXOgNpjLj6Ki7oDsDMX5EJBHdul0p6K3xLyEBwascaJV2Hivg00Fmt1EoMa';
-    
+  data () {    
     return {
       quantity: '',
       destination: '',
       shippingPrice: '',
-      shippingPriceQuantity: 1,
+      shippingPriceQuantity: 0,
       successURL: 'http://localhost:8080/',
       cancelURL: 'http://localhost:8080/live',
+      albumPrice: {
+        id: 'price_1JNf8BDjXF4YVvjQmdqESkaY',
+        price: 19.99
+      },
       suomiEuropeShipping: {
-        id: 'price_1JNGHNG8aJhMUW3T7iR8KEp6',
-        price: 3.70
+        id: 'price_1JNfBBDjXF4YVvjQwvGq9ZN7',
+        price: 2.70
       },
       europeShipping: {
-        id: 'price_1JNGIwG8aJhMUW3TP8LXMuDa',
-        price: 5.55
+        id: 'price_1JNfAIDjXF4YVvjQWmHsuDdm',
+        price: 4.55
       },
       worldShippingSingle: {
-        id: 'price_1JNGKlG8aJhMUW3TnllEEqHl',
-        price: 4.20
+        id: 'price_1JNf9gDjXF4YVvjQj0Jc5pBa',
+        price: 3.20
       },
       worldShippingMultiple: {
-        id: 'price_1JNGMDG8aJhMUW3Ta9wS6UQ7',
-        price: 7.40
+        id: 'price_1JNf8wDjXF4YVvjQ4gOtDh5Y',
+        price: 6.40
       },
       shipping_address_collection: {
         allowedCountries: [
@@ -78,6 +86,13 @@ export default {
       },
     };
   },
+  computed: {
+    computedPrice() {
+      const price = (this.shippingPrice.price * this.shippingPriceQuantity) + (this.albumPrice.price * this.quantity)
+
+      return price.toFixed(2)
+    }
+  },
   methods: {
     updatePrice() {
       if (this.destination === '' || this.quantity === '') return
@@ -85,7 +100,11 @@ export default {
       // Convert quantity to int, needs to be string in form.
       const albumQuantity = parseInt(this.quantity)
 
-      if (this.destination === 'fi') { // Suomi shipping
+      if (this.destination === 'none') {
+        this.shippingPrice = { id: 'none', price: 0.00 }
+        this.shippingPriceQuantity = 0
+      }
+      else if (this.destination === 'fi') { // Suomi shipping
         this.shippingPrice = this.suomiEuropeShipping
         if (albumQuantity <= 4) {
           this.shippingPriceQuantity = 1  
@@ -99,8 +118,6 @@ export default {
         } else if (albumQuantity >= 2 && albumQuantity <= 4) {
           this.shippingPrice = this.europeShipping
           this.shippingPriceQuantity = 1
-        } else if (albumQuantity === 5) {
-          // Implement five.
         } else {
           this.shippingPrice = this.europeShipping
           this.shippingPriceQuantity = 2
@@ -112,8 +129,6 @@ export default {
         } else if (albumQuantity >= 2 && albumQuantity <= 4) {
           this.shippingPrice = this.worldShippingMultiple
           this.shippingPriceQuantity = 1
-        } else if (albumQuantity === 5) {
-          // Implement five.
         } else {
           this.shippingPrice = this.worldShippingMultiple
           this.shippingPriceQuantity = 2
@@ -126,30 +141,37 @@ export default {
     },
     async submitVanilla() {
       const stripe = await stripePromise
-
-      const { error } = await stripe.redirectToCheckout({
+      
+      const config = {
         lineItems: [
           {
             // Album Price.
-            price: 'price_1JN1lJG8aJhMUW3TwaxRWtht',
+            price: this.albumPrice.id,
             quantity: parseInt(this.quantity),
-          },
-          {
-            // Shipping Price.
-            price: this.shippingPrice.id,
-            quantity: this.shippingPriceQuantity
           }
         ],
         mode: 'payment',
-        successUrl: 'http://localhost:8080/live',
-        cancelUrl: 'http://localhost:8080/',
-        shippingAddressCollection: {
+        successUrl: this.successURL,
+        cancelUrl: this.cancelURL,
+      }
+
+      // Add shipping information if applicable.
+      if (this.shippingPrice.id !== 'none') {
+        config.lineItems.push({
+            // Shipping Price.
+            price: this.shippingPrice.id,
+            quantity: this.shippingPriceQuantity
+        })
+
+        config.shippingAddressCollection = {
           allowedCountries: [
             'SE',
             'FI'
           ]
-        },
-      })
+        }
+      }
+
+      const { error } = await stripe.redirectToCheckout({ ...config })
 
       if (error) {
         console.log(error)
@@ -165,6 +187,11 @@ export default {
   margin: 30px 0 40px 0;
 }
 
+.line-through {
+  text-decoration: line-through;
+  display:inline
+}
+
 .titles {
   display: flex;
   flex-direction: column;
@@ -175,7 +202,7 @@ export default {
   font-size: 70px;
   letter-spacing: 5px;
 }
-.subtitle , .line-price{
+.subtitle , .line-price, .line-through {
   font-family: 'Bad Script', cursive;
   letter-spacing: 3px;
   font-size: 40px;

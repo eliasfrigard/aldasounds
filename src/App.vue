@@ -95,7 +95,7 @@ export default {
       burger.classList.toggle('toggle')
     },
     reloadPage() {
-      window.location.href = "http://localhost:8080"
+      window.location.href = "/"
     },
     closePlayer() {
       document.querySelector('.audio-player').remove()

@@ -130,9 +130,9 @@ export default {
     flex-direction: column;
   }
 
-  .date p {
+/*   .date p {
     text-shadow: 0px 5px 4px rgba(41, 41, 41, 0.15);
-  }
+  } */
 
   .day, .month, .year {
     margin: 0;

@@ -145,7 +145,6 @@ export default {
 
     .upcoming {
       margin-top: 30px;
-      background-color: rgb(216, 185, 13)
     }
   }
 </style>
