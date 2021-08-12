@@ -7,10 +7,10 @@
         <p class="year">{{year}}</p>
       </div>
       <div class="location">
-        <p>{{ location }}, {{ countryUpperCase }} <i :class="flagClass"></i></p>
+        <p>{{ location }}, {{ country.toUpperCase() }} <i :class="flagClass"></i></p>
       </div>
       <div class="description">
-        <p class="mobile-location">{{ location }}, {{ countryUpperCase }} <i :class="flagClass"></i></p>
+        <p class="mobile-location">{{ location }}, {{ country.toUpperCase() }} <i :class="flagClass"></i></p>
         <p>{{description}}</p>
       </div>
       <div class="links" @click="onClick">
@@ -33,15 +33,7 @@ import moment from 'moment'
 export default {
   name: 'Concerts',
   props: ['date', 'location', 'country', 'link', 'streamLink', 'description', 'divider'],
-  data() {
-    return {
-
-    }
-  },
   computed: {
-    countryUpperCase() {
-      return this.country.toUpperCase()
-    },
     flagClass() {
       return this.country.toLowerCase() + ' flag'
     },
@@ -55,16 +47,10 @@ export default {
       return moment(this.date).format('YYYY')
     }
   },
-  async created () {
-    console.log(this.streamLink)
-  },
   methods: {
     onClick() {
       window.location.href = this.link
     }
-  },
-  components: {
-
   }
 }
 </script>
@@ -102,13 +88,8 @@ export default {
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
   }
 
-  .mobile-links {
+  .mobile-links, .mobile-location {
     display: none;
-  }
-
-  .mobile-links button {
-    width: 100%;
-    margin: 5px 0;
   }
 
   .stream-link, .event-link:hover {
@@ -136,10 +117,6 @@ export default {
 
   .location {
     max-width: 300px;
-  }
-
-  .mobile-location {
-    display: none;
   }
 
   .description p {
@@ -184,6 +161,11 @@ export default {
   }
 
   @media screen and (max-width: 992px) {
+    .mobile-links button {
+      width: 100%;
+      margin: 5px 0;
+    }
+
     .location {
       display: none;
     }

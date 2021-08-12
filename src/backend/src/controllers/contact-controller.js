@@ -15,33 +15,34 @@ export class ContactController {
           user: "info@aldasounds.com",
           pass: 'saxvlnpno'
         }
-      });
-      
+      })
+
       const mailOptions = {
         from: 'info@aldasounds.com',
         to: 'elias_frigard@hotmail.com',
         subject: `ALDASOUNDS.COM New Contact Message! `,
         html: `
-          <p><b>From: </b>Elias Frigård</p>
-          <p><b>E-Mail: </b>elias_frigard@hotmail.com</p>
-          <p><b>Phone: </b>+46706691374</p>
-          <p><b>Subject: </b>Hello!</p>
+          <p><b>From: </b>${req.body.name}</p>
+          <p><b>E-Mail: </b>${req.body.email}</p>
+          <p><b>Phone: </b>${req.body.phone}</p>
+          <p><b>Subject: </b>${req.body.subject}</p>
           <p><b>Message:</b></p>
-          <p>AOWIFHAÖOWIUHFÖAOWIFHÖAOWIHFAÖOWIFHAÖOWFH</p>
+          <p>${req.body.message}</p>
         `
       }
       
       // Send email.
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
-        console.log(error);
+          console.log(error)
+          res.sendStatus(500)
         } else {
           console.log('Email sent: ' + info.response);
+          res.sendStatus(200)
         }
       })
-      res.sendStatus(200)
     } catch (error) {
-      next(error)
+      res.status(500).send('Error')
     }
   }
 }

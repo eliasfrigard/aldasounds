@@ -1,11 +1,13 @@
 {
   "name": "aldasounds",
   "version": "0.1.0",
+  "homepage": "https://eliasfrigard.github.io/aldasounds",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@stripe/stripe-js": "^1.16.0",
@@ -13,6 +15,8 @@
     "aos": "^2.3.4",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "emailjs-com": "^3.2.0",
+    "gh-pages": "^3.2.3",
     "moment": "^2.29.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",

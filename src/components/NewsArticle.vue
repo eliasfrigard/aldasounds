@@ -31,9 +31,7 @@ export default {
       image.classList.toggle('zoom-image')
     },
     onClick() {
-      this.$router.push(`/article${this.id}`)
-
-      //this.$router.push({ path: 'Article', params: { id: this.id }})
+      this.$router.push(`/news/${this.id}`)
     }
   }
 }

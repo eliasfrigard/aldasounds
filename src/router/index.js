@@ -31,7 +31,7 @@ const routes = [
     component: () => import('../views/Live.vue')
   },
   {
-    path: '/article:id',
+    path: '/news/:id',
     name: 'Article',
     component: () => import('../views/Article.vue'),
     props: true

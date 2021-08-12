@@ -45,6 +45,7 @@ export default {
   },
   async created () {
     // Fetch data from API.
+    // console.log(process.env.VUE_APP_BACKEND_ADDRESS);
 
     // Filter upcoming concerts.
     concerts.forEach(concert => {
@@ -143,7 +144,8 @@ export default {
     }
 
     .upcoming {
-      margin-top: 30px
+      margin-top: 30px;
+      background-color: rgb(216, 185, 13)
     }
   }
 </style>

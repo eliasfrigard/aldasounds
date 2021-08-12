@@ -55,7 +55,8 @@ export default {
   },
   methods: {
     submitForm() {
-      const url = 'http://127.0.0.1:3000/contact'
+      const url = `${process.env.VUE_APP_BACKEND_ADDRESS}/contact`
+      
       const params = {
         name: this.name,
         email: this.email,

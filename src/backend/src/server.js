@@ -1,5 +1,6 @@
 import express from 'express'
 import logger from 'morgan'
+import cors from 'cors'
 import { dirname, join } from 'path'
 import { fileURLToPath } from 'url'
 import { router } from './routes/router.js'
@@ -10,6 +11,9 @@ import { router } from './routes/router.js'
 const main = async () => {
   // Create express application.
   const app = express()
+
+  // Use cors.
+  app.use(cors())
 
   // Use Morgan dev logger.
   app.use(logger('dev'))
@@ -26,6 +30,7 @@ const main = async () => {
 
   // Serve static files from public folder.
   app.use(express.static(join(directoryFullName, '..', 'public')))
+  
   // Register routes.
   app.use('/', router)
 

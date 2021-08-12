@@ -24,17 +24,13 @@
             <a href="#" class="item" v-else>Download Audio Sample</a>
             <a href="#" class="item" v-if="!mobile">Download Full Resolution Images</a>
             <a href="#" class="item" v-else>Download Images</a>         
-          <br>
-
+            <br>
           </div>
         </div>
 
         <div class="four wide column social-media">
           <h4 class="ui inverted header" v-if="!mobile">Social Media</h4>
-
           <div class="ui hidden divider" v-if="!mobile"></div>
-          
-
             <div class="social">
               <a href="https://www.facebook.com/aldasounds" target="_blank">
                 <i class="fab fa-facebook-square fa-lg"></i>
@@ -50,9 +46,7 @@
               </a>
             </div><br>
           <p>Copyright © 2021 Elias Frigård</p>
-
         </div>
-
       </div>
     </div>
   </div>
@@ -62,11 +56,6 @@
 <script>
   export default {
     name: 'Footer',
-    data() {
-      return {
-
-      }
-    },
     computed: {
       mobile() {
         return screen.width < 992
@@ -75,7 +64,6 @@
   }
 </script>
 
-/* Style */
 <style scoped>
   #footer {
     padding: 80px;
@@ -123,18 +111,23 @@
     color: rgba(230, 230, 230, 0.6);
     opacity: 0.6;
   }
+
   .social i:hover {
     opacity: 1;
   }
+
   .social .fa-facebook-square:hover {
     color: rgb(49, 92, 177);
   }
+
   .social .fa-youtube:hover {
     color: rgb(255, 0, 0);
   }
+
   .social .fa-instagram:hover {
     color: rgb(251, 173, 80)
   }
+  
   .social .fa-spotify:hover {
     color: rgb(30, 215, 96);
   }

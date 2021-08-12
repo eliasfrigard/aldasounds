@@ -24,14 +24,14 @@
           <option value="8">8</option>
         </select>
       </form>
-    </div>
     <div id="buy-header" class="header-disabled" v-if="shippingPrice === '' || quantity === ''">
       <h3>Continue to payment!</h3>
     </div>
     <div id="buy-header" class="header" @click="submitVanilla" v-else>
       <h3>Continue to payment!</h3>
     </div>
-    <p class="destination-info">For larger orders or destinations not on the list, contact us and we can make an arrangement for you!</p>
+    </div>
+    <p class="destination-info">For large orders or destinations not on the list, contact us and we can make an arrangement for you!</p>
   </div>
 </template>
 
@@ -52,6 +52,8 @@ export default {
       destination: '',
       shippingPrice: '',
       shippingPriceQuantity: 1,
+      successURL: 'http://localhost:8080/',
+      cancelURL: 'http://localhost:8080/live',
       suomiEuropeShipping: {
         id: 'price_1JNGHNG8aJhMUW3T7iR8KEp6',
         price: 3.70
@@ -68,59 +70,49 @@ export default {
         id: 'price_1JNGMDG8aJhMUW3Ta9wS6UQ7',
         price: 7.40
       },
-      loading: false,
-      lineItems: [
-        {
-          price: 'price_1JN1lJG8aJhMUW3TwaxRWtht', // The id of the one-time price you created in your Stripe dashboard
-          quantity: 2,
-        },
-      ],
       shipping_address_collection: {
         allowedCountries: [
           'SE',
           'FI'
         ]
       },
-      shipping_rates: ['shr_1JN2BSG8aJhMUW3TRkVKKytG'],
-      successURL: 'http://localhost:8080/',
-      cancelURL: 'http://localhost:8080/live',
     };
   },
   methods: {
     updatePrice() {
       if (this.destination === '' || this.quantity === '') return
 
-      console.log(typeof this.quantity);
+      // Convert quantity to int, needs to be string in form.
+      const albumQuantity = parseInt(this.quantity)
 
       if (this.destination === 'fi') { // Suomi shipping
         this.shippingPrice = this.suomiEuropeShipping
-        
-        if (this.quantity <= 4) {
+        if (albumQuantity <= 4) {
           this.shippingPriceQuantity = 1  
-        } else if (this.quantity > 4) {
+        } else if (albumQuantity > 4) {
           this.shippingPriceQuantity = 2
         }
       } else if (this.destination === 'eu') { // Europe Shipping
-        if (this.quantity === 1) {
+        if (albumQuantity === 1) {
           this.shippingPrice = this.suomiEuropeShipping
           this.shippingPriceQuantity = 1
-        } else if (this.quantity >= 2 && this.quantity <= 4) {
+        } else if (albumQuantity >= 2 && albumQuantity <= 4) {
           this.shippingPrice = this.europeShipping
           this.shippingPriceQuantity = 1
-        } else if (this.quantity === 5) {
+        } else if (albumQuantity === 5) {
           // Implement five.
         } else {
           this.shippingPrice = this.europeShipping
           this.shippingPriceQuantity = 2
         }
       } else if (this.destination === 'na') { // World Shipping
-        if (this.quantity === 1) {
+        if (albumQuantity === 1) {
           this.shippingPrice = this.worldShippingSingle
           this.shippingPriceQuantity = 1
-        } else if (this.quantity >= 2 && this.quantity <= 4) {
+        } else if (albumQuantity >= 2 && albumQuantity <= 4) {
           this.shippingPrice = this.worldShippingMultiple
           this.shippingPriceQuantity = 1
-        } else if (this.quantity === 5) {
+        } else if (albumQuantity === 5) {
           // Implement five.
         } else {
           this.shippingPrice = this.worldShippingMultiple
@@ -170,18 +162,14 @@ export default {
 <style scoped>
 #buy-header {
   background-color: #ec3c01;
-  margin: 30px 0 20px 0;
-}
-
-#buy-header:hover {
-  background-color: rgb(4, 46, 66)
+  margin: 30px 0 40px 0;
 }
 
 .titles {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px 0 50px 0;
+  margin: 20px 0 45px 0;
 }
 .title {
   font-size: 70px;

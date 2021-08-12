@@ -24,7 +24,7 @@
         <!-- Musician object. -->
         <div class="musician" v-for="(musician, index) in musicians" :key="musician.name" data-aos="fade in">
           <!-- Image (every second on left side) -->
-          <div class="musician-img" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 0 || mobile" />
+          <div class="musician-img-left" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 0 || mobile" />
           <!-- Musician Info -->
           <div class="musician-info">
             <h3 class="musician-name">{{musician.name}}</h3>
@@ -40,7 +40,7 @@
             </div>
           </div>
           <!-- Image (every second on right side) -->
-          <div class="musician-img" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 1 && !mobile" />
+          <div class="musician-img-right" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 1 && !mobile" />
         </div>
       </div>
     </div>
@@ -231,7 +231,7 @@ export default {
   align-items: center;
 }
 
-.musician-img {
+.musician-img-left, .musician-img-right {
   height: 500px;
   width: 50%;
   margin: 0 25px;
@@ -342,11 +342,11 @@ hr {
     height: 92px;
   }
 
-  .musician-info, .musician-img {
+  .musician-info, .musician-img-left, .musician-img-right {
     width: 100%;
   }
 
-  .musician-img {
+  .musician-img-left, .musician-img-right {
     margin: 0 0 50px 0;
   }
 
