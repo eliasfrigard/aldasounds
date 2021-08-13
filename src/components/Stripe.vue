@@ -76,7 +76,7 @@ export default {
         id: 'price_1JO0b6DjXF4YVvjQpM7kLv1C',
         price: 6.40
       },
-      shipping_address_collection: {
+      shippingAddressCollection: {
         allowedCountries: ["AT","BE","BG","HR","CY","CZ","DK","EE","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","GB","FI","SE","NO","IS","LI","CH","ME","MK","AL","RS","TR","BA","XK","AM","AZ","MD","RU","GE","UA","BY","US","CA"]
       },
     }
@@ -158,12 +158,7 @@ export default {
             quantity: this.shippingPriceQuantity
         })
 
-        config.shippingAddressCollection = {
-          allowedCountries: [
-            'SE',
-            'FI'
-          ]
-        }
+        config.shippingAddressCollection = this.shippingAddressCollection
       }
 
       const { error } = await stripe.redirectToCheckout({ ...config })

@@ -93,11 +93,7 @@ export default {
         key: process.env.VUE_APP_BACKEND_KEY
       }
 
-      const headers = {
-        'Access-Control-Allow-Origin': '*',
-      }
-      
-      axios.post(url, params, headers)
+      axios.post(url, params)
         .then(response => {
           this.messageSent = true
           console.log(response.data)
