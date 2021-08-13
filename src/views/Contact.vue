@@ -32,6 +32,8 @@
           <input type="text" name="subject" id="" placeholder="Subject" v-model="subject" required>
           <textarea name="text" id="" cols="30" rows="10" placeholder="Your Message" v-model="message" required></textarea>
           <input type="submit" value="SUBMIT" @click.prevent="submitForm">
+          <h2 id="success-message" v-if="messageSent === true">Success! Message has been recieved!</h2>
+          <h2 id="fail-message" v-else-if="messageSent === false">Sorry! We could not send your message.</h2>
         </form>  
       </div>    
     </div>
@@ -49,11 +51,11 @@
       </div>
       <div class="download-item">
         <i class="fas fa-download"></i>
-        <h4 class="download-item-text">Download Audio Sample</h4>
+        <h4 class="download-item-text">Download Full Resolution Images</h4>
       </div>
       <div class="download-item">
         <i class="fas fa-download"></i>
-        <h4 class="download-item-text">Download Full Resolution Images</h4>
+        <h4 class="download-item-text">Download Audio</h4>
       </div>
     </div>
 
@@ -72,19 +74,23 @@ export default {
       email: '',
       phone: '',
       subject: '',
-      message: ''
+      message: '',
+      messageSent: null
     }
   },
   methods: {
     submitForm() {
-      const url = `${process.env.VUE_APP_BACKEND_ADDRESS}/contact`
+      this.messageSent = null
+
+      const url = `${process.env.VUE_APP_BACKEND_ADDRESS}`
       
       const params = {
         name: this.name,
         email: this.email,
         phone: this.phone,
         subject: this.subject,
-        message: this.message
+        message: this.message,
+        key: process.env.VUE_APP_BACKEND_KEY
       }
 
       const headers = {
@@ -92,9 +98,12 @@ export default {
       }
       
       axios.post(url, params, headers)
-        .then(response => console.log(response.data))
+        .then(response => {
+          this.messageSent = true
+          console.log(response.data)
+        })
         .catch(error => {
-          this.errorMessage = error.message;
+          this.messageSent = false
           console.error("There was an error!", error);
         })
 
@@ -307,7 +316,7 @@ input[type=submit]:hover {
   height: 100px;
   margin: 20px 0;
   width: 47.5%;
-  border: 2px solid rgb(4, 46, 66);
+  border: 3px solid rgb(4, 46, 66);
   border-radius: 20px;
   display:flex;
   align-items: center;
@@ -319,7 +328,7 @@ input[type=submit]:hover {
 }
 
 .download-item:hover {
-  border: 3px solid #ec3c01;
+  border: 4px solid #ec3c01;
   cursor: pointer;
   transform: scale(1.025);
 }
@@ -330,6 +339,17 @@ input[type=submit]:hover {
   font-family: 'Bad Script', cursive;
   letter-spacing: 3px;
   margin:0;
+}
+
+#success-message {
+  color: green;
+  font-size: 18px;
+
+}
+
+#fail-message {
+  color:#ec3c01;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 992px) {
@@ -367,9 +387,6 @@ input[type=submit]:hover {
   .info {
     width: 100%;
     margin-top: 50px;
-  }
-
-  .image {
   }
 }
 </style>

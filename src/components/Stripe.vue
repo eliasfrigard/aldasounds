@@ -44,9 +44,7 @@
 <script>
 import { loadStripe } from '@stripe/stripe-js'
 
-const stripePromise = loadStripe(
-  'pk_test_51JNey1DjXF4YVvjQmRg3ARnM3i2mILRQrQJM2VtcrQ6McpHBueYfNY7YfyizK6HXC9WWgHxfqCXg94Xf0IBm1xBX00kcmijS5Y'
-)
+const stripePromise = loadStripe(process.env.VUE_APP_STRIPE_KEY)
 
 export default {
   name: "Stripe",
@@ -56,35 +54,32 @@ export default {
       destination: '',
       shippingPrice: '',
       shippingPriceQuantity: 0,
-      successURL: 'http://localhost:8080/',
-      cancelURL: 'http://localhost:8080/live',
+      successURL: 'https://aldasounds.com/',
+      cancelURL: 'http://aldasounds.com/#/success',
       albumPrice: {
-        id: 'price_1JNf8BDjXF4YVvjQmdqESkaY',
+        id: 'price_1JO0beDjXF4YVvjQe6FfUmyX',
         price: 19.99
       },
       suomiEuropeShipping: {
-        id: 'price_1JNfBBDjXF4YVvjQwvGq9ZN7',
+        id: 'price_1JO0aiDjXF4YVvjQ5FVWwC9L',
         price: 2.70
       },
       europeShipping: {
-        id: 'price_1JNfAIDjXF4YVvjQWmHsuDdm',
+        id: 'price_1JO0asDjXF4YVvjQVDZWNhAq',
         price: 4.55
       },
       worldShippingSingle: {
-        id: 'price_1JNf9gDjXF4YVvjQj0Jc5pBa',
+        id: 'price_1JO0axDjXF4YVvjQHepgU9NM',
         price: 3.20
       },
       worldShippingMultiple: {
-        id: 'price_1JNf8wDjXF4YVvjQ4gOtDh5Y',
+        id: 'price_1JO0b6DjXF4YVvjQpM7kLv1C',
         price: 6.40
       },
       shipping_address_collection: {
-        allowedCountries: [
-          'SE',
-          'FI'
-        ]
+        allowedCountries: ["AT","BE","BG","HR","CY","CZ","DK","EE","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","GB","FI","SE","NO","IS","LI","CH","ME","MK","AL","RS","TR","BA","XK","AM","AZ","MD","RU","GE","UA","BY","US","CA"]
       },
-    };
+    }
   },
   computed: {
     computedPrice() {

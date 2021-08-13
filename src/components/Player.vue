@@ -108,7 +108,7 @@ export default {
         length: '3:54'
       },
       {
-        title: 'Moment Before SAMPLE',
+        title: 'Moment Before Sample',
         link: 'music/samples/Moment Before SAMPLE.mp3',
         artist: 'ALDA',
         album: 'Nine Worlds',
@@ -116,7 +116,7 @@ export default {
         length: '0:39'
       },
       {
-        title: 'Bee Reel SAMPLE',
+        title: 'Bee Reel Sample',
         link: 'music/samples/BEE REEL SAMPLE.mp3',
         artist: 'ALDA',
         album: 'Nine Worlds',
@@ -124,15 +124,15 @@ export default {
         length: '0:20'
       },
       {
-        title: 'Ajastaika SAMPLE',
-        link: 'music/samples/AJASTAIK SAMPLE.mp3',
+        title: 'Ajastaika Sample',
+        link: 'music/samples/AJASTAIKA SAMPLE.mp3',
         artist: 'ALDA',
         album: 'Nine Worlds',
         composer: 'Veera Kuisma',
         length: '0:41'
       },
       {
-        title: 'Polska In Between SAMPLE',
+        title: 'Polska In Between Sample',
         link: 'music/samples/POLSKA IN BETWEEN SAMPLE.mp3',
         artist: 'ALDA',
         album: 'Nine Worlds',
