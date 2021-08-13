@@ -16,7 +16,8 @@
       <div class="links" @click="onClick">
         <button class="stream-link" v-if="streamLink !== undefined">LIVE STREAM</button>
         <button class="stream-link hidden" v-else>LIVE STREAM</button>
-        <button class="event-link">GO TO EVENT</button>
+        <button class="event-link" v-if="link !== ''">GO TO EVENT</button>
+        <button class="event-link-disabled" v-else>GO TO EVENT</button>
       </div>
     </div>
     <div class="mobile-links" @click="onClick">
@@ -49,6 +50,8 @@ export default {
   },
   methods: {
     onClick() {
+      if (this.link === '') return
+
       window.location.href = this.link
     }
   }
@@ -96,8 +99,13 @@ export default {
     background-color: rgb(4, 46, 66);
   }
 
-  .event-link {
+  .event-link, .event-link-disabled {
     background-color: #ec3c01;
+  }
+
+  .event-link-disabled {
+    cursor: default;
+    opacity: 0.3;
   }
 
   .hidden {

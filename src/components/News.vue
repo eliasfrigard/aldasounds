@@ -10,13 +10,14 @@
     </div>
 
     <div class="articles">
-      <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" :id="article.id" data-aos="fade-in" />
+      <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" :author="article.author" :image="article.image" :date="article.date" :id="article.id" data-aos="fade-in" />
     </div>
   </div>
 </template>
 
 <script>
 import NewsArticle from '@/components/NewsArticle.vue'
+import news from '/news.json'
 
 export default {
   name: 'News',
@@ -30,9 +31,7 @@ export default {
     }
   },
   async created () {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(response => response.json())
-      .then(json => this.articles = json.slice(0, this.articleNumber))
+    this.articles = [...news]
   },
   methods: {
     hooverEnter() {

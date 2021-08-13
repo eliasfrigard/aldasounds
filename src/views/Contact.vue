@@ -39,7 +39,7 @@
     </div>
 
 
-    <div class="ui container contact-downloads">
+<!--     <div class="ui container contact-downloads">
       <h2 class="title downloads-title">DOWNLOADS</h2>
       <div class="download-item">
         <i class="fas fa-download"></i>
@@ -57,7 +57,7 @@
         <i class="fas fa-download"></i>
         <h4 class="download-item-text">Download Audio</h4>
       </div>
-    </div>
+    </div> -->
 
     <div class="image" data-aos="fade-up"></div>
   </div>
@@ -320,7 +320,6 @@ input[type=submit]:hover {
   -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
-
 }
 
 .download-item:hover {
@@ -349,6 +348,11 @@ input[type=submit]:hover {
 }
 
 @media screen and (max-width: 992px) {
+  .image {
+    background-image: url('/P1110937-mobile-sized.webp');
+    background-position: bottom left;
+  }
+
   .download-item {
     width: 100%;
   }

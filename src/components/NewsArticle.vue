@@ -1,7 +1,7 @@
 <template>
   <div class="news-article" @mouseover="onHover" @click="onClick">
     <div class="image-wrapper">
-      <div class="news-image">      
+      <div class="news-image" v-bind:style="{ 'background-image': 'url(' + image + ')' }">      
         <span>Read More</span>
       </div>
     </div>
@@ -9,20 +9,25 @@
       <h3 class="news-title">{{title}}</h3>
       <p class="news-text">{{body}}</p>
       <div class="news-meta">
-        <p class="news-author">Author goes here.</p>
-        <p class="news-date">23rd MAY 2020</p>
+        <p class="news-author">{{author}}</p>
+        <p class="news-date">{{day}} {{month}} {{year}}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   name: 'News',
   props: {
     id: Number,
     title: String,
     body: String,
+    author: String,
+    date: String,
+    image: String,
   },
   methods: {
     onHover() {
@@ -32,6 +37,17 @@ export default {
     },
     onClick() {
       this.$router.push(`/news/${this.id}`)
+    }
+  },
+  computed: {
+    day() {
+      return moment(this.date).format('DD')
+    },
+    month() {
+      return moment(this.date).format('MMMM')
+    },
+    year() {
+      return moment(this.date).format('YYYY')
     }
   }
 }

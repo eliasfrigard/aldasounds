@@ -7,6 +7,7 @@
       <div id="more-concerts-header" class="header" v-if="onlyUpcoming" @click="moreNews">
           <h3>see all concerts</h3>
       </div>
+      <h2 class="subtitle" v-if="upcomingConcerts.length <= 0">No upcoming events at this moment.</h2>
       <Concert class="concert-main" v-for="concert in upcomingConcerts.slice(0, limit)" :key="concert.id" :date="concert.date" :location="concert.location" :country="concert.country" :link="concert.link" :streamLink="concert.streamLink" :description="concert.description" :divider="concert.divider" />
     </div>
     <div class="previous" v-show="!onlyUpcoming" data-aos="fade-in">
@@ -44,9 +45,6 @@ export default {
     }
   },
   async created () {
-    // Fetch data from API.
-    // console.log(process.env.VUE_APP_BACKEND_ADDRESS);
-
     // Filter upcoming concerts.
     concerts.forEach(concert => {
       if (moment(concert.date).isAfter(new Date())) {
@@ -111,6 +109,10 @@ export default {
     align-items: center;
   }
 
+  .previous {
+    margin: 100px 0 50px 0;
+  }
+
   .title {
     font-size: 70px;
     letter-spacing: 5px;
@@ -118,6 +120,13 @@ export default {
     color: rgb(4, 46, 66);
   }
 
+  .subtitle {
+    font-family: 'Bad Script', cursive;
+    letter-spacing: 3px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
 
   .titles {
     display: flex;

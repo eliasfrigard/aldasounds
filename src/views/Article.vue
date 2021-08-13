@@ -1,23 +1,25 @@
 <template>
   <div class="article">
     <div class="ui container content">
-      <h1 class="article-title">{{title}}</h1>
-      <img class="article-image" :src="image" alt="" srcset="" @error="noImage">
-      <p class="article-author">{{author}}</p>
+      <h1 class="article-title">{{article.title}}</h1>
+      <img class="article-image" :src="article.image" alt="" srcset="" @error="noImage">
+      <p class="article-author">{{article.author}}</p>
       <p class="article-date">{{computedDate}}</p>
-      <p class="article-body">{{body}}</p>
+      <p class="article-body">{{article.body}}</p>
     </div>
   </div>  
 </template>
 
 <script>
 import moment from 'moment'
+import news from '/news.json'
 
 export default {
   name: "Article",
   data() {
     return {
       id: this.$route.params.id,
+      article: {},
       title: 'New album out now!',
       image: 'P1110937-sized.webp',
       author: 'Veera Kuisma',
@@ -32,21 +34,19 @@ export default {
   },
   computed: {
     computedDate() {
-      const date = moment(this.date).format('Do')
-      const month = moment(this.date).format('MMMM')
-      const year = moment(this.date).format('YYYY')
+      const date = moment(this.article.date).format('Do')
+      const month = moment(this.article.date).format('MMMM')
+      const year = moment(this.article.date).format('YYYY')
 
       return `${date} ${month} ${year}`
     }
   },
-  created() {
-    // Fetch data for article.
-    fetch(`https://jsonplaceholder.typicode.com/posts/${this.id}`)
-      .then(response => response.json())
-      .then(json => {
-        this.title = json.title
-        //this.body = json.body
-      })
+  created() {  
+    const paramID = parseInt(this.$route.params.id)
+
+    news.forEach(newsArticle => {
+      if (newsArticle.id === paramID) this.article = newsArticle
+    })
   }
 }
 </script>

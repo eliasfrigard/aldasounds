@@ -17,20 +17,14 @@
         </div>
       </div>
 
-      <div class="musicians ui container">
-        <!-- Title for musicians div. -->
+<!--       <div class="musicians ui container">
         <h2 class="title" id="band-members-title" data-aos="fade in">BAND MEMBERS</h2>
-
-        <!-- Musician object. -->
         <div class="musician" v-for="(musician, index) in musicians" :key="musician.name" data-aos="fade in">
-          <!-- Image (every second on left side) -->
           <div class="musician-img-left" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 0 || mobile" />
-          <!-- Musician Info -->
           <div class="musician-info">
             <h3 class="musician-name">{{musician.name}}</h3>
             <p class="musician-instrument">{{musician.instrument}}</p>            
             <p class="musician-text">{{musician.description}}</p>
-            <!-- Meta Information -->
             <div class="musician-meta">
               <div class="musician-contact">
                 <p>{{musician.phone}}</p>
@@ -39,10 +33,9 @@
               <a :href="musician.website" target="_blank">{{musician.website}}</a>
             </div>
           </div>
-          <!-- Image (every second on right side) -->
           <div class="musician-img-right" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 1 && !mobile" />
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -191,6 +184,10 @@ export default {
   word-spacing: 2px;
 }
 
+.band-info p {
+  text-align: center;
+}
+
 .slogan {
   text-align: center;
   font-family: 'Bad Script', cursive;
@@ -312,7 +309,7 @@ hr {
 
   .image {
     width: 100%;
-    background-image: url("/P1110937-mobile-sized.jpg");
+    background-image: url("/P1110937-mobile-sized.webp");
     background-position: center center;
   }
 
