@@ -18,6 +18,7 @@
 <script>
 import NewsArticle from '@/components/NewsArticle.vue'
 import news from '/news.json'
+import moment from 'moment'
 
 export default {
   name: 'News',
@@ -32,6 +33,12 @@ export default {
   },
   async created () {
     this.articles = [...news]
+
+    // Sort previous dates decending.
+    this.articles.sort((a, b) => {
+      if (moment(a.date).isAfter(b.date)) return -1 
+      else return 1
+    })
   },
   methods: {
     hooverEnter() {

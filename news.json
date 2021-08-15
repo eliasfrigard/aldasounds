@@ -6,5 +6,13 @@
     "title": "Our new album just arrived!",
     "body": "Today is a happy day because our new album is here! You can order the physical CD from here on our website for 19.99€ + shipping to your address! Digital albums also coming soon, stay tuned for more information, news and music!",
     "image": "/newsimages/newalbum.jpg"
+  },
+  {
+    "id": 2,
+    "date": "2021-08-15T15:15:43.511Z",
+    "author": "Elias Frigård",
+    "title": "Preorders shipping out now!",
+    "body": "We have now started sending out pre-orders of our album. We are so grateful to everyone who supported us during this time and process! Creating albums on your own can be daunting and financially uncertain, but thanks to your help we made it through with an awesome result. Thank you! If you haven’t ordered our album yet, you can do so from the home page on this website.",
+    "image": "/newsimages/sendingalbums.webp"
   }
 ]

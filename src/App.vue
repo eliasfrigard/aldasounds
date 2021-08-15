@@ -88,7 +88,7 @@ export default {
         if (link.style.animation) {
           link.style.animation = ''
         } else {
-          link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.7}s`
+          link.style.animation = `navLinkFade 0.3s ease forwards ${index / 7 + 0.5}s`
         }
       })
 
@@ -328,7 +328,7 @@ body {
     flex-direction: column;
     width: 100%;
     transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    transition: transform 0.4s ease-in;
     align-items: center;
   }
 

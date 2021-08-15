@@ -131,6 +131,7 @@ export default {
     background-image: url("/P1110937-sized.webp");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     border-radius: 3px;
     transition: all .3s;
     display:flex;
@@ -169,6 +170,10 @@ export default {
     .news-article {
       flex-direction: column;
       height: auto;
+    }
+
+    .news-title {
+      margin: 20px 0;
     }
 
     .news-content {

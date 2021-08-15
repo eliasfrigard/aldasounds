@@ -265,5 +265,9 @@ select:focus {
     width: 100%;
     margin: 0;
   }
+
+  .subtitle {
+    font-size: 30px;
+  }
 }
 </style>

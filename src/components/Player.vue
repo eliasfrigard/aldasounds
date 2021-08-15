@@ -88,7 +88,7 @@
 
 
     <!--  -->
-    <audio :src="currentSong.link" class="music-audio" @timeupdate="updateProgress" :volume="volume"></audio>
+    <audio :src="currentSong.link" class="music-audio" @timeupdate="updateProgress" @ended="nextSong" :volume="volume"></audio>
   </div>
 </template>
 
@@ -109,11 +109,11 @@ export default {
       },
       {
         title: 'Moment Before Sample',
-        link: 'music/samples/Moment Before SAMPLE.mp3',
+        link: 'music/samples/MOMENT BEFORE SAMPLE.mp3',
         artist: 'ALDA',
         album: 'Nine Worlds',
         composer: 'Veera Kuisma',
-        length: '0:39'
+        length: '0:21'
       },
       {
         title: 'Bee Reel Sample',
@@ -121,7 +121,7 @@ export default {
         artist: 'ALDA',
         album: 'Nine Worlds',
         composer: 'Veera Kuisma',
-        length: '0:20'
+        length: '0:17'
       },
       {
         title: 'Ajastaika Sample',
@@ -129,7 +129,7 @@ export default {
         artist: 'ALDA',
         album: 'Nine Worlds',
         composer: 'Veera Kuisma',
-        length: '0:41'
+        length: '0:27'
       },
       {
         title: 'Polska In Between Sample',
@@ -137,7 +137,7 @@ export default {
         artist: 'ALDA',
         album: 'Nine Worlds',
         composer: 'Veera Kuisma',
-        length: '0:30'
+        length: '0:23'
       }],
       currentSong: '',
       currentSongIndex: 0,
@@ -206,6 +206,8 @@ export default {
     },
     async loadAndPlayAudio() {
       const audio = document.querySelector('.music-audio')
+
+      this.isPlaying = true
       
       await audio.load()
       await audio.play()
@@ -417,6 +419,14 @@ th, td {
   z-index: 1;
 }
 
+.music-info {
+  display: block;
+}
+
+.mobile-progress {
+  display:none;
+}
+
 
 @media screen and (max-width: 992px) {
   .music-info {
@@ -436,6 +446,7 @@ th, td {
   }
 
   .mobile-progress {
+    display:block;
     width: 100%;
   }
 

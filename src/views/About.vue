@@ -185,7 +185,7 @@ export default {
 }
 
 .band-info p {
-  text-align: center;
+  text-align: left;
 }
 
 .slogan {

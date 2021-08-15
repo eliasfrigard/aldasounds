@@ -3,15 +3,6 @@
     <div id="splash"></div>
 
     <div id="firstContent">
-      <News :preview="true" :articleNumber="3" title="LATEST NEWS" />
-      <div class="ui hidden divider"></div>
-      <div class="ui hidden divider"></div>
-      <Concerts :onlyUpcoming="true" />
-    </div>
-
-    <div class="image-divider"></div>
-
-    <div id="secondContent">
       <div class="ui container">
         <div class="titles">
           <p class="pre-title">NINE WORLDS</p>
@@ -26,6 +17,15 @@
 
         <Stripe />
       </div>
+    </div>
+
+    <div class="image-divider"></div>
+
+    <div id="secondContent">
+      <News :preview="true" :articleNumber="3" title="LATEST NEWS" />
+      <div class="ui hidden divider"></div>
+      <div class="ui hidden divider"></div>
+      <Concerts :onlyUpcoming="true" />
     </div>
   </div>
 </template>
@@ -159,7 +159,7 @@ export default {
   }
 
   #firstContent, #secondContent {
-    padding: 50px 0 50px 0;
+    padding: 100px 0 100px 0;
     top: 100vh;
     width: 100%;
     position:relative;
@@ -236,14 +236,13 @@ export default {
       background-position: center right;
     }
 
+    #firstContent, #secondContent {
+      padding: 50px 0;
+    }
     #firstContent {
-      padding: 0;
+      padding-top: 0;
     }
-
-    #secondContent {
-      padding-top: 10px; 
-    }
-
+    
     .home {
       height: auto;
     }
