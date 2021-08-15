@@ -54,8 +54,8 @@ export default {
       destination: '',
       shippingPrice: '',
       shippingPriceQuantity: 0,
-      successURL: 'https://aldasounds.com/',
-      cancelURL: 'http://aldasounds.com/#/success',
+      successURL: `https://aldasounds.com/#/success`,
+      cancelURL: 'http://aldasounds.com/',
       albumPrice: {
         id: 'price_1JO0beDjXF4YVvjQe6FfUmyX',
         price: 19.99

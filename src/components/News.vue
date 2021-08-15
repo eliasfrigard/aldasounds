@@ -48,7 +48,7 @@ export default {
       this.header = false
     },
     moreNews() {
-      window.location.href = '/news'
+      window.location.href = process.env.VUE_APP_BASEURL + '/news'
     },
     nextPreviews() {     
       fetch('https://jsonplaceholder.typicode.com/posts')
@@ -78,6 +78,10 @@ export default {
   #more-news-header {
     background-color: rgb(4, 46, 66);
     margin: 50px 0;
+  }
+
+  #more-news-header:hover {
+    background-color: #ec3c01;
   }
 
   .navi {

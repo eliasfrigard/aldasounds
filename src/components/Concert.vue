@@ -17,11 +17,12 @@
         <button class="stream-link" v-if="streamLink !== undefined">LIVE STREAM</button>
         <button class="stream-link hidden" v-else>LIVE STREAM</button>
         <button class="event-link" v-if="link !== ''">GO TO EVENT</button>
-        <button class="event-link-disabled" v-else>GO TO EVENT</button>
+        <button id="event-link-disabled" v-else>GO TO EVENT</button>
       </div>
     </div>
     <div class="mobile-links" @click="onClick">
-      <button class="event-link">GO TO EVENT</button>
+      <button class="event-link" v-if="link !== ''">GO TO EVENT</button>
+      <button id="event-link-disabled" v-else>GO TO EVENT</button>
       <button class="stream-link" v-if="streamLink !== undefined">LIVE STREAM</button>
     </div>
     <hr class="divider" v-if="divider">
@@ -99,11 +100,11 @@ export default {
     background-color: rgb(4, 46, 66);
   }
 
-  .event-link, .event-link-disabled {
+  .event-link, #event-link-disabled {
     background-color: #ec3c01;
   }
 
-  .event-link-disabled {
+  #event-link-disabled {
     cursor: default;
     opacity: 0.3;
   }
@@ -137,10 +138,6 @@ export default {
     display: flex;
     flex-direction: column;
   }
-
-/*   .date p {
-    text-shadow: 0px 5px 4px rgba(41, 41, 41, 0.15);
-  } */
 
   .day, .month, .year {
     margin: 0;

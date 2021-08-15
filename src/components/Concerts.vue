@@ -4,7 +4,7 @@
       <div class="titles" data-aos="fade-in">
         <h2 class="title">UPCOMING CONCERTS</h2>
       </div>
-      <div id="more-concerts-header" class="header" v-if="onlyUpcoming" @click="moreNews">
+      <div id="more-concerts-header" class="header" v-if="onlyUpcoming" @click="moreConcerts">
           <h3>see all concerts</h3>
       </div>
       <h2 class="subtitle" v-if="upcomingConcerts.length <= 0">No upcoming events at this moment.</h2>
@@ -42,6 +42,11 @@ export default {
     return {
       upcomingConcerts: [],
       previousConcerts: [],
+    }
+  },
+  methods: {
+    moreConcerts() {
+      window.location.href = process.env.VUE_APP_BASEURL + '/live'
     }
   },
   async created () {
