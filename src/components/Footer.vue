@@ -45,6 +45,14 @@
                 <i class="fab fa-spotify fa-lg"></i>
               </a>
             </div><br>
+          <div class="available-on">
+            <a href="http://">
+              <img src="/amazonwhite.png" alt="" srcset="" class="available-img">
+            </a>
+            <a href="http://">
+              <img src="/itunessmall.png" alt="" srcset="" class="available-img">
+            </a>
+          </div>
           <p>Copyright © 2021 Elias Frigård</p>
         </div>
       </div>
@@ -65,6 +73,13 @@
 </script>
 
 <style scoped>
+  .available-img {
+    max-height: 30px;
+    margin: 0 20px 20px 0;
+    opacity: 0.6;
+
+  }
+
   #footer {
     padding: 80px;
     background-color: rgb(4, 46, 66);
@@ -112,7 +127,7 @@
     opacity: 0.6;
   }
 
-  .social i:hover {
+  .social i:hover, .available-img:hover {
     opacity: 1;
   }
 
