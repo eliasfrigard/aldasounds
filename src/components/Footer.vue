@@ -45,14 +45,6 @@
                 <i class="fab fa-spotify fa-lg"></i>
               </a>
             </div><br>
-          <div class="available-on">
-            <a href="http://">
-              <img src="/amazonwhite.png" alt="" srcset="" class="available-img">
-            </a>
-            <a href="http://">
-              <img src="/itunessmall.png" alt="" srcset="" class="available-img">
-            </a>
-          </div>
           <p>Copyright © 2021 Elias Frigård</p>
         </div>
       </div>

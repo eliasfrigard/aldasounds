@@ -9,7 +9,6 @@
       <h3 class="news-title">{{title}}</h3>
       <p class="news-text">{{body}}</p>
       <div class="news-meta">
-        <p class="news-author">{{author}}</p>
         <p class="news-date">{{day}} {{month}} {{year}}</p>
       </div>
     </div>
@@ -128,7 +127,6 @@ export default {
 
   .news-image {
     height: 100%;
-    background-image: url("/P1110937-sized.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
