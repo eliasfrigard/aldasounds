@@ -8,22 +8,22 @@
           <div class="ui hidden divider"></div>
           <div class="ui inverted link list">
             <a href="#" class="item">Home</a>
-            <a href="#about-container" class="item">Story</a>
-            <a href="#projects-container" class="item">News</a>
-            <a href="#contact-container" class="item">Live</a>
-            <a href="#contact-container" class="item">Contact</a>
+            <a href="#/about" class="item">Story</a>
+            <a href="#/news" class="item">News</a>
+            <a href="#/live" class="item">Live</a>
+            <a href="#/contact" class="item">Contact</a>
           </div>
         </div>
         <div id="downloads" class="five wide column">
           <h4 class="ui inverted header">Downloads</h4>
           <div class="ui hidden divider"></div>
           <div class="ui inverted link list">
-            <a href="#contact-container" class="item">Download Presskit</a>
-            <a href="https://github.com/eliasfrigard/devsite" target="_blank" class="item">Download Technical Rider</a>
-            <a href="#" class="item" v-if="!mobile">Download Full Audio Sample</a>
-            <a href="#" class="item" v-else>Download Audio Sample</a>
-            <a href="#" class="item" v-if="!mobile">Download Full Resolution Images</a>
-            <a href="#" class="item" v-else>Download Images</a>         
+<!--             <a href="#contact-container" class="item">Download Presskit</a>
+            <a href="https://github.com/eliasfrigard/devsite" target="_blank" class="item">Download Technical Rider</a> -->
+            <a href="/music/ALDA Music.zip" class="item" v-if="!mobile" download="ALDA Music">Download Full Audio Samples</a>
+            <a href="/music/ALDA Music.zip" class="item" v-else download="ALDA Music">Download Audio Sample</a>
+            <a href="/originals/ALDA Images.zip" class="item" v-if="!mobile" download="ALDA Images">Download Full Resolution Images</a>
+            <a href="/originals/ALDA Images.zip" class="item" v-else download="ALDA Images">Download Images</a>         
             <br>
           </div>
         </div>
@@ -65,6 +65,13 @@
 </script>
 
 <style scoped>
+  .available-img {
+    max-height: 30px;
+    margin: 0 20px 20px 0;
+    opacity: 0.6;
+
+  }
+
   #footer {
     padding: 80px;
     background-color: rgb(4, 46, 66);
@@ -112,7 +119,7 @@
     opacity: 0.6;
   }
 
-  .social i:hover {
+  .social i:hover, .available-img:hover {
     opacity: 1;
   }
 

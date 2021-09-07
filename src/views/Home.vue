@@ -16,6 +16,15 @@
         </div>
 
         <Stripe />
+
+        <div class="listen-on">
+          <a href="https://amzn.to/3DIpUQU" target="_blank">
+            <img src="/amazonmusic.png" class="listen-on-img" alt="" srcset="">
+          </a>
+          <a href="https://apple.co/2WRzMXZ" target="_blank">
+            <img src="/itunes.png" class="listen-on-img" alt="" srcset="">
+          </a>
+        </div>
       </div>
     </div>
 
@@ -228,6 +237,24 @@ export default {
 
 .title, .subtitle, .pre-title {
   line-height: 125%;
+}
+
+.listen-on {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0 0 0;
+}
+
+.listen-on-img {
+  max-height: 45px;
+  margin: 0 20px;
+  opacity: 0.8;
+}
+
+.listen-on-img:hover {
+  opacity: 1;
 }
 
   @media screen and (max-width: 768px) {

@@ -14,5 +14,13 @@
     "title": "Preorders shipping out now!",
     "body": "We have now started sending out pre-orders of our album. We are so grateful to everyone who supported us during this time and process! Creating albums on your own can be daunting and financially uncertain, but thanks to your help we made it through with an awesome result. Thank you! If you haven’t ordered our album yet, you can do so from the home page on this website.",
     "image": "/newsimages/sendingalbums.webp"
+  },
+  {
+    "id": 3,
+    "date": "2021-09-07T14:06:43.511Z",
+    "author": "Elias Frigård",
+    "title": "Album available on iTunes and Amazon!",
+    "body": "Our album is now available in digital format from iTunes and Amazon. You can find the links on the homepage of this website! If you would rather order a physical CD, we are of course still shipping our album to many different locations, and you can order it from our web shop. We hope that you are all enjoying the music!",
+    "image": "/newsimages/itunes.png"
   }
 ]

@@ -3,7 +3,7 @@
     <div class="ui container content">
       <h1 class="article-title">{{article.title}}</h1>
       <img class="article-image" :src="article.image" alt="" srcset="" @error="noImage">
-      <p class="article-author">{{article.author}}</p>
+      <p class="article-author"><!-- {{article.author}} --></p>
       <p class="article-date">{{computedDate}}</p>
       <p class="article-body">{{article.body}}</p>
     </div>
@@ -20,11 +20,11 @@ export default {
     return {
       id: this.$route.params.id,
       article: {},
-      title: 'New album out now!',
-      image: 'P1110937-sized.webp',
-      author: 'Veera Kuisma',
-      date: '2012-04-23T18:25:43.511Z',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat odio id nulla sollicitudin accumsan. Maecenas lorem dolor, consequat in blandit eget, tempor et massa. Praesent accumsan pellentesque efficitur. Nulla facilisi. Cras fringilla dolor ut dui congue, sollicitudin varius diam facilisis. Fusce porta enim sit amet nisl vulputate, et egestas lacus porttitor. Maecenas mi purus, pellentesque accumsan accumsan sed, egestas eget nisl. Nulla imperdiet ac urna eu interdum. Maecenas euismod erat non commodo consequat.Curabitur sit amet mi sed velit consequat pulvinar. Duis accumsan leo nec turpis dignissim fermentum. Donec aliquam diam est, vel mattis sapien maximus id. Aenean massa diam, commodo sit amet nibh sit amet, posuere bibendum augue. Fusce eget malesuada eros, ac sollicitudin ipsum. Fusce sollicitudin facilisis massa, ac cursus arcu iaculis ullamcorper. Pellentesque sodales, elit a aliquet dignissim, felis odio convallis erat, non porttitor eros purus at arcu.Proin vehicula nibh at pharetra commodo. Aenean lacinia mi ut euismod sagittis. Etiam tincidunt consequat nisl nec feugiat. Vestibulum molestie pharetra ultrices. Sed dapibus neque faucibus pretium porta. Nunc tincidunt nulla ut mauris efficitur placerat. Donec non sem congue, tincidunt ligula non, gravida orci. Phasellus ac semper mauris. Sed placerat tincidunt nulla, nec iaculis augue rutrum sit amet. Cras congue volutpat leo, ut lacinia arcu blandit vitae. Aliquam sit amet varius magna. Phasellus pellentesque lorem ac gravida viverra. Cras iaculis ultricies velit sed ullamcorper. In aliquam enim sit amet aliquet hendrerit. Etiam luctus elit nec odio dictum molestie.In varius placerat tincidunt. Aenean maximus pellentesque mauris eu cursus. Curabitur auctor vehicula enim, in tristique mauris auctor sit amet. Morbi quam nisi, vulputate a ultricies ac, pharetra placerat enim. Vestibulum ultrices magna ligula, nec blandit nulla consectetur tempus. Sed at augue elementum, placerat diam a, posuere tortor. Duis efficitur sem lacus, eget accumsan nisi dictum vulputate. Nam nec lacinia dolor, a gravida orci. Integer venenatis sed arcu vel aliquam.Donec malesuada nisi quis nisl vestibulum, id dignissim quam efficitur. Morbi sed consectetur magna. Nunc in pharetra nibh. Praesent a mi pharetra, scelerisque massa eu, tempor mauris. In hac habitasse platea dictumst. Nullam elementum massa id justo tempor consequat. Mauris commodo fringilla diam eget lobortis. Sed scelerisque tristique vulputate. Quisque tellus massa, gravida in imperdiet nec, egestas et augue. Nam eget nulla nulla. Nulla purus augue, molestie sed elit vel, pharetra dapibus nunc. Donec rhoncus hendrerit nisl eu mattis.',
+      title: '',
+      image: '',
+      author: '',
+      date: '',
+      body: '',
     }
   },
   methods: {
