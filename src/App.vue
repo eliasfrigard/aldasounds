@@ -122,6 +122,11 @@ export default {
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: rgb(4, 46, 66);
+  color: white;
+}
+
 body {
   overflow-x: hidden;
 }
