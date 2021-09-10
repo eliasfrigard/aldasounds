@@ -37,8 +37,8 @@
       <h3>Continue to payment!</h3>
     </div>
     </div>
-    <p class="destination-info">For large orders or destinations not on the list, contact us and we can make an arrangement for you!</p>
-  </div>
+<!--     <p class="destination-info">For large orders or destinations not on the list, contact us and we can make an arrangement for you!</p>
+ -->  </div>
 </template>
 
 <script>
