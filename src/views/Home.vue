@@ -16,6 +16,15 @@
         </div>
 
         <Stripe />
+
+        <div class="listen-on">
+          <a href="https://amzn.to/3DIpUQU" target="_blank">
+            <img src="/amazonmusic.png" class="listen-on-img" alt="" srcset="">
+          </a>
+          <a href="https://apple.co/2WRzMXZ" target="_blank">
+            <img src="/itunes.png" class="listen-on-img" alt="" srcset="">
+          </a>
+        </div>
       </div>
     </div>
 
