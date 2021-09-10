@@ -149,7 +149,7 @@ body {
 .header-disabled {
     background-color: #3b3d3d;
     cursor:default;
-    opacity: 0.2;
+    opacity: 0.8;
 }
 
 /* width */

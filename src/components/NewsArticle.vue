@@ -80,7 +80,7 @@ export default {
   .news-article {
     width: 100%;
     height: 275px;
-    margin: 30px 0 30px 0;
+    margin: 60px 0;
     display: flex;
     cursor: pointer;
   }

@@ -4,7 +4,7 @@
       <div class="titles" v-if="preview" data-aos="fade-in">
         <h2 class="title">LATEST NEWS</h2>
         <div id="more-news-header" class="header" v-if="preview" @click="moreNews">
-            <h3>read More News</h3>
+            <h3>see More News</h3>
         </div>
       </div>
     </div>
