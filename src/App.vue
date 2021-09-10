@@ -18,7 +18,7 @@
       <a href="https://www.instagram.com/aldasounds/" target="_blank">
         <i class="fab fa-instagram fa-lg"></i>
       </a>
-      <a href="" target="_blank">
+      <a href="https://open.spotify.com/album/6ewLQQEhzrgIvEOXWtlYPV?si=rbuc5Ux3QTeIF5Cwxgh9_g&dl_branch=1" target="_blank">
         <i class="fab fa-spotify fa-lg"></i>
       </a>
     </div>
@@ -149,7 +149,7 @@ body {
 .header-disabled {
     background-color: #3b3d3d;
     cursor:default;
-    opacity: 0.2;
+    opacity: 0.8;
 }
 
 /* width */

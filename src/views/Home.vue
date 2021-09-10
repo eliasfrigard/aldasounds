@@ -22,6 +22,9 @@
             <img src="/amazonmusic.png" class="listen-on-img" alt="" srcset="">
           </a>
           <a href="https://apple.co/2WRzMXZ" target="_blank">
+            <img src="/soundcloud.png" class="listen-on-img" alt="" srcset="">
+          </a>
+          <a href="https://apple.co/2WRzMXZ" target="_blank">
             <img src="/itunes.png" class="listen-on-img" alt="" srcset="">
           </a>
         </div>
@@ -244,7 +247,7 @@ export default {
   display:flex;
   justify-content: center;
   align-items: center;
-  margin: 60px 0 0 0;
+  margin: 100px 0 0 0;
 }
 
 .listen-on-img {

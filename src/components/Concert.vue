@@ -53,7 +53,7 @@ export default {
     onClick() {
       if (this.link === '') return
 
-      window.location.href = this.link
+      window.open(this.link, '_blank').focus();
     }
   }
 }

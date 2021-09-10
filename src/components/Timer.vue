@@ -1,5 +1,5 @@
 <template>
-<div class="timer" data-aos="fade-in">
+<div class="timer" data-aos="fade-in" v-if="displayDays < 60">
   <h1 class="title">Next show going live in</h1>
   <div class="counter">
     <div class="days">
