@@ -54,7 +54,7 @@ export default {
         {
           name: 'Elias Frigård',
           instrument: 'Soprano- & Baritone Saxophone',
-          description: 'Elias Frigård is a contemporary saxophone player with roots in traditional and modern folk music as well as jazz and improvisation. He was raised in Gävle, Sweden by a Finnish family around traditional violin music of regions Gästrikland and Hälsingland. In 2017 he moved to Helsinki, Finland in search of his roots and has since then ended up playing music with some of Finland’s most prominent musicians. Elias has studied at the Royal College of Music in Stockholm and Sibelius-Academy in Helsinki with some of the best folk and jazz musicians in the world as his teachers.',
+          description: 'Elias Frigård is a contemporary saxophone player with roots in traditional and modern folk music as well as jazz and improvisation. He was raised in Gävle, Sweden around traditional violin music of regions Gästrikland and Hälsingland. In 2017 he moved to Helsinki, Finland and has since then ended up playing music with some of Finland’s most prominent musicians. Elias studied at the Royal College of Music in Stockholm and Sibelius-Academy in Helsinki for some of the best folk and jazz musicians in the world.',
           phone: '+46(0)70-6691374',
           email: 'elias@aldasounds.com',
           website: 'www.eliasfrigard.com',

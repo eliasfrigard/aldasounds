@@ -1,7 +1,7 @@
 <template>
   <div class="live">
     <Timer :date="upcomingConcert.date"/>
-    <Concerts @next-concert="setUpcoming"/>
+    <Concerts @next-concert="setUpcoming" id="concerts" />
     <div class="image" data-aos="fade-up"></div>
   </div>
 </template>
@@ -40,36 +40,13 @@
     transition: all 2s ease;
   }
 
-  .title {
-    font-size: 70px;
-    letter-spacing: 5px;
-  }
-
-  .subtitle {
-    font-family: 'Bad Script', cursive;
-    letter-spacing: 3px;
-    font-size: 40px;
-  }
-
-
-  .pre-title {
-    letter-spacing: 2px;
-  }
-
-  .title, .subtitle, .pre-title {
-    line-height: 125%;
-  }
-
-  .titles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 50px;
-  }
-
   .image:hover {
     background-image: url("/P1110954-sized.webp");
     transition: all 2.5s ease;
+  }
+
+  #concerts {
+    margin-top: 10px;
   }
 
   @media screen and (max-width: 992px) {

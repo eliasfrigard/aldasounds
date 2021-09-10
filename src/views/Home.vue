@@ -239,6 +239,24 @@ export default {
   line-height: 125%;
 }
 
+.listen-on {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 0 0 0;
+}
+
+.listen-on-img {
+  max-height: 45px;
+  margin: 0 20px;
+  opacity: 0.8;
+}
+
+.listen-on-img:hover {
+  opacity: 1;
+}
+
   @media screen and (max-width: 768px) {
     #splash {
       background-image: url("/P1110768-sized.webp");
