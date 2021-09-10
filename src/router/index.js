@@ -53,7 +53,7 @@ router.beforeEach(() => {
 })
 
 router.beforeEach((to, from, next) => {
-  document.title = 'ALDA - ' + to.name
+  document.title = to.name + ' | ALDA'
   next()
 })
 
