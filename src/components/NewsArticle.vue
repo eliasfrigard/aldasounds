@@ -56,8 +56,9 @@ export default {
 <style scoped>
   .news-meta {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
+    text-align: left;
   }
 
   .news-article:hover .news-image,
@@ -71,9 +72,9 @@ export default {
     height: 100%;
     width: 35%;
     border-radius: 3px;
-    -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
+/*     -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
-    box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.1); */
   }
 
   .news-article {
@@ -81,6 +82,7 @@ export default {
     height: 275px;
     margin: 60px 0;
     display: flex;
+    justify-content: space-between;
     cursor: pointer;
   }
 
@@ -117,7 +119,7 @@ export default {
 
   .news-content {
     height: 100%;
-    width: 65%;
+    width: 62%;
     padding: 25px;
     display:flex;
     flex-direction: column;
@@ -144,7 +146,7 @@ export default {
     font-size: 24px;
     font-family: 'Bad Script', cursive;
     letter-spacing: 4px;
-    line-height: 150%;
+    line-height: 200%;
   }
 
   .news-author, .news-date {
@@ -168,14 +170,22 @@ export default {
     .news-article {
       flex-direction: column;
       height: auto;
+      text-align: center;
+    }
+
+    .news-meta {
+      text-align: center;
     }
 
     .news-title {
       margin: 20px 0;
+      width: 100%;
+      text-align: center;
     }
 
     .news-content {
       width: 100%;
+      padding: 25px 0px;
     }
 
     .image-wrapper {

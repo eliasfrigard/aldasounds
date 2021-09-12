@@ -5,6 +5,7 @@
       <img class="article-image" :src="article.image" alt="" srcset="" @error="noImage">
       <p class="article-author"><!-- {{article.author}} --></p>
       <p class="article-date">{{computedDate}}</p>
+      <a :href="article.link" id="article-link">{{article.link}}</a>
       <p class="article-body">{{article.body}}</p>
     </div>
   </div>  
@@ -52,6 +53,10 @@ export default {
 </script>
 
 <style scoped>
+#article-link {
+  margin: 20px 0;
+}
+
 .article {
   min-height: 100vh;
   background-color: white;

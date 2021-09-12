@@ -4,12 +4,15 @@
 
     <div id="firstContent">
       <div class="ui container">
+
         <div class="titles">
           <p class="pre-title">NINE WORLDS</p>
           <h2 class="title">NEW ALBUM OUT NOW</h2>
           <h1 class="subtitle" v-if="!mobile">Available for purchase below.</h1>
         </div>
 
+        <blockquote class="splash-message">ALDA’s contemporary instrumental music is full of energetic grooves, majestic harmonies, improvisation and satisfying melodies. Based on traditional Nordic types of tunes such as polskas, schottisches and waltzes, they have created a mind-blowing piece of art for five-string violin, soprano saxophone and piano that transcends borders and genres. Hearing them perform will make you smile and dance, bring tears to your eyes and might even make you go a bit crazy. Immerse yourself in the furiously groovy world of ALDA!</blockquote>
+        
         <div class="album-img">
           <img src="../assets/albumfront-sized.webp" alt="" class="image">
           <img src="../assets/albumback-sized.webp" alt="" class="image">
@@ -19,13 +22,13 @@
 
         <div class="listen-on">
           <a href="https://amzn.to/3DIpUQU" target="_blank">
-            <img src="/amazonmusic.png" class="listen-on-img" alt="" srcset="">
+            <img src="/amazonmusic.webp" class="listen-on-img" alt="" srcset="">
+          </a>
+          <a href="https://aldasounds.bandcamp.com/releases" target="_blank">
+            <img src="/bandcamp.webp" class="listen-on-img" alt="" srcset="">
           </a>
           <a href="https://apple.co/2WRzMXZ" target="_blank">
-            <img src="/soundcloud.png" class="listen-on-img" alt="" srcset="">
-          </a>
-          <a href="https://apple.co/2WRzMXZ" target="_blank">
-            <img src="/itunes.png" class="listen-on-img" alt="" srcset="">
+            <img src="/itunes.webp" class="listen-on-img" alt="" srcset="">
           </a>
         </div>
       </div>
@@ -121,6 +124,14 @@ export default {
 </script>
 
 <style scoped> 
+.splash-message{
+  font-size: 16px;
+  line-height: 200%;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  text-align: center;
+}
+
   .album-img {
     display:flex;
     justify-content: space-between;
@@ -251,9 +262,10 @@ export default {
 }
 
 .listen-on-img {
-  max-height: 45px;
+  max-height: 40px;
   margin: 0 20px;
-  opacity: 0.8;
+  opacity: 0.9;
+  image-rendering: optimizeQuality;
 }
 
 .listen-on-img:hover {
@@ -264,6 +276,10 @@ export default {
     #splash {
       background-image: url("/P1110768-sized.webp");
       background-position: center right;
+    }
+
+    .splash-message{
+      margin-bottom: 50px;
     }
 
     #firstContent, #secondContent {
@@ -289,6 +305,10 @@ export default {
     .image-divider {
       height: 500px;
     }
+
+    .titles {
+      margin: 30px;
+    }
     
     .title {
       font-size: 40px;
@@ -302,6 +322,16 @@ export default {
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
       box-shadow: none;
+    }
+
+    .listen-on {
+      flex-direction: column;
+      margin: 50px 0 0 0;
+    }
+
+    .listen-on-img {
+      margin: 20px;
+      opacity: 1;
     }
   }
 </style>

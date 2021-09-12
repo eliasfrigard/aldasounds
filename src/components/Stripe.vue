@@ -1,9 +1,9 @@
 <template>
   <div class="stripe">
     <div class="titles">
-      <h1 class="subtitle" v-if="shippingPrice.id === 'none'">Buy now for <h2 class="line-price">{{computedPrice}}€</h2> + <h1 class="line-through">shipping!</h1></h1>
+<!--       <h1 class="subtitle" v-if="shippingPrice.id === 'none'">Buy now for <h2 class="line-price">{{computedPrice}}€</h2> + <h1 class="line-through">shipping!</h1></h1>
       <h1 class="subtitle" v-else-if="shippingPrice === '' || quantity === ''">Buy now for <h2 class="line-price">19.99€</h2> + shipping!</h1>
-      <h1 class="subtitle" v-else>Buy now for <h2 class="line-price">{{computedPrice}}€</h2> including shipping!</h1>
+      <h1 class="subtitle" v-else>Buy now for <h2 class="line-price">{{computedPrice}}€</h2> including shipping!</h1> -->
     </div>
     <div class="ui container album-form">
       <div v-if="destination === 'none'">
@@ -186,7 +186,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 20px 0 45px 0;
+  margin: 20px 0;
 }
 .title {
   font-size: 70px;

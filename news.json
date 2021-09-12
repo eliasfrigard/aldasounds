@@ -21,6 +21,15 @@
     "author": "Elias Frigård",
     "title": "Album available on iTunes and Amazon!",
     "body": "Our album is now available in digital format from iTunes and Amazon. You can find the links on the homepage of this website! If you would rather order a physical CD, we are of course still shipping our album to many different locations, and you can order it from our web shop. We hope that you are all enjoying the music!",
-    "image": "/newsimages/itunes.png"
+    "image": "/newsimages/amznmusic.jpeg"
+  },
+  {
+    "id": 4,
+    "date": "2021-09-12T14:37:43.511Z",
+    "author": "Veera Kuisma",
+    "title": "We are now on Bandcamp!",
+    "body": "You can now find us from Bandcamp where you can buy our digital and physical CD. We are so damn proud of this album finally seeing the daylight, so please go check it out, we want you to hear it!",
+    "link": "https://aldasounds.bandcamp.com/releases",
+    "image": "/newsimages/bandcamp2.png"
   }
 ]
