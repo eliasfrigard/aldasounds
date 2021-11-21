@@ -17,6 +17,20 @@
         </div>
       </div>
 
+      <div class="ui container quotes">
+        <div class="ui container quote">
+          <p class="quote-text">"The sheer energy, close-woven intricacy of harmony, and consummate musicianship from these three performers makes for some of the most joyous music to come out of the nordic countries in recent years…an absolute delight to listen to!"</p>
+          <p class="quote-name">- Natalie Haas, Musician (US)</p>
+          <a class="quote-link" href="https://www.nataliehaas.com/home" target="_blank">www.nataliehaas.com</a>
+        </div>
+
+        <div class="ui container quote">
+          <p class="quote-text">"Aldan valoisa debyyttialbumi pistää tanssijalan vipattamaan, mutta skandinaavishenkisen pelimannipoljennon sekaan mahtuu myös hauskoja rytmisiä jekkuja. Taitava soittajatrio on löytänyt erinomaisen tasapainon."</p>
+          <p class="quote-name">- Tove Djupsjöbacka, Journalist (FI)</p>
+          <a class="quote-link" href="https://kansanmusiikki-lehti.fi/" target="_blank">www.kansanmusiikki-lehti.fi/</a>
+        </div>
+      </div>
+
       <div class="musicians ui container">
         <h2 class="title" id="band-members-title" data-aos="fade in">BAND MEMBERS</h2>
         <div class="musician" v-for="(musician, index) in musicians" :key="musician.name" data-aos="fade in">
@@ -102,6 +116,28 @@ export default {
   word-wrap: break-word;
 }
 
+.quotes {
+  display: flex;
+}
+
+.quote {
+  width: 43%;
+  margin: 55px 0 35px 0;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: .5px;
+  word-spacing: 2px;
+
+}
+
+.quote-text {
+  font-size: 21px;
+  line-height: 200%;
+  letter-spacing: 1px;
+  font-family: 'Bad Script', cursive;
+}
+
+
 .image {
   height: 92vh;
   width: 100%;
@@ -179,7 +215,7 @@ export default {
 
 .band-info p, .more-info p, .musician-text {
   font-size: 16px;
-  line-height: 185%;
+  line-height: 200%;
   letter-spacing: 1px;
   word-spacing: 2px;
 }
@@ -192,11 +228,11 @@ export default {
   text-align: center;
   font-family: 'Bad Script', cursive;
   letter-spacing: 5px;
-  margin-bottom:40px;
+  margin:10px 0 50px;
   text-transform: uppercase;
 }
 
-.band-image, .musician-img {
+.musician-img {
   -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
   box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
@@ -283,6 +319,16 @@ hr {
 }
 
 @media screen and (max-width: 992px) {
+  .quotes {
+    flex-direction: column;
+    width: 100%;
+  }
+
+
+  .quote-text {
+    font-size: 22px;
+  }
+
   .about {
     height: auto;
   }
@@ -316,6 +362,10 @@ hr {
   .band-image {
     background-image: url("/P1110881-sized.webp");
     height: 300px;
+  }
+
+  .band-info p {
+    text-align:center;
   }
 
   .bio {

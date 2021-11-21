@@ -3,15 +3,16 @@
     <div v-if="preview" @mouseover="hooverEnter" @mouseleave="hooverLeave" data-aos="fade-in">
       <div class="titles" v-if="preview" data-aos="fade-in">
         <h2 class="title">LATEST NEWS</h2>
-        <div id="more-news-header" class="header" v-if="preview" @click="moreNews">
-            <h3>see More News</h3>
-        </div>
+
       </div>
     </div>
 
     <div class="articles">
       <NewsArticle v-for="article in articles" :key="article.id" :title="article.title" :body="article.body" :author="article.author" :image="article.image" :date="article.date" :id="article.id" data-aos="fade-in" />
     </div>
+      <div id="more-news-header" class="header" v-if="preview" @click="moreNews">
+        <h3>see More News</h3>
+      </div>
   </div>
 </template>
 
@@ -32,13 +33,15 @@ export default {
     }
   },
   async created () {
-    this.articles = [...news]
+    this.articles = [...news.slice(0)]
 
     // Sort previous dates decending.
     this.articles.sort((a, b) => {
       if (moment(a.date).isAfter(b.date)) return -1 
       else return 1
     })
+
+    this.articles = this.articles.slice(0, this.articleNumber)
   },
   methods: {
     hooverEnter() {
@@ -77,7 +80,7 @@ export default {
 <style scoped>
   #more-news-header {
     background-color: rgb(4, 46, 66);
-    margin: 50px 0;
+    margin: 100px 0;
   }
 
   #more-news-header:hover {

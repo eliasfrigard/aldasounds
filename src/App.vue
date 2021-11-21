@@ -1,43 +1,21 @@
 <template>
-  <div id="navbar">
-    <h1 id="title" @click="reloadPage" data-aos="fade-in">ALDA</h1>
-    <div class="nav">
-      <router-link to="/" @click="toggleMobileNav">Home</router-link>
-      <router-link to="/about" @click="toggleMobileNav">Story</router-link>
-      <router-link to="/news" @click="toggleMobileNav">News</router-link>
-      <router-link to="/live" @click="toggleMobileNav">Live</router-link>
-      <router-link to="/contact" @click="toggleMobileNav">Contact</router-link>
-    </div>
-    <div class="social" data-aos="fade-in">
-      <a href="https://www.facebook.com/aldasounds" target="_blank">
-        <i class="fab fa-facebook-square fa-lg"></i>
-      </a>
-      <a href="https://www.youtube.com/channel/UC1CSzPlVfH7RYlWo-ulYDaw" target="_blank">
-        <i class="fab fa-youtube fa-lg"></i>
-      </a>
-      <a href="https://www.instagram.com/aldasounds/" target="_blank">
-        <i class="fab fa-instagram fa-lg"></i>
-      </a>
-      <a href="https://open.spotify.com/album/6ewLQQEhzrgIvEOXWtlYPV?si=rbuc5Ux3QTeIF5Cwxgh9_g&dl_branch=1" target="_blank">
-        <i class="fab fa-spotify fa-lg"></i>
-      </a>
-    </div>
+  <!-- Navigation -->
+  <Navigation />
 
-    <div class="burger" @click="toggleMobileNav" data-aos="fade-in">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-  </div>
-
+  <!-- Page Content -->
   <router-view id="page-content" v-slot="{ Component }" class="ui component"> 
     <transition name="fade" mode="out-in">
       <component :is="Component" />
     </transition>
   </router-view>
+
+  <!-- Footer -->
   <Footer class="footer" />
+
+  <!-- Audio Player (absolute)-->
   <Player class="audio-player" @close-player="closePlayer" />
 
+  <!-- To Top Button. -->
   <div class="to-top">
     <button class="action-btn-big" @click="toTop">
       <i class="fas fa-chevron-up"></i>
@@ -49,6 +27,7 @@
 <script>
 import Footer from '@/components/Footer.vue'
 import Player from '@/components/Player.vue'
+import Navigation from '@/components/Navigation.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -59,7 +38,8 @@ export default {
   name: 'App',
   components: {
     Footer,
-    Player
+    Player,
+    Navigation
   },
   data() {
     return {
@@ -75,25 +55,6 @@ export default {
     }
   },
   methods: {
-    toggleMobileNav() {
-      if (!this.mobile) return
-      
-      const nav = document.querySelector('.nav')
-      const navLinks = document.querySelectorAll('.nav a')
-      const burger = document.querySelector('.burger')
-
-      nav.classList.toggle('nav-active')
-
-      navLinks.forEach((link, index) => {
-        if (link.style.animation) {
-          link.style.animation = ''
-        } else {
-          link.style.animation = `navLinkFade 0.3s ease forwards ${index / 7 + 0.5}s`
-        }
-      })
-
-      burger.classList.toggle('toggle')
-    },
     reloadPage() {
       window.location.href = "/"
     },
@@ -125,6 +86,10 @@ export default {
 ::selection {
   background-color: rgb(4, 46, 66);
   color: white;
+}
+
+#page-content {
+  padding-top:8vh;
 }
 
 body {
@@ -184,111 +149,6 @@ body {
   color: #2c3e50;
 }
 
-#page-content {
-  padding-top: 8vh;
-}
-
-#navbar {
-  z-index: 1;
-  position: fixed;
-  top:_0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 8vh;
-  min-height: 50px;
-  background-color: rgb(4, 46, 66);
-  -webkit-box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.3);
-  box-shadow: 0px 10px 19px 0px rgba(0,0,0,0.3);
-}
-
-#title {
-  color: rgb(230, 230, 230);
-  letter-spacing: 5px;
-  margin:0px;
-  width:25%;
-  display: flex;
-  justify-content: center;
-  font-size: 40px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:25%;
-}
-
-.social i {
-  margin: 20px;
-  color: rgba(230, 230, 230, 0.6);
-  opacity: 0.6;
-}
-.social i:hover {
-  opacity: 1;
-}
-.social .fa-facebook-square:hover {
-  color: rgb(49, 92, 177);
-}
-.social .fa-youtube:hover {
-  color: rgb(255, 0, 0);
-}
-.social .fa-instagram:hover {
-  color: rgb(251, 173, 80)
-}
-.social .fa-spotify:hover {
-  color: rgb(30, 215, 96);
-}
-
-.social a {
-  display:flex;
-  align-items: center;
-  font-size: 18px;
-}
-
-.nav {
-  width: 50%;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0 100px;
-}
-
-
-.nav a {
-  text-decoration: none;
-  letter-spacing: 4px;
-  font-weight: 500;
-  font-size: 22px;
-  color: rgb(230, 230, 230);
-  font-family: 'Bad Script', cursive;
- }
-
- .nav a:hover {
-  font-weight: bold;
-}
-
-.nav a.router-link-exact-active {
-  font-weight: bold;
-  color: rgb(230, 230, 230);
-}
-
-.burger {
-  display: none;
-  cursor: pointer;
-}
-
-.burger div {
-  width: 25px;
-  height: 3px;
-  background-color: rgb(230, 230, 230);
-  margin: 5px;
-  transition: all 0.3s ease;
-}
-
 .to-top {
   position: fixed;
   bottom:  100px;
@@ -324,62 +184,9 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .nav {
-    position: absolute;
-    right: 0px;
-    height: calc(92vh - 75px);
-    top: 8vh;
-    background-color: rgb(4, 46, 66);
-    flex-direction: column;
-    width: 100%;
-    transform: translateX(100%);
-    transition: transform 0.4s ease-in;
-    align-items: center;
-  }
-
-  .nav a {
-    opacity: 0;
-  }
-
-  .burger {
-    display: block;
-  }
-
-  .nav-active {
-    transform: translateX(0%);
-  }
-
-  .social {
-    display: none;
-  }
-
   .to-top {
     display: none;
   }
-
-  .nav a {
-    font-size: 25px;
-  }
-}
-
-@keyframes navLinkFade {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  } to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-.toggle .line1 {
-  transform: rotate(-45deg) translate(-5px, 6px)
-}
-.toggle .line2 {
-  opacity: 0;
-}
-.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px)
 }
 
 .fade-enter-from,

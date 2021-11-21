@@ -4,9 +4,7 @@
       <div class="titles" data-aos="fade-in">
         <h2 class="title">UPCOMING CONCERTS</h2>
       </div>
-      <div id="more-concerts-header" class="header" v-if="onlyUpcoming" @click="moreConcerts">
-          <h3>see all concerts</h3>
-      </div>
+
       <h2 class="subtitle" v-if="upcomingConcerts.length <= 0">No upcoming events at this moment.</h2>
       <Concert class="concert-main" v-for="concert in upcomingConcerts.slice(0, limit)" :key="concert.id" :date="concert.date" :location="concert.location" :country="concert.country" :link="concert.link" :streamLink="concert.streamLink" :description="concert.description" :divider="concert.divider" />
     </div>
@@ -17,6 +15,9 @@
       </div>
       <Concert class="concert-main" v-for="concert in previousConcerts" :key="concert.id" :date="concert.date" :location="concert.location" :country="concert.country" :link="concert.link" :description="concert.description" :divider="concert.divider" />
     </div>
+      <div id="more-concerts-header" class="header" v-if="onlyUpcoming" @click="moreConcerts">
+        <h3>see all concerts</h3>
+      </div>
   </div>
 </template>
 
@@ -108,7 +109,7 @@ export default {
   }
 
   .upcoming, .previous {
-    margin: 50px 0 50px 0;
+    margin: 0;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -137,11 +138,11 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom:50px;
+    margin-bottom:75px;
   }
 
   #more-concerts-header {
-    margin: 14px 0 75px 0;
+    margin: 75px 0;
   }
 
   #more-concerts-header:hover {

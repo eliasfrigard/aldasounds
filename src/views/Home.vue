@@ -13,6 +13,20 @@
 
         <blockquote class="splash-message">ALDA’s contemporary instrumental music is full of energetic grooves, majestic harmonies, improvisation and satisfying melodies. Based on traditional Nordic types of tunes such as polskas, schottisches and waltzes, they have created a mind-blowing piece of art for five-string violin, soprano saxophone and piano that transcends borders and genres. Hearing them perform will make you smile and dance, bring tears to your eyes and might even make you go a bit crazy. Immerse yourself in the furiously groovy world of ALDA!</blockquote>
         
+      <div class="ui container quotes">
+        <div class="ui container quote">
+          <p class="quote-text">"The sheer energy, close-woven intricacy of harmony, and consummate musicianship from these three performers makes for some of the most joyous music to come out of the nordic countries in recent years…an absolute delight to listen to!"</p>
+          <p class="quote-name">- Natalie Haas, Musician (US)</p>
+          <a class="quote-link" href="https://www.nataliehaas.com/home" target="_blank">www.nataliehaas.com</a>
+        </div>
+
+        <div class="ui container quote">
+          <p class="quote-text">"Aldan valoisa debyyttialbumi pistää tanssijalan vipattamaan, mutta skandinaavishenkisen pelimannipoljennon sekaan mahtuu myös hauskoja rytmisiä jekkuja. Taitava soittajatrio on löytänyt erinomaisen tasapainon."</p>
+          <p class="quote-name">- Tove Djupsjöbacka, Journalist (FI)</p>
+          <a class="quote-link" href="https://kansanmusiikki-lehti.fi/" target="_blank">www.kansanmusiikki-lehti.fi/</a>
+        </div>
+      </div>
+
         <div class="album-img">
           <img src="../assets/albumfront-sized.webp" alt="" class="image">
           <img src="../assets/albumback-sized.webp" alt="" class="image">
@@ -25,7 +39,7 @@
             <img src="/amazonmusic.webp" class="listen-on-img" alt="" srcset="">
           </a>
           <a href="https://aldasounds.bandcamp.com/releases" target="_blank">
-            <img src="/bandcamp.webp" class="listen-on-img" alt="" srcset="">
+            <img src="/bandcamp.webp" class="listen-on-img" id="listen-on-bandcamp" alt="" srcset="">
           </a>
           <a href="https://apple.co/2WRzMXZ" target="_blank">
             <img src="/itunes.webp" class="listen-on-img" alt="" srcset="">
@@ -131,6 +145,28 @@ export default {
   word-spacing: 2px;
   text-align: center;
 }
+
+.quotes {
+  display: flex;
+}
+
+.quote {
+  width: 43%;
+  margin: 55px 0 35px 0;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: .5px;
+  word-spacing: 2px;
+
+}
+
+.quote-text {
+  font-size: 21px;
+  line-height: 200%;
+  letter-spacing: 1px;
+  font-family: 'Bad Script', cursive;
+}
+
 
   .album-img {
     display:flex;
@@ -262,10 +298,13 @@ export default {
 }
 
 .listen-on-img {
-  max-height: 40px;
+  max-height: 30px;
   margin: 0 20px;
-  opacity: 0.9;
   image-rendering: optimizeQuality;
+}
+
+#listen-on-bandcamp {
+  max-height: 20px;
 }
 
 .listen-on-img:hover {
@@ -273,6 +312,19 @@ export default {
 }
 
   @media screen and (max-width: 768px) {
+    .quotes {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .quote {
+      margin: 0;
+    }
+
+    .quote-text {
+      font-size: 22px;
+    }
+
     #splash {
       background-image: url("/P1110768-sized.webp");
       background-position: center right;
@@ -287,6 +339,10 @@ export default {
     }
     #firstContent {
       padding-top: 0;
+    }
+
+    .quote {
+      margin-bottom: 50px;
     }
     
     .home {

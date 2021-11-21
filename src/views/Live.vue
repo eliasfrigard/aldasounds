@@ -1,21 +1,21 @@
 <template>
   <div class="live">
-    <Timer :date="upcomingConcert.date"/>
-    <Concerts @next-concert="setUpcoming" id="concerts" />
+<!--     <Timer :date="upcomingConcert.date"/>
+ -->    <Concerts @next-concert="setUpcoming" id="concerts" />
     <div class="image" data-aos="fade-up"></div>
   </div>
 </template>
 
 <script>
   import Concerts from '@/components/Concerts.vue'
-  import Timer from '@/components/Timer.vue'
-
+/*   import Timer from '@/components/Timer.vue'
+ */
   export default {
     name: 'Music',
     components: {
       Concerts,
-      Timer,
-    },
+/*       Timer,
+ */    },
     data() {
       return {
         upcomingConcert: {}
@@ -46,7 +46,7 @@
   }
 
   #concerts {
-    margin-top: 10px;
+    margin-top: 75px;
   }
 
   @media screen and (max-width: 992px) {
