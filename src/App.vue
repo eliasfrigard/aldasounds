@@ -83,6 +83,10 @@ export default {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ::selection {
   background-color: rgb(4, 46, 66);
   color: white;
