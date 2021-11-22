@@ -2,19 +2,19 @@
   <div class="player">
     <!--  -->
     <div class="audio-controls">
-      <button id="prev" class="action-btn" @click="prevSong">
+      <button id="prev" name="previous" class="action-btn" @click="prevSong">
         <i class="fas fa-backward"></i>
       </button>
 
-      <button id="pause" class="action-btn-big" v-if="isPlaying" @click="pauseAudio">
+      <button id="pause" name="pause" class="action-btn-big" v-if="isPlaying" @click="pauseAudio">
         <i class="fas fa-pause"></i>
       </button>
 
-      <button id="play" class="action-btn-big" v-else @click="playAudio">
+      <button id="play" name="play" class="action-btn-big" v-else @click="playAudio">
         <i class="fas fa-play"></i>
       </button>
 
-      <button id="next" class="action-btn" @click="nextSong">
+      <button id="next" name="next" class="action-btn" @click="nextSong">
         <i class="fas fa-forward"></i>
       </button>
     </div>
@@ -32,28 +32,28 @@
       <div class="volume-controls" @mouseover="openVolumeControl" @mouseout="closeVolumeControl">
         <input type="range" class="volume-range" name="" id="" min="0" max="100" value="80" @change="changeVolume">
         
-        <button class="action-btn" v-if="volumeValue > 50" @click="muteAudio">
+        <button class="action-btn" name="volume up" v-if="volumeValue > 50" @click="muteAudio">
           <i class="fas fa-volume-up"></i>
         </button>
 
-        <button class="action-btn" v-else-if="volumeValue > 0" @click="muteAudio">
+        <button class="action-btn" name="volume down" v-else-if="volumeValue > 0" @click="muteAudio">
           <i class="fas fa-volume-down"></i>
         </button>
 
-        <button class="action-btn" v-else @click="unmuteAudio">
+        <button class="action-btn" name="mute" v-else @click="unmuteAudio">
           <i class="fas fa-volume-mute"></i>
         </button>
       </div>
 
-      <button class="action-btn" v-if="listIsOpen" @click="closeList">
+      <button class="action-btn" name="close playlist" v-if="listIsOpen" @click="closeList">
         <i class="fas fa-chevron-down"></i>
       </button>
 
-      <button class="action-btn" v-else @click="openList">
+      <button class="action-btn" name="open playlist" v-else @click="openList">
         <i class="fas fa-chevron-up"></i>
       </button>
 
-      <button class="action-btn" @click="$emit('close-player')">
+      <button class="action-btn" name="close player" @click="$emit('close-player')">
         <i class="fas fa-times"></i>
       </button>
     </div>
