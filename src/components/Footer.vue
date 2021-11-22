@@ -45,7 +45,8 @@
                 <i class="fab fa-spotify fa-lg"></i>
               </a>
             </div><br>
-          <p>Copyright © 2021 Elias Frigård</p>
+          <p>Made by Elias Frigård</p>
+          <p>Copyright © 2021 ALDA Music</p>
         </div>
       </div>
     </div>
