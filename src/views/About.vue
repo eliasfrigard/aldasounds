@@ -31,6 +31,21 @@
         </div>
       </div>
 
+      <svg id="mythology-svg-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#042e42" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,202.7C384,203,480,213,576,229.3C672,245,768,267,864,256C960,245,1056,203,1152,202.7C1248,203,1344,245,1392,266.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+      <div class="mythology">
+        <div class="ui container">
+          <div data-tooltip="Yggdrasil, the giant world tree that holds together the Nine Worlds of Norse mythology." class="" data-position="top center">
+            <img id="yggdrasil" src="/yggdrasil.png" alt="" srcset="">
+          </div>
+          <div class="titles" data-aos="fade-in">
+            <h2 class="title" id="mythology-title">MYTHOLOGY OF ALDA</h2>
+          </div>
+          <p>An old Northern story shares a tale of the mermaid Alda. With melancholy in her beautiful voice, she sang to the fishermen who one after one lost their minds. All except one, Brandur. Despite his daily fishing trips, the young, poor, and hard-working fisherman did not give in to Alda’s alluring voice. Every morning when the sun was still sleeping, Brandur flew along the gloomy bay with fire dancing in his boat. Fire attracted the fish, but also Alda, who day by day came closer to his boat. One day the moment came when he saw a glimpse of her green eyes and wild hair, and at that very moment he jumped from his boat and vanished into the dark water. On silent nights, Alda’s singing may still be heard in the Breiðafjörður bay (ref. Norður & Co).</p>
+<!--           <p>Deeply rooted in the rich musical traditions of Finland and Sweden the trio ALDA creates music that share the magical and captivating voice of this mythological creature. ALDA’s contemporary instrumental music is full of energetic grooves, majestic harmonies, improvisation and satisfying melodies. Based on traditional Nordic types of tunes such as polskas, schottisches and waltzes, they have created a mind-blowing piece of art for five-string violin, soprano saxophone and piano that transcends borders and genres. Hearing them perform will make you smile and dance, bring tears to your eyes and might even make you go a bit crazy. Immerse yourself in the furiously groovy world of ALDA!</p>
+ -->        </div>
+      </div>
+      <svg id="mythology-svg-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#042e42" fill-opacity="1" d="M0,160L60,160C120,160,240,160,360,170.7C480,181,600,203,720,192C840,181,960,139,1080,128C1200,117,1320,139,1380,149.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+
       <div class="musicians ui container">
         <h2 class="title" id="band-members-title" data-aos="fade in">BAND MEMBERS</h2>
         <div class="musician" v-for="(musician, index) in musicians" :key="musician.name" data-aos="fade in">
@@ -114,6 +129,50 @@ export default {
 <style scoped>
 * {
   word-wrap: break-word;
+}
+
+.mythology{
+  padding: 100px 0;
+  width: 100%;
+  background-color: #042e42;
+}
+
+#mythology-title {
+  color:rgba(255, 255, 255, 0.3);
+}
+
+.mythology ::selection {
+  background-color: white;
+  color: rgb(4, 46, 66);
+}
+
+#mythology-svg-bottom {
+  transform: rotate(180deg);
+  margin-top: -50px;
+}
+
+.mythology, .mythology div {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mythology p {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  font-size: 16px;
+  line-height: 200%;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+#yggdrasil {
+  width: 250px;
+  height: 250px;
+  margin-bottom: 50px;
+  opacity: 0.3;
 }
 
 .quotes {
@@ -252,13 +311,12 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 .musician {
   height: 500px;
   width: 100%;
-  margin: 50px 0;
+  margin: 75px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,6 +377,11 @@ hr {
 }
 
 @media screen and (max-width: 992px) {
+  #mythology-svg-bottom {
+    transform: rotate(180deg);
+    margin-top: -1px;
+  }
+
   .quotes {
     flex-direction: column;
     width: 100%;

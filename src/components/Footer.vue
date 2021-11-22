@@ -24,14 +24,13 @@
             <a target="_blank" href="https://music.apple.com/fi/album/nine-worlds/1582222096" class="item">Apple iTunes</a>
             <a target="_blank" href="https://www.amazon.com/Nine-Worlds-Alda/dp/B09D8SXWKT/ref=sr_1_1?dchild=1&keywords=alda+nine+worlds&qid=1630664054&rnid=2941120011&s=music&sr=1-1" class="item">Amazon Music</a>
 
-            <div class="ui hidden divider"></div>
 <!--             <a href="#contact-container" class="item">Download Presskit</a>
             <a href="https://github.com/eliasfrigard/devsite" target="_blank" class="item">Download Technical Rider</a> -->
 <!--             <a href="/music/ALDA Music.zip" class="item" v-if="!mobile" download="ALDA Music">Download Full Audio Samples</a>
             <a href="/music/ALDA Music.zip" class="item" v-else download="ALDA Music">Download Audio Sample</a>
             <a href="/originals/ALDA Images.zip" class="item" v-if="!mobile" download="ALDA Images">Download Full Resolution Images</a>
             <a href="/originals/ALDA Images.zip" class="item" v-else download="ALDA Images">Download Images</a>         
- -->            <br>
+ -->            
           </div>
         </div>
 
