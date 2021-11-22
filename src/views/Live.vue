@@ -38,6 +38,7 @@
     background-repeat: no-repeat;
     background-position: center;
     transition: all 2s ease;
+    content:url("/P1110954-2-sized.webp") url("/P1110954-sized.webp");
   }
 
   .image:hover {
