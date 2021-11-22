@@ -31,7 +31,7 @@
         </select>
       </form>
     <div id="buy-header" class="header-disabled" v-if="shippingPrice === '' || quantity === ''">
-      <h3>Continue to payment!</h3>
+      <h3>Select shipping above!</h3>
     </div>
     <div id="buy-header" class="header" @click="submitVanilla" v-else>
       <h3>Continue to payment!</h3>
@@ -240,7 +240,7 @@ select:focus {
 }
 
 #buy-header h3 {
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 @media screen and (max-width: 768px) {
