@@ -59,8 +59,10 @@
       </div>
     </div> -->
 
-    <div class="image" data-aos="fade-up"></div>
-  </div>
+<!--     <div class="image" data-aos="fade-up"></div>
+ -->  
+<br><br><br><br><br><br><br>
+ </div>
 </template>
 
 <script>
@@ -115,16 +117,13 @@ export default {
 
 <style scoped>
 .divider-img {
-  margin: 25px 0 75px 0;
+  margin: 25px 0 100px 0;
   height: 750px;
   border-radius: 4px;
   background-image: url("/P1110770-sized-cropped.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
-  -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
-  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
 }
 
 .image {
@@ -373,7 +372,11 @@ input[type=submit]:hover {
   }
 
   .divider-img {
-    display: none;
+    min-width: 100%;
+    max-height: 250px;
+    overflow: hidden;
+    margin: 0;
+    margin: 40px 0 70px 0;
   }
 
   .titles {
@@ -386,7 +389,7 @@ input[type=submit]:hover {
 
   .info {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 70px;
   }
 }
 </style>

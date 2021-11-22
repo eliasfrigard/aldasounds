@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <div class="ui container quotes">
+      <div class="ui container quotes" data-aos="fade-in">
         <div class="ui container quote">
           <p class="quote-text">"The sheer energy, close-woven intricacy of harmony, and consummate musicianship from these three performers makes for some of the most joyous music to come out of the nordic countries in recent years…an absolute delight to listen to!"</p>
           <p class="quote-name">- Natalie Haas, Musician (US)</p>
@@ -34,13 +34,13 @@
       <svg id="mythology-svg-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#042e42" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,202.7C384,203,480,213,576,229.3C672,245,768,267,864,256C960,245,1056,203,1152,202.7C1248,203,1344,245,1392,266.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
       <div class="mythology">
         <div class="ui container">
-          <div data-tooltip="Yggdrasil, the giant world tree that holds together the Nine Worlds of Norse mythology." class="" data-position="top center">
+          <div data-aos="fade-in" data-tooltip="Yggdrasil, the giant world tree that holds together the Nine Worlds of Norse mythology." class="" data-position="top center">
             <img id="yggdrasil" src="/yggdrasil.png" alt="" srcset="">
           </div>
           <div class="titles" data-aos="fade-in">
             <h2 class="title" id="mythology-title">MYTHOLOGY OF ALDA</h2>
           </div>
-          <p>An old Northern story shares a tale of the mermaid Alda. With melancholy in her beautiful voice, she sang to the fishermen who one after one lost their minds. All except one, Brandur. Despite his daily fishing trips, the young, poor, and hard-working fisherman did not give in to Alda’s alluring voice. Every morning when the sun was still sleeping, Brandur flew along the gloomy bay with fire dancing in his boat. Fire attracted the fish, but also Alda, who day by day came closer to his boat. One day the moment came when he saw a glimpse of her green eyes and wild hair, and at that very moment he jumped from his boat and vanished into the dark water. On silent nights, Alda’s singing may still be heard in the Breiðafjörður bay (ref. Norður & Co).</p>
+          <p data-aos="fade-in">An old Northern story shares a tale of the mermaid Alda. With melancholy in her beautiful voice, she sang to the fishermen who one after one lost their minds. All except one, Brandur. Despite his daily fishing trips, the young, poor, and hard-working fisherman did not give in to Alda’s alluring voice. Every morning when the sun was still sleeping, Brandur flew along the gloomy bay with fire dancing in his boat. Fire attracted the fish, but also Alda, who day by day came closer to his boat. One day the moment came when he saw a glimpse of her green eyes and wild hair, and at that very moment he jumped from his boat and vanished into the dark water. On silent nights, Alda’s singing may still be heard in the Breiðafjörður bay (ref. Norður & Co).</p>
 <!--           <p>Deeply rooted in the rich musical traditions of Finland and Sweden the trio ALDA creates music that share the magical and captivating voice of this mythological creature. ALDA’s contemporary instrumental music is full of energetic grooves, majestic harmonies, improvisation and satisfying melodies. Based on traditional Nordic types of tunes such as polskas, schottisches and waltzes, they have created a mind-blowing piece of art for five-string violin, soprano saxophone and piano that transcends borders and genres. Hearing them perform will make you smile and dance, bring tears to your eyes and might even make you go a bit crazy. Immerse yourself in the furiously groovy world of ALDA!</p>
  -->        </div>
       </div>
