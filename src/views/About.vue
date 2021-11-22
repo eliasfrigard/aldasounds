@@ -59,7 +59,7 @@
                 <p>{{musician.phone}}</p>
                 <a :href="'mailto:' + musician.email">{{musician.email}}</a>
               </div>
-              <a :href="musician.website" target="_blank">{{musician.website}}</a>
+              <a :href="'https://' + musician.website" target="_blank">{{musician.website}}</a>
             </div>
           </div>
           <div class="musician-img-right" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 1 && !mobile" />
