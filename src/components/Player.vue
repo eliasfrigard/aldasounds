@@ -64,16 +64,16 @@
           <tr>
             <th>#</th>
             <th>Title</th>
-            <th>Artist</th>
             <th>Album</th>
+            <th>Artist</th>
             <th class="composer-header">Composer</th>
             <th class="length-header">Length</th>
           </tr>
           <tr class="data-row" v-for="(song, index) in songList" :key="index" :id="index" @click="changeTrack(index)">
             <td class="song-id">{{index + 1}}</td>
             <td class="song-title">{{song.title}}</td>
-            <td class="song-artist">{{song.artist}}</td>
             <td class="song-album">{{song.album}}</td>
+            <td class="song-artist">{{song.artist}}</td>
             <td class="song-composer">{{song.composer}}</td>
             <td class="song-length">{{song.length}}</td>
           </tr>

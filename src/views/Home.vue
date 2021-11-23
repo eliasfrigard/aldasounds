@@ -1,39 +1,34 @@
 <template>
   <div class="home" @scroll="onScroll">
+    <!-- Splash image on front page. -->
     <div id="splash"></div>
 
     <div id="firstContent">
       <div class="ui container">
 
+        <!-- Album Content Titles -->
         <div class="titles">
           <p class="pre-title">NINE WORLDS</p>
           <h2 class="title">NEW ALBUM OUT NOW</h2>
           <h1 class="subtitle" v-if="!mobile">Available for purchase below.</h1>
         </div>
 
+        <!-- Album Description -->
         <blockquote class="splash-message">ALDA’s contemporary instrumental music is full of energetic grooves, majestic harmonies, improvisation and satisfying melodies. Based on traditional Nordic types of tunes such as polskas, schottisches and waltzes, they have created a mind-blowing piece of art for five-string violin, soprano saxophone and piano that transcends borders and genres. Hearing them perform will make you smile and dance, bring tears to your eyes and might even make you go a bit crazy. Immerse yourself in the furiously groovy world of ALDA!</blockquote>
         
-      <div class="ui container quotes">
-        <div class="ui container quote">
-          <p class="quote-text">"The sheer energy, close-woven intricacy of harmony, and consummate musicianship from these three performers makes for some of the most joyous music to come out of the nordic countries in recent years…an absolute delight to listen to!"</p>
-          <p class="quote-name">- Natalie Haas, Musician (US)</p>
-          <a class="quote-link" href="https://www.nataliehaas.com/home" target="_blank">www.nataliehaas.com</a>
-        </div>
+        <!-- Album Quotes -->
+        <Quotes />
 
-        <div class="ui container quote">
-          <p class="quote-text">"Aldan valoisa debyyttialbumi pistää tanssijalan vipattamaan, mutta skandinaavishenkisen pelimannipoljennon sekaan mahtuu myös hauskoja rytmisiä jekkuja. Taitava soittajatrio on löytänyt erinomaisen tasapainon."</p>
-          <p class="quote-name">- Tove Djupsjöbacka, Journalist (FI)</p>
-          <a class="quote-link" href="https://kansanmusiikki-lehti.fi/" target="_blank">www.kansanmusiikki-lehti.fi/</a>
-        </div>
-      </div>
-
+        <!-- Album Images -->
         <div class="album-img">
           <img src="../assets/albumfront-sized.webp" alt="" class="image">
           <img src="../assets/albumback-sized.webp" alt="" class="image">
         </div>
 
+        <!-- Stripe payment form for album. -->
         <Stripe />
 
+        <!-- Additional Listening Resources. -->
         <div class="listen-on">
           <a href="https://amzn.to/3DIpUQU" target="_blank">
             <img src="/amazonmusic.webp" class="listen-on-img" alt="" srcset="">
@@ -51,26 +46,32 @@
     <div class="image-divider"></div>
 
     <div id="secondContent">
+      <!-- News Previews. -->
       <News :preview="true" :articleNumber="3" title="LATEST NEWS" />
+      
+      <!-- Dividers -->
       <div class="ui hidden divider"></div>
       <div class="ui hidden divider"></div>
+
+      <!-- Upcoming Concert Previews -->
       <Concerts :onlyUpcoming="true" />
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import News from '@/components/News.vue'
 import Concerts from '@/components/Concerts.vue'
 import Stripe from '@/components/Stripe.vue'
+import Quotes from '@/components/Quotes.vue'
 
 export default {
   name: 'Home',
   components: {
     News,
     Concerts,
-    Stripe
+    Stripe,
+    Quotes
   },
   computed: {
     mobile() {

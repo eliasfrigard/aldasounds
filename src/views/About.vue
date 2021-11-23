@@ -17,19 +17,7 @@
         </div>
       </div>
 
-      <div class="ui container quotes" data-aos="fade-in">
-        <div class="ui container quote">
-          <p class="quote-text">"The sheer energy, close-woven intricacy of harmony, and consummate musicianship from these three performers makes for some of the most joyous music to come out of the nordic countries in recent years…an absolute delight to listen to!"</p>
-          <p class="quote-name">- Natalie Haas, Musician (US)</p>
-          <a class="quote-link" href="https://www.nataliehaas.com/home" target="_blank">www.nataliehaas.com</a>
-        </div>
-
-        <div class="ui container quote">
-          <p class="quote-text">"Aldan valoisa debyyttialbumi pistää tanssijalan vipattamaan, mutta skandinaavishenkisen pelimannipoljennon sekaan mahtuu myös hauskoja rytmisiä jekkuja. Taitava soittajatrio on löytänyt erinomaisen tasapainon."</p>
-          <p class="quote-name">- Tove Djupsjöbacka, Journalist (FI)</p>
-          <a class="quote-link" href="https://kansanmusiikki-lehti.fi/" target="_blank">www.kansanmusiikki-lehti.fi/</a>
-        </div>
-      </div>
+      <Quotes />
 
       <svg id="mythology-svg-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#042e42" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,202.7C384,203,480,213,576,229.3C672,245,768,267,864,256C960,245,1056,203,1152,202.7C1248,203,1344,245,1392,266.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
       <div class="mythology">
@@ -71,9 +59,14 @@
 
 <script>
 import text from '/band-text.json'
+import Quotes from '@/components/Quotes.vue'
+
 
 export default {
   name: 'About',
+  components: {
+    Quotes,
+  },
   data() {
     return {
       firstParagraph: text[0].firstParagraph,
@@ -174,28 +167,6 @@ export default {
   margin-bottom: 50px;
   opacity: 0.3;
 }
-
-.quotes {
-  display: flex;
-}
-
-.quote {
-  width: 43%;
-  margin: 55px 0 35px 0;
-  text-align: center;
-  font-size: 16px;
-  letter-spacing: .5px;
-  word-spacing: 2px;
-
-}
-
-.quote-text {
-  font-size: 21px;
-  line-height: 200%;
-  letter-spacing: 1px;
-  font-family: 'Bad Script', cursive;
-}
-
 
 .image {
   height: 92vh;
@@ -380,16 +351,6 @@ hr {
   #mythology-svg-bottom {
     transform: rotate(180deg);
     margin-top: -1px;
-  }
-
-  .quotes {
-    flex-direction: column;
-    width: 100%;
-  }
-
-
-  .quote-text {
-    font-size: 22px;
   }
 
   .about {
