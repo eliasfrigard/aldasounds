@@ -79,7 +79,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   #more-news-header {
-    background-color: rgb(4, 46, 66);
+    background-color: var(--main-color);
     margin: 100px 0;
   }
 
@@ -104,7 +104,7 @@ export default {
     font-size: 70px;
     letter-spacing: 5px;
     line-height: 125%;
-    color: rgb(4, 46, 66);
+    color: var(--main-color);
   }
 
 

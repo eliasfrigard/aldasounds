@@ -97,7 +97,7 @@ export default {
   }
 
   .stream-link, .event-link:hover {
-    background-color: rgb(4, 46, 66);
+    background-color: var(--main-color);
   }
 
   .event-link, #event-link-disabled {

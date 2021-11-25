@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "author": "Natalie Haas",
+    "author_title": "Musician",
+    "country": "US",
+    "link": "www.nataliehaas.com/",
+    "text": "The sheer energy, close-woven intricacy of harmony, and consummate musicianship from these three performers makes for some of the most joyous music to come out of the nordic countries in recent years…an absolute delight to listen to!"
+  },
+  {
+    "id": 2,
+    "author": "Tove Djupsjöbacka",
+    "author_title": "Journalist",
+    "country": "FI",
+    "link": "www.kansanmusiikki-lehti.fi/",
+    "text": "Aldan valoisa debyyttialbumi pistää tanssijalan vipattamaan, mutta skandinaavishenkisen pelimannipoljennon sekaan mahtuu myös hauskoja rytmisiä jekkuja. Taitava soittajatrio on löytänyt erinomaisen tasapainon."
+  }
+]

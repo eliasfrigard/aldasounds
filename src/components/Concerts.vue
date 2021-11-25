@@ -123,7 +123,7 @@ export default {
     font-size: 70px;
     letter-spacing: 5px;
     line-height: 125%;
-    color: rgb(4, 46, 66);
+    color: var(--main-color);
   }
 
   .subtitle {

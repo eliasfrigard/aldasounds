@@ -81,7 +81,7 @@
 
   #footer {
     padding: 80px;
-    background-color: rgb(4, 46, 66);
+    background-color: var(--main-color);
     bottom:0;
   }
   

@@ -127,7 +127,7 @@ export default {
 .mythology{
   padding: 100px 0;
   width: 100%;
-  background-color: #042e42;
+  background-color: var(--main-color);
 }
 
 #mythology-title {
@@ -136,7 +136,7 @@ export default {
 
 .mythology ::selection {
   background-color: white;
-  color: rgb(4, 46, 66);
+  color: var(--main-color);
 }
 
 #mythology-svg-bottom {

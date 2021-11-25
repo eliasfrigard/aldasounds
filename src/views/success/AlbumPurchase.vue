@@ -33,7 +33,7 @@
   justify-content: center;
   align-items: center;
   background-image: url('/');
-  background-color: rgb(4, 46, 66);
+  background-color: var(--main-color);
 }
 
 .fa-check {

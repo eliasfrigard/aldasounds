@@ -282,7 +282,7 @@ export default {
   height: 75px;
   width: 100vw;
   padding: 0 50px;
-  background-color: rgb(4, 46, 66);
+  background-color: var(--main-color);
   bottom:0;
   display:flex;
   justify-content: space-between;
@@ -354,7 +354,7 @@ export default {
   left: 0;
   width: 100%;
   display: none;
-  background-color: rgb(4, 46, 66);
+  background-color: var(--main-color);
   padding: 50px;
   color: rgb(230, 230, 230);
 }

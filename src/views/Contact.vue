@@ -228,7 +228,7 @@ input[type=submit] {
   border-radius: 2px;
   text-align: center;
   text-transform: uppercase;
-  background-color: #042e42;
+  background-color: var(--main-color);
   color: rgb(230, 230, 230);
   padding: 15px 20px;
   transition: all .3s;
@@ -311,7 +311,7 @@ input[type=submit]:hover {
   height: 100px;
   margin: 20px 0;
   width: 47.5%;
-  border: 3px solid rgb(4, 46, 66);
+  border: 3px solid var(--main-color);
   border-radius: 20px;
   display:flex;
   align-items: center;

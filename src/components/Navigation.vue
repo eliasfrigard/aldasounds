@@ -113,7 +113,7 @@ export default {
   align-items: center;
   height: 8vh;
   min-height: 50px;
-  background-color: rgb(4, 46, 66);
+  background-color: var(--main-color);
 }
 
 #title {
@@ -211,7 +211,7 @@ export default {
     right: 0px;
     height: calc(92vh - 75px);
     top: 8vh;
-    background-color: rgb(4, 46, 66);
+    background-color: var(--main-color);
     flex-direction: column;
     width: 100%;
     transform: translateX(100%);

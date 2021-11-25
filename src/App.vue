@@ -13,12 +13,21 @@
   <Footer class="footer" />
 
   <!-- Audio Player (absolute)-->
-  <Player class="audio-player" @close-player="closePlayer" />
+  <div class="player-div">
+    <Player class="audio-player" @close-player="closePlayer" />
+  </div>
 
   <!-- To Top Button. -->
-  <div class="to-top">
+  <div class="fixed-btn to-top">
     <button class="action-btn-big" @click="toTop">
       <i class="fas fa-chevron-up"></i>
+    </button>
+  </div>
+
+  <!-- Player Button. -->
+  <div class="fixed-btn player-btn">
+    <button class="action-btn-big" @click="openPlayer">
+      <i class="fas fa-music"></i>
     </button>
   </div>
 </template>
@@ -69,6 +78,12 @@ export default {
         nav.style.height = "92vh"
       }
     },
+    openPlayer() {
+      const playerDiv = document.querySelector('.player-div')
+      const player = document.createElement('Player')
+
+      playerDiv.appendChild(player)
+    },
     toTop() {
       window.scrollTo(0, 0)
     }
@@ -87,17 +102,22 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+/* VARIABLES */
+:root {
+  --main-color: rgb(4, 46, 66);
+}
+
 ::selection {
-  background-color: rgb(4, 46, 66);
+  background-color: var(--main-color);
   color: white;
 }
 
 #page-content {
   padding-top:8vh;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 .header, .header-disabled {
@@ -117,7 +137,7 @@ body {
 }
 
 .header {
-  background-color: #042e42;
+  background-color: var(--main-color);
 }
 
 .header-disabled {
@@ -138,7 +158,7 @@ body {
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(4, 46, 66); 
+  background: var(--main-color);
 }
 
 /* Handle on hover */
@@ -154,12 +174,20 @@ body {
 }
 
 .to-top {
-  position: fixed;
-  bottom:  100px;
   left: 44px;
+  bottom:  100px;
+}
+
+.player-btn {
+  left: 120px;
+  bottom: 25px;
+}
+
+.fixed-btn {
+  position: fixed;
   height: 50px;
   width: 50px;
-  background-color: rgb(4, 46, 66);
+  background-color: var(--main-color);
   display: flex;
   justify-content: center;
   align-items: center;
