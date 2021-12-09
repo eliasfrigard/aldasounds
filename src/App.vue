@@ -3,7 +3,7 @@
   <Navigation />
 
   <!-- Page Content -->
-  <router-view id="page-content" v-slot="{ Component }" class="ui component"> 
+  <router-view id="page-content" v-slot="{ Component }" class="ui component">
     <transition name="fade" mode="out-in">
       <component :is="Component" />
     </transition>
@@ -25,20 +25,19 @@
   </div>
 
   <!-- Player Button. -->
-  <div class="fixed-btn player-btn">
+  <!--   <div class="fixed-btn player-btn">
     <button class="action-btn-big" @click="openPlayer">
       <i class="fas fa-music"></i>
     </button>
-  </div>
+  </div> -->
 </template>
 
-
 <script>
-import Footer from '@/components/Footer.vue'
-import Player from '@/components/Player.vue'
-import Navigation from '@/components/Navigation.vue'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import Footer from '@/components/Footer.vue';
+import Player from '@/components/Player.vue';
+import Navigation from '@/components/Navigation.vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 /**
  * @author Elias Frigård
@@ -48,47 +47,47 @@ export default {
   components: {
     Footer,
     Player,
-    Navigation
+    Navigation,
   },
   data() {
     return {
-      playerIsActive: true
-    }
+      playerIsActive: true,
+    };
   },
-  created () {
-    AOS.init()
+  created() {
+    AOS.init();
   },
   computed: {
     mobile() {
-      return screen.width < 992
-    }
+      return screen.width < 992;
+    },
   },
   methods: {
     reloadPage() {
-      window.location.href = "/"
+      window.location.href = '/';
     },
     closePlayer() {
-      document.querySelector('.audio-player').remove()
-      document.querySelector('.to-top').style.bottom = '25px'
-      this.playerIsActive = false
+      document.querySelector('.audio-player').remove();
+      document.querySelector('.to-top').style.bottom = '25px';
+      this.playerIsActive = false;
 
       if (this.mobile) {
-        const nav = document.querySelector('.nav')
+        const nav = document.querySelector('.nav');
 
-        nav.style.height = "92vh"
+        nav.style.height = '92vh';
       }
     },
     openPlayer() {
-      const playerDiv = document.querySelector('.player-div')
-      const player = document.createElement('Player')
+      const playerDiv = document.querySelector('.player-div');
+      const player = document.createElement('Player');
 
-      playerDiv.appendChild(player)
+      playerDiv.appendChild(player);
     },
     toTop() {
-      window.scrollTo(0, 0)
-    }
-  }
-}
+      window.scrollTo(0, 0);
+    },
+  },
+};
 </script>
 
 <style>
@@ -117,10 +116,11 @@ body {
 }
 
 #page-content {
-  padding-top:8vh;
+  padding-top: 8vh;
 }
 
-.header, .header-disabled {
+.header,
+.header-disabled {
   text-align: center;
   text-transform: uppercase;
   font-size: 14px;
@@ -131,9 +131,9 @@ body {
   width: 100%;
   border-radius: 2px;
   cursor: pointer;
-  -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
-  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
 }
 
 .header {
@@ -141,9 +141,9 @@ body {
 }
 
 .header-disabled {
-    background-color: #3b3d3d;
-    cursor:default;
-    opacity: 0.8;
+  background-color: #3b3d3d;
+  cursor: default;
+  opacity: 0.8;
 }
 
 /* width */
@@ -153,9 +153,9 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--main-color);
@@ -163,7 +163,7 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #ec3c01; 
+  background: #ec3c01;
 }
 
 #app {
@@ -175,7 +175,7 @@ body {
 
 .to-top {
   left: 44px;
-  bottom:  100px;
+  bottom: 100px;
 }
 
 .player-btn {
