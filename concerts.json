@@ -134,5 +134,13 @@
     "country": "FI",
     "link": "https://kansanmusiikkiliitto.fi/",
     "description": "Kansanmusiikkiliiton Kiertue"
+  },
+  {
+    "id": 17,
+    "date": "2022-04-10T19:00:00.511Z",
+    "location": "Kokkola",
+    "country": "FI",
+    "link": "https://kansanmusiikkiliitto.fi/",
+    "description": "Kansanmusiikkiliiton Kiertue"
   }
 ]
