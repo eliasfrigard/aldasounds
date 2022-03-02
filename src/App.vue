@@ -14,7 +14,11 @@
 
   <!-- Audio Player (absolute)-->
   <div class="player-div">
-    <Player class="audio-player" @close-player="closePlayer" />
+    <Player
+      class="audio-player"
+      @close-player="closePlayer"
+      data-aos="fade-up"
+    />
   </div>
 
   <!-- To Top Button. -->
@@ -33,11 +37,11 @@
 </template>
 
 <script>
-import Footer from '@/components/Footer.vue';
-import Player from '@/components/Player.vue';
-import Navigation from '@/components/Navigation.vue';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import Footer from '@/components/Footer.vue'
+import Player from '@/components/Player.vue'
+import Navigation from '@/components/Navigation.vue'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 /**
  * @author Elias Frigård
@@ -52,42 +56,42 @@ export default {
   data() {
     return {
       playerIsActive: true,
-    };
+    }
   },
   created() {
-    AOS.init();
+    AOS.init()
   },
   computed: {
     mobile() {
-      return screen.width < 992;
+      return screen.width < 992
     },
   },
   methods: {
     reloadPage() {
-      window.location.href = '/';
+      window.location.href = '/'
     },
     closePlayer() {
-      document.querySelector('.audio-player').remove();
-      document.querySelector('.to-top').style.bottom = '25px';
-      this.playerIsActive = false;
+      document.querySelector('.audio-player').remove()
+      document.querySelector('.to-top').style.bottom = '25px'
+      this.playerIsActive = false
 
       if (this.mobile) {
-        const nav = document.querySelector('.nav');
+        const nav = document.querySelector('.nav')
 
-        nav.style.height = '92vh';
+        nav.style.height = '92vh'
       }
     },
     openPlayer() {
-      const playerDiv = document.querySelector('.player-div');
-      const player = document.createElement('Player');
+      const playerDiv = document.querySelector('.player-div')
+      const player = document.createElement('Player')
 
-      playerDiv.appendChild(player);
+      playerDiv.appendChild(player)
     },
     toTop() {
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 0)
     },
   },
-};
+}
 </script>
 
 <style>
