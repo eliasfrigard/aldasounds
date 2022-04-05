@@ -10,46 +10,103 @@
       <div class="bio ui container">
         <div class="band-image" data-aos="fade-in"></div>
         <div class="band-info" data-aos="fade-in">
-          <h2 class="slogan">Furious Nordic groove, divine harmonies and top-notch melodies.</h2>
-          <p>{{firstParagraph}}</p>
-          <p>{{secondParagraph}}</p>
-          <p>{{thirdParagraph}}</p>
+          <h2 class="slogan">
+            Furious Nordic groove, divine harmonies and top-notch melodies.
+          </h2>
+          <p>{{ firstParagraph }}</p>
+          <p>{{ secondParagraph }}</p>
+          <p>{{ thirdParagraph }}</p>
         </div>
       </div>
 
       <Quotes />
 
-      <svg id="mythology-svg-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#042e42" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,202.7C384,203,480,213,576,229.3C672,245,768,267,864,256C960,245,1056,203,1152,202.7C1248,203,1344,245,1392,266.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+      <svg
+        id="mythology-svg-top"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#042e42"
+          fill-opacity="1"
+          d="M0,224L48,218.7C96,213,192,203,288,202.7C384,203,480,213,576,229.3C672,245,768,267,864,256C960,245,1056,203,1152,202.7C1248,203,1344,245,1392,266.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
       <div class="mythology">
         <div class="ui container">
-          <div data-aos="fade-in" data-tooltip="Yggdrasil, the giant world tree that holds together the Nine Worlds of Norse mythology." class="" data-position="top center">
-            <img id="yggdrasil" src="/yggdrasil.png" alt="" srcset="">
+          <div
+            data-aos="fade-in"
+            data-tooltip="Yggdrasil, the giant world tree that holds together the Nine Worlds of Norse mythology."
+            class=""
+            data-position="top center"
+          >
+            <img id="yggdrasil" src="/yggdrasil.png" alt="" srcset="" />
           </div>
           <div class="titles" data-aos="fade-in">
-            <h2 class="title" id="mythology-title">MYTHOLOGY OF ALDA</h2>
+            <h2 class="title" id="mythology-title">ALDA</h2>
           </div>
-          <p data-aos="fade-in">An old Northern story shares a tale of the mermaid Alda. With melancholy in her beautiful voice, she sang to the fishermen who one after one lost their minds. All except one, Brandur. Despite his daily fishing trips, the young, poor, and hard-working fisherman did not give in to Alda’s alluring voice. Every morning when the sun was still sleeping, Brandur flew along the gloomy bay with fire dancing in his boat. Fire attracted the fish, but also Alda, who day by day came closer to his boat. One day the moment came when he saw a glimpse of her green eyes and wild hair, and at that very moment he jumped from his boat and vanished into the dark water. On silent nights, Alda’s singing may still be heard in the Breiðafjörður bay (ref. Norður & Co).</p>
-          </div>
+          <p data-aos="fade-in">
+            An old Northern story shares a tale of the mermaid Alda. With
+            melancholy in her beautiful voice, she sang to the fishermen who one
+            after one lost their minds. All except one, Brandur. Despite his
+            daily fishing trips, the young, poor, and hard-working fisherman did
+            not give in to Alda’s alluring voice. Every morning when the sun was
+            still sleeping, Brandur flew along the gloomy bay with fire dancing
+            in his boat. Fire attracted the fish, but also Alda, who day by day
+            came closer to his boat. One day the moment came when he saw a
+            glimpse of her green eyes and wild hair, and at that very moment he
+            jumped from his boat and vanished into the dark water. On silent
+            nights, Alda’s singing may still be heard in the Breiðafjörður bay
+            (ref. Norður & Co).
+          </p>
+        </div>
       </div>
-      <svg id="mythology-svg-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#042e42" fill-opacity="1" d="M0,160L60,160C120,160,240,160,360,170.7C480,181,600,203,720,192C840,181,960,139,1080,128C1200,117,1320,139,1380,149.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+      <svg
+        id="mythology-svg-bottom"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
+        <path
+          fill="#042e42"
+          fill-opacity="1"
+          d="M0,160L60,160C120,160,240,160,360,170.7C480,181,600,203,720,192C840,181,960,139,1080,128C1200,117,1320,139,1380,149.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+        ></path>
+      </svg>
 
       <div class="musicians ui container">
-        <h2 class="title" id="band-members-title" data-aos="fade in">BAND MEMBERS</h2>
-        <div class="musician" v-for="(musician, index) in musicians" :key="musician.name" data-aos="fade in">
-          <div class="musician-img-left" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 0 || mobile" />
+        <h2 class="title" id="band-members-title" data-aos="fade in">
+          BAND MEMBERS
+        </h2>
+        <div
+          class="musician"
+          v-for="(musician, index) in musicians"
+          :key="musician.name"
+          data-aos="fade in"
+        >
+          <div
+            class="musician-img-left"
+            :style="{ backgroundImage: 'url(' + musician.image + ')' }"
+            v-if="index % 2 === 0 || mobile"
+          />
           <div class="musician-info">
-            <h3 class="musician-name">{{musician.name}}</h3>
-            <p class="musician-instrument">{{musician.instrument}}</p>            
-            <p class="musician-text">{{musician.description}}</p>
+            <h3 class="musician-name">{{ musician.name }}</h3>
+            <p class="musician-instrument">{{ musician.instrument }}</p>
+            <p class="musician-text">{{ musician.description }}</p>
             <div class="musician-meta">
               <div class="musician-contact">
-                <p>{{musician.phone}}</p>
-                <a :href="'mailto:' + musician.email">{{musician.email}}</a>
+                <p>{{ musician.phone }}</p>
+                <a :href="'mailto:' + musician.email">{{ musician.email }}</a>
               </div>
-              <a :href="'https://' + musician.website" target="_blank">{{musician.website}}</a>
+              <a :href="'https://' + musician.website" target="_blank">{{
+                musician.website
+              }}</a>
             </div>
           </div>
-          <div class="musician-img-right" :style="{ backgroundImage: 'url(' + musician.image + ')' }" v-if="index % 2 === 1 && !mobile" />
+          <div
+            class="musician-img-right"
+            :style="{ backgroundImage: 'url(' + musician.image + ')' }"
+            v-if="index % 2 === 1 && !mobile"
+          />
         </div>
       </div>
     </div>
@@ -59,7 +116,6 @@
 <script>
 import text from '/band-text.json'
 import Quotes from '@/components/Quotes.vue'
-
 
 export default {
   name: 'About',
@@ -75,37 +131,40 @@ export default {
         {
           name: 'Elias Frigård',
           instrument: 'Soprano- & Baritone Saxophone',
-          description: 'Elias Frigård is a contemporary saxophone player with roots in traditional and modern folk music as well as jazz and improvisation. He was raised in Gävle, Sweden around the traditional violin music of regions Gästrikland and Hälsingland. In 2017 he moved to Helsinki, Finland and has since then ended up playing music with some of Finland’s most prominent musicians. Elias studied at the Royal College of Music in Stockholm and Sibelius-Academy in Helsinki for some of the best folk and jazz musicians in the world.',
+          description:
+            'Elias Frigård is a contemporary saxophone player with roots in traditional and modern folk music as well as jazz and improvisation. He was raised in Gävle, Sweden around the traditional violin music of regions Gästrikland and Hälsingland. In 2017 he moved to Helsinki, Finland and has since then ended up playing music with some of Finland’s most prominent musicians. Elias studied at the Royal College of Music in Stockholm and Sibelius-Academy in Helsinki for some of the best folk and jazz musicians in the world.',
           phone: '+46(0)70-6691374',
           email: 'elias@aldasounds.com',
           website: 'www.eliasfrigard.com',
-          image: '/eliasalt.webp'
+          image: '/eliasalt.webp',
         },
         {
           name: 'Veera Kuisma',
           instrument: '5-string Violin',
-          description: 'Veera Kuisma is from the new generation of Finnish folk fiddlers. She is currently a master student at the Sibelius-Academy in Helsinki, Finland and has previously studied at Berklee College of Music in Boston, US with a full scholarship. She enjoys playing groovy Nordic tunes and composes music inspired by Celtic, American, and Nordic folk traditions. Veera identifies herself as a group musician, playing with others is the best thing she knows!',
+          description:
+            'Veera Kuisma is from the new generation of Finnish folk fiddlers. She is currently a master student at the Sibelius-Academy in Helsinki, Finland and has previously studied at Berklee College of Music in Boston, US with a full scholarship. She enjoys playing groovy Nordic tunes and composes music inspired by Celtic, American, and Nordic folk traditions. Veera identifies herself as a group musician, playing with others is the best thing she knows!',
           phone: '+358(0)45-1107182',
           email: 'veera@aldasounds.com',
           website: '',
-          image: '/veera-sized.webp'
+          image: '/veera-sized.webp',
         },
         {
           name: 'Timo Alakotila',
           instrument: 'Piano & Harmonium',
-          description: 'Timo Alakotila is one of Finland’s busiest, most versatile and most in-demand musicians, as composer, arranger, pianist and harmonium player in folk, classical, jazz and pop fields. His career began in 1982 in Kaustinen, Finland as harmonium player and founding member of the fiddle group JPP, who quickly established themselves as the best and most innovative fiddle music group in Finland.',
+          description:
+            'Timo Alakotila is one of Finland’s busiest, most versatile and most in-demand musicians, as composer, arranger, pianist and harmonium player in folk, classical, jazz and pop fields. His career began in 1982 in Kaustinen, Finland as harmonium player and founding member of the fiddle group JPP, who quickly established themselves as the best and most innovative fiddle music group in Finland.',
           phone: '+358(0)50-5116112',
           email: 'timoalakotila@gmail.com',
           website: 'www.timoalakotila.com',
-          image: '/timo-sized.webp'
-        }
-      ]
+          image: '/timo-sized.webp',
+        },
+      ],
     }
   },
   computed: {
     mobile() {
       return screen.width < 992
-    }
+    },
   },
   mounted() {
     const footer = document.querySelector('#footer')
@@ -114,7 +173,7 @@ export default {
   unmounted() {
     const footer = document.querySelector('#footer')
     footer.style.top = '0'
-  }
+  },
 }
 </script>
 
@@ -123,14 +182,14 @@ export default {
   word-wrap: break-word;
 }
 
-.mythology{
+.mythology {
   padding: 100px 0;
   width: 100%;
   background-color: var(--main-color);
 }
 
 #mythology-title {
-  color:rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .mythology ::selection {
@@ -143,8 +202,9 @@ export default {
   margin-top: -50px;
 }
 
-.mythology, .mythology div {
-  display:flex;
+.mythology,
+.mythology div {
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -171,11 +231,11 @@ export default {
   height: 92vh;
   width: 100%;
   max-width: 100vw;
-  background-image: url("/P1110768-sized.webp");
+  background-image: url('/P1110768-sized.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
-  position: fixed
+  position: fixed;
 }
 
 .title {
@@ -189,12 +249,13 @@ export default {
   font-size: 40px;
 }
 
-
 .pre-title {
   letter-spacing: 2px;
 }
 
-.title, .subtitle, .pre-title {
+.title,
+.subtitle,
+.pre-title {
   line-height: 125%;
   max-width: 100%;
 }
@@ -216,33 +277,36 @@ export default {
   top: 100vh;
   width: 100%;
   background-color: white;
-  position:relative;
-  display:flex;
+  position: relative;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
 .bio {
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
-.band-image, .band-info {
+.band-image,
+.band-info {
   width: 100%;
   margin: 25px 0;
 }
 
 .band-image {
   height: 700px;
-  background-image: url("/P1110933-cropped-sized.webp");
+  background-image: url('/P1110933-cropped-sized.webp');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 4px;
 }
 
-.band-info p, .more-info p, .musician-text {
+.band-info p,
+.more-info p,
+.musician-text {
   font-size: 16px;
   line-height: 200%;
   letter-spacing: 1px;
@@ -250,21 +314,21 @@ export default {
 }
 
 .band-info p {
-  text-align:justify;
+  text-align: justify;
 }
 
 .slogan {
   text-align: center;
   font-family: 'Bad Script', cursive;
   letter-spacing: 5px;
-  margin:10px 0 50px;
+  margin: 10px 0 50px;
   text-transform: uppercase;
 }
 
 .musician-img {
-  -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
-  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
 }
 
 .about-us {
@@ -277,7 +341,7 @@ export default {
 }
 
 .musicians {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -292,7 +356,8 @@ export default {
   align-items: center;
 }
 
-.musician-img-left, .musician-img-right {
+.musician-img-left,
+.musician-img-right {
   height: 500px;
   width: 50%;
   margin: 0 25px;
@@ -318,11 +383,10 @@ export default {
 }
 
 .musician-instrument {
-    font-family: 'Bad Script', cursive;
-    font-size: 18px;
-    letter-spacing: 3px;
-    opacity: 0.8;
-
+  font-family: 'Bad Script', cursive;
+  font-size: 18px;
+  letter-spacing: 3px;
+  opacity: 0.8;
 }
 
 .musician-meta {
@@ -362,7 +426,7 @@ hr {
 
   .musicians {
     width: 100%;
-    overflow:hidden;
+    overflow: hidden;
   }
 
   .musician-info {
@@ -373,22 +437,22 @@ hr {
   .band-image {
     width: auto;
     height: 450px;
-    margin:0;
+    margin: 0;
   }
 
   .image {
     width: 100%;
-    background-image: url("/P1110937-mobile-sized.webp");
+    background-image: url('/P1110937-mobile-sized.webp');
     background-position: center center;
   }
 
   .band-image {
-    background-image: url("/P1110881-sized.webp");
+    background-image: url('/P1110881-sized.webp');
     height: 300px;
   }
 
   .band-info p {
-    text-align:center;
+    text-align: center;
   }
 
   .bio {
@@ -406,29 +470,34 @@ hr {
     height: auto;
     margin: 50px 0 0 0;
   }
-  
+
   .musician-meta {
     flex-direction: column;
     height: 92px;
   }
 
-  .musician-info, .musician-img-left, .musician-img-right {
+  .musician-info,
+  .musician-img-left,
+  .musician-img-right {
     width: 100%;
   }
 
-  .musician-img-left, .musician-img-right {
+  .musician-img-left,
+  .musician-img-right {
     margin: 0 0 50px 0;
   }
 
   .band-info {
     width: auto;
   }
-  
+
   .subtitle {
     font-size: 21px;
   }
 
-  .title, .subtitle, .pre-title {
+  .title,
+  .subtitle,
+  .pre-title {
     line-height: 100%;
   }
 

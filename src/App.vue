@@ -111,7 +111,7 @@ body {
 
 /* VARIABLES */
 :root {
-  --main-color: rgb(4, 46, 66);
+  --main-color: #042e42;
 }
 
 ::selection {

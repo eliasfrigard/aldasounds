@@ -101,15 +101,16 @@
     "location": "Helsinki",
     "country": "FI",
     "link": "https://folklandia.fi/",
-    "description": "Folklandia Festival"
+    "description": "Folklandia Festival",
+    "cancelled": true
   },
   {
     "id": 13,
     "date": "2022-04-06T19:00:00.511Z",
-    "location": "Helsinki",
+    "location": "Mäntyharju",
     "country": "FI",
-    "link": "https://www.perinnearkku.net/",
-    "description": "Perinnearkku"
+    "link": "https://kansanmusiikkiliitto.fi/tapahtumat/kiertueet/",
+    "description": "Mäntyharjun Kirjasto"
   },
   {
     "id": 14,
@@ -117,7 +118,7 @@
     "location": "Tampere",
     "country": "FI",
     "link": "https://www.rahvaanmusiikinkerho.net/",
-    "description": "Rahvaanmusiikin Kerho"
+    "description": "Rahvaanmusiikin Kerho, Telakka"
   },
   {
     "id": 15,
@@ -132,15 +133,24 @@
     "date": "2022-04-09T19:00:00.511Z",
     "location": "Oulu",
     "country": "FI",
-    "link": "https://kansanmusiikkiliitto.fi/",
-    "description": "Kansanmusiikkiliiton Kiertue"
+    "link": "https://omj.fi/konsertit/alda/",
+    "description": "Hiukkavaaran Kulttuurikasarmi"
   },
   {
     "id": 17,
     "date": "2022-04-10T19:00:00.511Z",
     "location": "Kokkola",
     "country": "FI",
-    "link": "https://kansanmusiikkiliitto.fi/",
-    "description": "Kansanmusiikkiliiton Kiertue"
+    "link": "https://kansanmusiikkiliitto.fi/tapahtumat/kiertueet/",
+    "description": "Keski-Pohjanmaan Konservatorio, Pikkusali"
+  },
+  {
+    "id": 18,
+    "date": "2022-04-06T19:00:00.511Z",
+    "location": "Helsinki",
+    "country": "FI",
+    "link": "https://kansanmusiikkiliitto.fi/tapahtumat/kiertueet/",
+    "description": "Perinnearkkuklubi",
+    "cancelled": true
   }
 ]
