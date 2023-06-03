@@ -44,10 +44,10 @@ export default {
           title: 'About',
           link: '/about',
         },
-        {
-          title: 'News',
-          link: '/news',
-        },
+        // {
+        //   title: 'News',
+        //   link: '/news',
+        // },
         {
           title: 'Live',
           link: '/live',
