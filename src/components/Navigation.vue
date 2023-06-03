@@ -1,18 +1,20 @@
 <template>
   <div id="navbar">
     <!-- Page title. -->
-    <h1 id="title" @click="reloadPage" data-aos="fade-in">{{title}}</h1>
+    <h1 id="title" @click="reloadPage" data-aos="fade-in">{{ title }}</h1>
 
     <!-- Navigation items. -->
     <div class="nav">
-      <router-link v-for="page in pages" :to="page.link" :key="page.title" @click="toggleMobileNav">{{page.title}}</router-link>
+      <router-link v-for="page in pages" :to="page.link" :key="page.title" @click="toggleMobileNav">{{
+        page.title
+      }}</router-link>
     </div>
 
     <!-- Social Media icons. -->
     <div class="social" data-aos="fade-in">
       <a v-for="social in media" :key="social.link" :href="social.link" target="_blank">
         <i :class="social.logo"></i>
-      </a>      
+      </a>
     </div>
 
     <!-- Mobile burger. -->
@@ -36,44 +38,44 @@ export default {
       pages: [
         {
           title: 'Home',
-          link: '/'
+          link: '/',
         },
         {
           title: 'About',
-          link: '/about'
+          link: '/about',
         },
         {
           title: 'News',
-          link: '/news'
+          link: '/news',
         },
         {
           title: 'Live',
-          link: '/live'
+          link: '/live',
         },
         {
           title: 'Contact',
-          link: '/contact'
-        }
+          link: '/contact',
+        },
       ],
       // Media links and logos by fontawesome.
       media: [
         {
           link: 'https://www.facebook.com/aldasounds',
-          logo: 'fab fa-facebook-square fa-lg'
+          logo: 'fab fa-facebook-square fa-lg',
         },
         {
           link: 'https://www.youtube.com/channel/UC1CSzPlVfH7RYlWo-ulYDaw',
-          logo: 'fab fa-youtube fa-lg'
+          logo: 'fab fa-youtube fa-lg',
         },
         {
           link: 'https://www.instagram.com/aldasounds/',
-          logo: 'fab fa-instagram fa-lg'
+          logo: 'fab fa-instagram fa-lg',
         },
         {
           link: 'https://open.spotify.com/album/6ewLQQEhzrgIvEOXWtlYPV?si=rbuc5Ux3QTeIF5Cwxgh9_g&dl_branch=1',
-          logo: 'fab fa-spotify fa-lg'
+          logo: 'fab fa-spotify fa-lg',
         },
-      ]
+      ],
     }
   },
   methods: {
@@ -83,7 +85,6 @@ export default {
 
       const navLinks = document.querySelectorAll('.nav a')
       const burger = document.querySelector('.burger')
-
 
       navLinks.forEach((link, index) => {
         if (link.style.animation) {
@@ -96,9 +97,9 @@ export default {
       burger.classList.toggle('toggle')
     },
     reloadPage() {
-      window.location.href = "/"
+      window.location.href = '/'
     },
-  }
+  },
 }
 </script>
 
@@ -106,12 +107,12 @@ export default {
 #navbar {
   z-index: 1;
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 8vh;
+  height: 6.5vh;
   min-height: 50px;
   background-color: var(--main-color);
 }
@@ -119,8 +120,8 @@ export default {
 #title {
   color: rgb(230, 230, 230);
   letter-spacing: 5px;
-  margin:0px;
-  width:25%;
+  margin: 0px;
+  width: 25%;
   display: flex;
   justify-content: center;
   font-size: 40px;
@@ -133,36 +134,39 @@ export default {
   display: flex;
   justify-content: space-evenly;
   padding: 0 100px;
+  margin-top: 7px;
 }
-
 
 .nav a {
   text-decoration: none;
   letter-spacing: 4px;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 18px;
   color: rgb(230, 230, 230);
   font-family: 'Bad Script', cursive;
- }
+  font-weight: bold;
+  padding-bottom: 4px;
+}
 
- .nav a:hover {
+.nav a:hover {
   font-weight: bold;
 }
 
 .nav a.router-link-exact-active {
   font-weight: bold;
   color: rgb(230, 230, 230);
+  border-bottom: 2px solid rgb(230, 230, 230);
 }
 
 .social {
   display: flex;
   justify-content: center;
   align-items: center;
-  width:25%;
+  width: 25%;
 }
 
 .social i {
-  margin: 20px;
+  margin: 15px;
   color: rgba(230, 230, 230, 0.6);
   opacity: 0.6;
 }
@@ -179,7 +183,7 @@ export default {
 }
 
 .social .fa-instagram:hover {
-  color: rgb(251, 173, 80)
+  color: rgb(251, 173, 80);
 }
 
 .social .fa-spotify:hover {
@@ -187,9 +191,9 @@ export default {
 }
 
 .social a {
-  display:flex;
+  display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .burger {
@@ -244,19 +248,20 @@ export default {
   from {
     opacity: 0;
     transform: translateX(50px);
-  } to {
+  }
+  to {
     opacity: 1;
     transform: translateX(0px);
   }
 }
 
 .toggle .line1 {
-  transform: rotate(-45deg) translate(-5px, 6px)
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
 .toggle .line2 {
   opacity: 0;
 }
 .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px)
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 </style>
