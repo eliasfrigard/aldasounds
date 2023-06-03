@@ -5,7 +5,7 @@
       <div class="titles" data-aos="fade-in">
         <p class="pre-title">WE ARE</p>
         <h2 class="title" id="band-title">ALDA</h2>
-        <h1 class="subtitle">Welcome to our home on the web!</h1>
+        <h1 class="subtitle">Welcome to our home!</h1>
       </div>
       <div class="bio ui container">
         <div class="band-image" data-aos="fade-in"></div>
@@ -21,11 +21,7 @@
 
       <Quotes />
 
-      <svg
-        id="mythology-svg-top"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
+      <svg id="mythology-svg-top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#042e42"
           fill-opacity="1"
@@ -34,38 +30,30 @@
       </svg>
       <div class="mythology">
         <div class="ui container">
-          <div
+          <!-- <div
             data-aos="fade-in"
             data-tooltip="Yggdrasil, the giant world tree that holds together the Nine Worlds of Norse mythology."
             class=""
             data-position="top center"
           >
             <img id="yggdrasil" src="/yggdrasil.png" alt="" srcset="" />
-          </div>
+          </div> -->
           <div class="titles" data-aos="fade-in">
-            <h2 class="title" id="mythology-title">ALDA</h2>
+            <h2 class="title" id="mythology-title">Where does our name come from?</h2>
           </div>
           <p data-aos="fade-in">
-            An old Northern story shares a tale of the mermaid Alda. With
-            melancholy in her beautiful voice, she sang to the fishermen who one
-            after one lost their minds. All except one, Brandur. Despite his
-            daily fishing trips, the young, poor, and hard-working fisherman did
-            not give in to Alda’s alluring voice. Every morning when the sun was
-            still sleeping, Brandur flew along the gloomy bay with fire dancing
-            in his boat. Fire attracted the fish, but also Alda, who day by day
-            came closer to his boat. One day the moment came when he saw a
-            glimpse of her green eyes and wild hair, and at that very moment he
-            jumped from his boat and vanished into the dark water. On silent
-            nights, Alda’s singing may still be heard in the Breiðafjörður bay
-            (ref. Norður & Co).
+            An old Northern story shares a tale of the mermaid Alda. With melancholy in her beautiful voice,
+            she sang to the fishermen who one after one lost their minds. All except one, Brandur. Despite his
+            daily fishing trips, the young, poor, and hard-working fisherman did not give in to Alda’s
+            alluring voice. Every morning when the sun was still sleeping, Brandur flew along the gloomy bay
+            with fire dancing in his boat. Fire attracted the fish, but also Alda, who day by day came closer
+            to his boat. One day the moment came when he saw a glimpse of her green eyes and wild hair, and at
+            that very moment he jumped from his boat and vanished into the dark water. On silent nights,
+            Alda’s singing may still be heard in the Breiðafjörður bay (ref. Norður & Co).
           </p>
         </div>
       </div>
-      <svg
-        id="mythology-svg-bottom"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
+      <svg id="mythology-svg-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#042e42"
           fill-opacity="1"
@@ -77,12 +65,7 @@
         <h2 class="title" id="band-members-title" data-aos="fade in">
           BAND MEMBERS
         </h2>
-        <div
-          class="musician"
-          v-for="(musician, index) in musicians"
-          :key="musician.name"
-          data-aos="fade in"
-        >
+        <div class="musician" v-for="(musician, index) in musicians" :key="musician.name" data-aos="fade in">
           <div
             class="musician-img-left"
             :style="{ backgroundImage: 'url(' + musician.image + ')' }"
@@ -97,9 +80,7 @@
                 <p>{{ musician.phone }}</p>
                 <a :href="'mailto:' + musician.email">{{ musician.email }}</a>
               </div>
-              <a :href="'https://' + musician.website" target="_blank">{{
-                musician.website
-              }}</a>
+              <a :href="'https://' + musician.website" target="_blank">{{ musician.website }}</a>
             </div>
           </div>
           <div
@@ -239,7 +220,7 @@ export default {
 }
 
 .title {
-  font-size: 70px;
+  font-size: 40px;
   letter-spacing: 5px;
 }
 
@@ -256,7 +237,7 @@ export default {
 .title,
 .subtitle,
 .pre-title {
-  line-height: 125%;
+  line-height: 110%;
   max-width: 100%;
 }
 
@@ -265,7 +246,7 @@ export default {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 50px;
+  margin: 10px 0 50px 0;
 }
 
 #band-members-title {
@@ -408,6 +389,10 @@ export default {
 hr {
   width: 100%;
   opacity: 0.2;
+}
+
+#band-title {
+  font-size: 105px;
 }
 
 @media screen and (max-width: 992px) {
