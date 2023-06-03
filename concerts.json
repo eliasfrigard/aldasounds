@@ -184,5 +184,29 @@
     "country": "FI",
     "link": "https://kaustinen.net/en/",
     "description": "Mondo @ Kaustinen Folk Music Festival"
+  },
+  {
+    "id": 22,
+    "date": "2022-08-03T17:15:00.511Z",
+    "location": "Helsinki",
+    "country": "FI",
+    "link": "https://www.etno-espa.fi/en/wed-3-8-1715-alda/",
+    "description": "Espan Laval @ Etno Espa"
+  },
+  {
+    "id": 23,
+    "date": "2023-08-20T18:00:00.511Z",
+    "location": "Salo",
+    "country": "FI",
+    "link": "Summer Con",
+    "description": "Kesäkonsertti @ Kiskon Kirkko"
+  },
+  {
+    "id": 24,
+    "date": "2023-12-16T18:00:00.511Z",
+    "location": "Hyvinkää",
+    "country": "FI",
+    "link": "https://kaukaselofolk.fi/",
+    "description": "ALDA + Vilma Talvitie @ Elofolk Joulukonsertti"
   }
 ]
