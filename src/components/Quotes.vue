@@ -1,9 +1,9 @@
 <template>
   <div class="ui container quotes">
     <div class="ui container quote" v-for="quote in quotesArray" :key="quote.id">
-      <p class="quote-text">"{{quote.text}}"</p>
-      <p class="quote-name">- {{quote.author}}, {{quote.author_title}} ({{quote.country}})</p>
-      <a class="quote-link" :href="'https://' + quote.link" target="_blank">{{quote.link}}</a>
+      <p class="quote-text">"{{ quote.text }}"</p>
+      <p class="quote-name">- {{ quote.author }}, {{ quote.author_title }} ({{ quote.country }})</p>
+      <a class="quote-link" :href="'https://' + quote.link" target="_blank">{{ quote.link }}</a>
     </div>
   </div>
 </template>
@@ -18,11 +18,11 @@ export default {
       quotesArray: [],
     }
   },
-  async created () {
-    quotes.forEach(quote => {
+  async created() {
+    quotes.forEach((quote) => {
       this.quotesArray.push(quote)
     })
-  }
+  },
 }
 </script>
 
@@ -34,12 +34,11 @@ export default {
 
 .quote {
   width: 43%;
-  margin: 55px 0 35px 0;
+  margin: 30px 0;
   text-align: center;
   font-size: 16px;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   word-spacing: 2px;
-
 }
 
 .quote-text {
