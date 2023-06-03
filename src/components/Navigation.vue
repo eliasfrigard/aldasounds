@@ -124,7 +124,7 @@ export default {
   width: 25%;
   display: flex;
   justify-content: center;
-  font-size: 40px;
+  font-size: 34px;
   font-weight: 700;
   cursor: pointer;
 }

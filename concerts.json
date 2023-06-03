@@ -152,5 +152,37 @@
     "link": "https://kansanmusiikkiliitto.fi/tapahtumat/kiertueet/",
     "description": "Perinnearkkuklubi",
     "cancelled": true
+  },
+  {
+    "id": 19,
+    "date": "2022-06-18T19:00:00.511Z",
+    "location": "Finland",
+    "country": "FI",
+    "link": "https://www.aldasounds.com",
+    "description": "Private Event"
+  },
+  {
+    "id": 19,
+    "date": "2022-06-30T19:00:00.511Z",
+    "location": "Haapavesi",
+    "country": "FI",
+    "link": "https://www.haapavesifolk.com/",
+    "description": "Haapavesi Folk"
+  },
+  {
+    "id": 20,
+    "date": "2023-07-14T16:30:00.511Z",
+    "location": "Kaustinen",
+    "country": "FI",
+    "link": "https://kaustinen.net/en/",
+    "description": "Kallioklubi @ Kaustinen Folk Music Festival"
+  },
+  {
+    "id": 21,
+    "date": "2023-07-15T16:30:00.511Z",
+    "location": "Kaustinen",
+    "country": "FI",
+    "link": "https://kaustinen.net/en/",
+    "description": "Mondo @ Kaustinen Folk Music Festival"
   }
 ]

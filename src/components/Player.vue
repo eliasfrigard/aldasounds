@@ -21,17 +21,26 @@
 
     <!--  -->
     <div class="music-info" v-if="!mobile">
-      <h4 class="music-title">{{currentSong.title}}</h4>
+      <h4 class="music-title">{{ currentSong.title }}</h4>
       <div class="music-progress-container" @click="setProgress">
         <div class="music-progress"></div>
       </div>
     </div>
-    
+
     <!--  -->
     <div class="window-controls">
       <div class="volume-controls" @mouseover="openVolumeControl" @mouseout="closeVolumeControl">
-        <input type="range" class="volume-range" name="" id="" min="0" max="100" value="80" @change="changeVolume">
-        
+        <input
+          type="range"
+          class="volume-range"
+          name=""
+          id=""
+          min="0"
+          max="100"
+          value="80"
+          @change="changeVolume"
+        />
+
         <button class="action-btn" name="volume up" v-if="volumeValue > 50" @click="muteAudio">
           <i class="fas fa-volume-up"></i>
         </button>
@@ -69,15 +78,22 @@
             <th class="composer-header">Composer</th>
             <th class="length-header">Length</th>
           </tr>
-          <tr class="data-row" v-for="(song, index) in songList" :key="index" :id="index" @click="changeTrack(index)">
-            <td class="song-id">{{index + 1}}</td>
-            <td class="song-title">{{song.title}}</td>
-            <td class="song-album">{{song.album}}</td>
-            <td class="song-artist">{{song.artist}}</td>
-            <td class="song-composer">{{song.composer}}</td>
-            <td class="song-length">{{song.length}}</td>
+          <tr
+            class="data-row"
+            v-for="(song, index) in songList"
+            :key="index"
+            :id="index"
+            @click="changeTrack(index)"
+          >
+            <td class="song-id">{{ index + 1 }}</td>
+            <td class="song-title">{{ song.title }}</td>
+            <td class="song-album">{{ song.album }}</td>
+            <td class="song-artist">{{ song.artist }}</td>
+            <td class="song-composer">{{ song.composer }}</td>
+            <td class="song-length">{{ song.length }}</td>
           </tr>
         </table>
+
         <div class="mobile-progress" v-if="mobile">
           <div class="music-progress-container" @click="setProgress">
             <div class="music-progress"></div>
@@ -86,73 +102,127 @@
       </div>
     </div>
 
-
     <!--  -->
-    <audio :src="currentSong.link" class="music-audio" @timeupdate="updateProgress" @ended="nextSong" :volume="volume"></audio>
+    <audio
+      :src="currentSong.link"
+      class="music-audio"
+      @timeupdate="updateProgress"
+      @ended="nextSong"
+      :volume="volume"
+    ></audio>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'Player',
   props: [],
   data() {
     return {
-      songList: [{
-        title: 'Fen-Fire Polska',
-        link: 'music/Fen-Fire Polska.mp3',
-        artist: 'ALDA',
-        album: 'Nine Worlds',
-        composer: 'Elias Frigård',
-        length: '3:54'
-      },
-      {
-        title: 'Moment Before Sample',
-        link: 'music/samples/MOMENT BEFORE SAMPLE.mp3',
-        artist: 'ALDA',
-        album: 'Nine Worlds',
-        composer: 'Veera Kuisma',
-        length: '0:21'
-      },
-      {
-        title: 'Bee Reel Sample',
-        link: 'music/samples/BEE REEL SAMPLE.mp3',
-        artist: 'ALDA',
-        album: 'Nine Worlds',
-        composer: 'Veera Kuisma',
-        length: '0:17'
-      },
-      {
-        title: 'Ajastaika Sample',
-        link: 'music/samples/AJASTAIKA SAMPLE.mp3',
-        artist: 'ALDA',
-        album: 'Nine Worlds',
-        composer: 'Veera Kuisma',
-        length: '0:27'
-      },
-      {
-        title: 'Polska In Between Sample',
-        link: 'music/samples/POLSKA IN BETWEEN SAMPLE.mp3',
-        artist: 'ALDA',
-        album: 'Nine Worlds',
-        composer: 'Veera Kuisma',
-        length: '0:23'
-      }],
+      songList: [
+        {
+          title: 'Fen-Fire Polska',
+          link: 'music/Fen-Fire Polska.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Elias Frigård',
+          length: '5:25',
+        },
+        {
+          title: '848',
+          link: 'music/848.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Veera Kuisma',
+          length: '3:50',
+        },
+        {
+          title: 'Ajastaika',
+          link: 'music/Ajastaika.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Veera Kuisma',
+          length: '5:20',
+        },
+        {
+          title: 'Bee Reel',
+          link: 'music/Bee Reel.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Veera Kuisma',
+          length: '2:21',
+        },
+        {
+          title: 'Nine Worlds',
+          link: 'music/Nine Worlds.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Elias Frigård',
+          length: '3:35',
+        },
+        {
+          title: 'Polska In Between',
+          link: 'music/Polska In Between.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Veera Kuisma',
+          length: '5:21',
+        },
+        {
+          title: 'Moment Before',
+          link: 'music/Moment Before.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Veera Kuisma',
+          length: '4:54',
+        },
+        {
+          title: 'Joulukoti',
+          link: 'music/Joulukoti.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Veera Kuisma',
+          length: '4:37',
+        },
+        {
+          title: 'Jonk Jonas',
+          link: 'music/Jonk Jonas.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Trad.',
+          length: '3:35',
+        },
+        {
+          title: 'Our Side of the Mountain',
+          link: 'music/Our Side of the Mountain.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Jeremy Kittel',
+          length: '3:45',
+        },
+        {
+          title: 'Clarity',
+          link: 'music/Clarity.mp3',
+          artist: 'ALDA',
+          album: 'Nine Worlds',
+          composer: 'Veera Kuisma',
+          length: '4:30',
+        },
+      ],
       currentSong: '',
       currentSongIndex: 0,
       isPlaying: false,
       volumeValue: 80,
       prevVolume: '',
       muted: false,
-      listIsOpen: false
+      listIsOpen: false,
     }
   },
   watch: {
-    currentSong: function () {
+    currentSong: function() {
       const allSongs = document.querySelectorAll(`.data-row`)
-      
-      allSongs.forEach(song => {
+
+      allSongs.forEach((song) => {
         const title = song.querySelector('.song-title').textContent
 
         if (this.currentSong.title === title) {
@@ -161,7 +231,7 @@ export default {
           song.classList.remove('is-active')
         }
       })
-    }
+    },
   },
   mounted() {
     this.currentSong = this.songList[0]
@@ -172,16 +242,16 @@ export default {
     },
     mobile() {
       return screen.width < 992
-    }
+    },
   },
   methods: {
     openVolumeControl() {
       if (screen.width > 992) {
-        document.querySelector('.volume-range').style.display = "block"
+        document.querySelector('.volume-range').style.display = 'block'
       }
     },
     closeVolumeControl() {
-      document.querySelector('.volume-range').style.display = "none"
+      document.querySelector('.volume-range').style.display = 'none'
     },
     changeVolume(e) {
       this.volumeValue = e.srcElement.value
@@ -208,11 +278,11 @@ export default {
       const audio = document.querySelector('.music-audio')
 
       this.isPlaying = true
-      
+
       await audio.load()
       await audio.play()
     },
-    updateProgress(e) {     
+    updateProgress(e) {
       const progress = document.querySelector('.music-progress')
       const { duration, currentTime } = e.srcElement
       const progressPercent = (currentTime / duration) * 100
@@ -225,7 +295,7 @@ export default {
 
       const audio = document.querySelector('.music-audio')
       const audioDuration = audio.duration
-      
+
       audio.currentTime = (clickPosition / progressContainerWidth) * audioDuration
     },
     nextSong() {
@@ -238,18 +308,18 @@ export default {
       this.currentSong = this.songList[this.currentSongIndex]
 
       document.querySelector('.music-audio')
-      
+
       this.loadAndPlayAudio()
     },
     prevSong() {
-      this.currentSongIndex--;
+      this.currentSongIndex--
 
       if (this.currentSongIndex < 0) {
-        this.currentSongIndex = this.songList.length - 1;
+        this.currentSongIndex = this.songList.length - 1
       }
 
       this.currentSong = this.songList[this.currentSongIndex]
-      
+
       this.loadAndPlayAudio()
     },
     changeTrack(index) {
@@ -270,8 +340,8 @@ export default {
       list.style.display = 'none'
 
       this.listIsOpen = false
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -283,13 +353,14 @@ export default {
   width: 100vw;
   padding: 0 50px;
   background-color: var(--main-color);
-  bottom:0;
-  display:flex;
+  bottom: 0;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.audio-controls, .window-controls {
+.audio-controls,
+.window-controls {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -337,7 +408,7 @@ export default {
   cursor: pointer;
   margin: 10px 0;
   height: 5px;
-  width: 100%;  
+  width: 100%;
 }
 
 .music-progress {
@@ -365,7 +436,7 @@ export default {
 }
 
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 th {
@@ -388,15 +459,16 @@ td {
   background-color: rgb(3, 38, 54);
 }
 
-th, td {
+th,
+td {
   height: 20px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 15px;
 }
 
-.song-table tr:last-child td{
-    border-bottom:0;
+.song-table tr:last-child td {
+  border-bottom: 0;
 }
 
 .volume-controls {
@@ -412,7 +484,7 @@ th, td {
 .volume-range {
   display: none;
   transform: rotate(-90deg);
-  position:fixed;
+  position: fixed;
   bottom: 110px;
   right: 120px;
   color: #ec3c01;
@@ -424,13 +496,12 @@ th, td {
 }
 
 .mobile-progress {
-  display:none;
+  display: none;
 }
-
 
 @media screen and (max-width: 992px) {
   .music-info {
-    display:none;
+    display: none;
   }
 
   .audio-controls {
@@ -438,7 +509,7 @@ th, td {
   }
 
   .window-controls {
-    width:35%;
+    width: 35%;
   }
 
   .volume-range {
@@ -446,7 +517,7 @@ th, td {
   }
 
   .mobile-progress {
-    display:block;
+    display: block;
     width: 100%;
   }
 
@@ -456,10 +527,13 @@ th, td {
 
   .mobile-progress .music-progress-container {
     height: 10px;
-    margin: 20px 0 0 ;
+    margin: 20px 0 0;
   }
 
-  .song-composer, .song-length, .composer-header, .length-header {
+  .song-composer,
+  .song-length,
+  .composer-header,
+  .length-header {
     display: none;
   }
 }

@@ -14,11 +14,7 @@
 
   <!-- Audio Player (absolute)-->
   <div class="player-div">
-    <Player
-      class="audio-player"
-      @close-player="closePlayer"
-      data-aos="fade-up"
-    />
+    <Player class="audio-player" @close-player="closePlayer" data-aos="fade-up" />
   </div>
 
   <!-- To Top Button. -->
@@ -120,7 +116,7 @@ body {
 }
 
 #page-content {
-  padding-top: 8vh;
+  padding-top: 6.5vh;
 }
 
 .header,
