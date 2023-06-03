@@ -208,5 +208,13 @@
     "country": "FI",
     "link": "https://kaukaselofolk.fi/",
     "description": "ALDA + Vilma Talvitie @ Elofolk Joulukonsertti"
+  },
+  {
+    "id": 25,
+    "date": "2023-01-13T00:00:00.511Z",
+    "location": "Helsinki",
+    "country": "FI",
+    "link": "https://folklandia.fi/",
+    "description": "Folklandia Festival"
   }
 ]
