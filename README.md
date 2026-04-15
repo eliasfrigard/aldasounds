@@ -1,24 +1,25 @@
-# aldasounds
+# ALDA - aldasounds.com
 
-## Project setup
-```
+The official website of ALDA, a Nordic folk music trio featuring saxophone, violin, and piano.
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) (Pages Router)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+
+## Getting Started
+
+```bash
 npm install
+npm run dev
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Compiles and minifies for production
-```
+## Build
+
+```bash
 npm run build
+npm start
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
